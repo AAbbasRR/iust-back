@@ -14,6 +14,7 @@ django-import-export==3.3.3
 django-jalali-date==1.0.2
 djangorestframework==3.14.0
 docx-mailmerge==0.5.0
+docx2pdf==0.1.8
 et-xmlfile==1.1.0
 filelock==3.13.1
 gunicorn==21.2.0
@@ -33,12 +34,15 @@ PyJWT==2.8.0
 PyMuPDF==1.23.26
 PyMuPDFb==1.23.22
 python-decouple==3.7
+python-docx==1.1.0
 pytz==2022.7.1
 PyYAML==6.0.1
 redis==4.4.2
 requests==2.31.0
 sqlparse==0.4.3
 tablib==3.5.0
+tqdm==4.66.2
+typing_extensions==4.10.0
 urllib3==2.1.0
 virtualenv==20.24.7
 xlrd==2.0.1
