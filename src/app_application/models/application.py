@@ -422,6 +422,12 @@ class Application(GeneralDateModel):
         blank=True,
         verbose_name=_("Application File"),
     )
+    application_letter = models.FileField(
+        upload_to=application_file_directory_path,
+        null=True,
+        blank=True,
+        verbose_name=_("Application Letter"),
+    )
 
     objects = ApplicationManager()
 
@@ -444,6 +450,25 @@ class Application(GeneralDateModel):
                 )
                 website_url = protocol + host
                 return website_url + self.application_file.url
+        except ValueError:
+            return None
+
+    def application_letter_url(self, request):
+        try:
+            if self.application_letter is None or self.application_letter == "":
+                return None
+            else:
+                host = request.get_host()
+                protocol = request.build_absolute_uri().split(host)[0]
+                protocol = (
+                    protocol
+                    if DEBUG
+                    else protocol.replace("http", "https")
+                    if protocol.split(":")[0] == "http"
+                    else protocol
+                )
+                website_url = protocol + host
+                return website_url + self.application_letter.url
         except ValueError:
             return None
 

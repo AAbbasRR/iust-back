@@ -10,6 +10,7 @@ from .application_admin import (
     AdminUpdateApplicationView,
     AdminReferralApplicationListView,
     AdminExportReferralApplicationListView,
+    AdminSubmitApplicationLetterView,
 )
 from .application_timeline_admin import AdminCreateApplicationTimeLineView
 from .documents import DocumentsCreateView, DocumentsDetailUpdateView

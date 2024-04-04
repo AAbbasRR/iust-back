@@ -30,4 +30,5 @@ class AdminLoginSerializer(serializers.Serializer):
                 "picurl": user_obj.picurl,
                 "full_name": user_obj.get_full_name(),
                 "auth_token": user_token.key,
+                "can_issuance_letter": user_obj.can_issuance_letter,
             }

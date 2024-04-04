@@ -1,5 +1,5 @@
 from django.db.models import Q, Case, When, Value, CharField
-
+from django.core.files.base import ContentFile
 from django.utils.translation import gettext_lazy as _
 
 from rest_framework import serializers, exceptions
@@ -17,6 +17,10 @@ from app_admin.models import AdminModel
 from app_notification.models import NotificationModel
 
 from utils.base_errors import BaseErrors
+
+from docx import Document
+from io import BytesIO
+from docx2pdf import convert
 
 
 class AdminApplicationListSerializer(serializers.ModelSerializer):
@@ -252,6 +256,9 @@ class AdminDetailApplicationSerializer(serializers.ModelSerializer):
     )
     status_value = serializers.CharField(source="status", read_only=True)
     application_file_url = serializers.SerializerMethodField("get_application_file_url")
+    application_letter_url = serializers.SerializerMethodField(
+        "get_application_letter_url"
+    )
 
     class Meta:
         model = ApplicationModel
@@ -266,6 +273,7 @@ class AdminDetailApplicationSerializer(serializers.ModelSerializer):
             "jalali_created_at",
             "application_document",
             "application_file_url",
+            "application_letter_url",
             "application_timeline",
             "user",
             "staffs",
@@ -283,6 +291,9 @@ class AdminDetailApplicationSerializer(serializers.ModelSerializer):
             if self.method in ["PUT", "PATCH"]:
                 for field_name, field in self.fields.items():
                     field.required = False
+
+    def get_application_letter_url(self, obj):
+        return obj.application_letter_url(self.request)
 
     def get_application_file_url(self, obj):
         return obj.application_file_url(self.request)
@@ -452,3 +463,82 @@ class AdminUpdateApplicationSerializer(serializers.ModelSerializer):
             return instance
         else:
             raise exceptions.ParseError(BaseErrors.user_cant_edit_application_status)
+
+
+class AdminSubmitApplicationLetterSerializer(serializers.Serializer):
+    application = serializers.IntegerField(required=True)
+    count_semesters = serializers.IntegerField(required=True, min_value=1)
+    fee = serializers.IntegerField(required=True, min_value=0)
+    semesters_year = serializers.CharField(max_length=10, required=True)
+    semesters_season = serializers.CharField(max_length=10, required=True)
+    register_start_date = serializers.CharField(max_length=15, required=True)
+    register_end_date = serializers.CharField(max_length=15, required=True)
+    start_program_date = serializers.CharField(max_length=15, required=True)
+
+    def validate_application(self, value):
+        application_obj = ApplicationModel.objects.filter(pk=value).first()
+        if application_obj is not None:
+            return application_obj
+        else:
+            raise exceptions.NotFound(
+                BaseErrors._change_error_variable(
+                    "object_not_found", object=_("Application")
+                )
+            )
+
+    def validate(self, attrs):
+        replacements = {
+            "<<created_at>>": str(attrs["application"].create_at.date()),
+            "<<create_at>>": str(attrs["application"].create_at.date()),
+            "<<tracking_id>>": str(attrs["application"].tracking_id),
+            "<<gender>>": "Mr"
+            if attrs["application"].user.user_profile.gender == "Male"
+            else "Miss",
+            "<<full_name>>": str(attrs["application"].full_name),
+            "<<faculty>>": str(attrs["application"].faculty),
+            "<<field_of_study>>": str(attrs["application"].field_of_study),
+            "<<count_semesters>>": str(attrs["count_semesters"]),
+            "<<count_years>>": str(attrs["count_semesters"] / 2),
+            "<<fee>>": str(attrs["fee"]),
+            "<<semesters_year>>": str(attrs["semesters_year"]),
+            "<<semesters_season>>": str(attrs["semesters_season"]),
+            "<<register_start_date>>": str(attrs["register_start_date"]),
+            "<<register_end_date>>": str(attrs["register_end_date"]),
+            "<<start_program_date>>": str(attrs["start_program_date"]),
+        }
+
+        doc = Document("letter.docx")
+        for p in doc.paragraphs:
+            for key, value in replacements.items():
+                if key.strip() in p.text:
+                    inline = p.runs
+                    for i in range(len(inline)):
+                        if key in inline[i].text:
+                            text = inline[i].text.replace(key, value)
+                            inline[i].text = text
+
+        for table in doc.tables:
+            for row in table.rows:
+                for cell in row.cells:
+                    for paragraph in cell.paragraphs:
+                        for key, value in replacements.items():
+                            if key in paragraph.text:
+                                inline = paragraph.runs
+                                for i in range(len(inline)):
+                                    if key in inline[i].text:
+                                        text = inline[i].text.replace(key, value)
+                                        inline[i].text = text
+
+        doc_bytes_stream = BytesIO()
+        doc.save(doc_bytes_stream)
+
+        attrs["application"].application_letter.save(
+            "application_letter.docx",
+            ContentFile(doc_bytes_stream.getvalue()),
+            save=True,
+        )
+
+        doc_bytes_stream.close()
+        attrs.pop("application")
+
+        return attrs

@@ -62,4 +62,9 @@ urlpatterns = [
         AdminUpdateApplicationView.as_view(),
         name="admin_application_update_status",
     ),
+    path(
+        "admin/application/issuance_letter/",
+        AdminSubmitApplicationLetterView.as_view(),
+        name="admin_application_issuance_letter",
+    ),
 ]

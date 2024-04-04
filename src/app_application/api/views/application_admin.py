@@ -1,7 +1,6 @@
 from django.http import HttpResponse
-from django.db.models import Q
 
-from rest_framework import generics
+from rest_framework import generics, response
 
 from app_application.models import ApplicationModel
 from app_application.api.serializers.application_admin import (
@@ -9,11 +8,16 @@ from app_application.api.serializers.application_admin import (
     AdminApplicationExportResource,
     AdminDetailApplicationSerializer,
     AdminUpdateApplicationSerializer,
+    AdminSubmitApplicationLetterSerializer,
 )
 from app_application.filters.applications import ApplicationListFilter
 from app_admin.models import AdminModel
 
-from utils.permissions import IsAuthenticatedPermission, IsAdminUserPermission
+from utils.permissions import (
+    IsAuthenticatedPermission,
+    IsAdminUserPermission,
+    CanIssuanceLetterPermission,
+)
 from utils.versioning import BaseVersioning
 from utils.paginations import BasePagination
 
@@ -139,3 +143,18 @@ class AdminUpdateApplicationView(generics.UpdateAPIView):
                 faculty__in=list(user_faculty),
                 application_referral__destination_user=self.request.user,
             ).exclude(status=ApplicationModel.ApplicationStatusOptions.Not_Completed)
+
+
+class AdminSubmitApplicationLetterView(generics.GenericAPIView):
+    permission_classes = [
+        IsAuthenticatedPermission,
+        IsAdminUserPermission,
+        CanIssuanceLetterPermission,
+    ]
+    versioning_class = BaseVersioning
+    serializer_class = AdminSubmitApplicationLetterSerializer
+
+    def post(self, request, *args, **kwargs):
+        ser = self.serializer_class(data=self.request.data)
+        ser.is_valid(raise_exception=True)
+        return response.Response(ser.validated_data)

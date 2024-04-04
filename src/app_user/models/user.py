@@ -112,6 +112,9 @@ class User(AbstractUser):
         default=AdminOptions.Nothing,
         verbose_name=_("Admin Role"),
     )
+    can_issuance_letter = models.BooleanField(
+        default=False, verbose_name=_("Can Issuance Letter")
+    )
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []

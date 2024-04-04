@@ -13,3 +13,13 @@ class IsSuperUserPermission(BasePermission):
 
     def has_permission(self, request, view):
         return bool(request.user and request.user.is_superuser)
+
+
+class CanIssuanceLetterPermission(BasePermission):
+    message = {
+        "status": False,
+        "message": BaseErrors.user_do_not_have_permission_for_application,
+    }
+
+    def has_permission(self, request, view):
+        return bool(request.user.can_issuance_letter)
