@@ -11,5 +11,9 @@
     <p>Active Your Account</p>
     <p>Welcome, your Otp Code is: {{ content.otp_code }}</p>
 {% endif %}
+{% if  content.title == "forget_password" %}
+    <p>Reset Your Account Password</p>
+    <p>Your Otp Code is: {{ content.otp_code }}</p>
+{% endif %}
 </body>
 </html>
