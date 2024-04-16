@@ -106,9 +106,9 @@ class ApplicationSerializer(serializers.ModelSerializer):
                 application=obj,
                 status=TimeLineModel.TimeLineStatusOptions.NeedToEdit,
             ).last()
-            return last_timeline.message
-        else:
-            return ""
+            if last_timeline is not None:
+                return last_timeline.message
+        return ""
 
     def create(self, validated_data):
         agent = None
