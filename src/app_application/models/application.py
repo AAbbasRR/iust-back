@@ -28,6 +28,9 @@ class Application(GeneralDateModel):
         ordering = ["-id"]
 
     class ApplicationFacultyOptions(models.TextChoices):
+        Department_of_Test = "Department of Test", _(
+            "Department of Test",
+        )
         Department_of_Chemistry = "Department of Chemistry", _(
             "Department of Chemistry"
         )
@@ -78,6 +81,7 @@ class Application(GeneralDateModel):
         )
 
     class ApplicationFieldOfStudyOptions(models.TextChoices):
+        Test = "Test", _("Test")
         Architecture = "Architecture", _("Architecture")
         Industrial_Design = "Industrial Design", _("Industrial Design")
         Chemical_Engineering = "Chemical Engineering", _("Chemical Engineering")

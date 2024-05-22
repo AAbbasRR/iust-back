@@ -264,6 +264,10 @@ data = {
                     "value": "Architecture",
                 },
                 {
+                    "label": "شهرسازی",
+                    "value": "Urbanism",
+                },
+                {
                     "label": "معماری - مسکن",
                     "value": "Architecture - Housing",
                 },
@@ -404,6 +408,10 @@ data = {
             ],
             "School of Computer Engineering": [
                 {
+                    "label": "مهندسی سخت افزار",
+                    "value": "Hardware Engineering",
+                },
+                {
                     "label": "مهندسی نرم افزار",
                     "value": "Software Engineering",
                 },
@@ -438,6 +446,10 @@ data = {
                     "value": "Bio-Electrics",
                 },
                 {
+                    "label": "الکترونیک",
+                    "value": "Electronics",
+                },
+                {
                     "label": "سیستم های الکترونیک دیجیتال",
                     "value": "Digital Electronic Systems",
                 },
@@ -455,6 +467,10 @@ data = {
                 },
             ],
             "School of Industrial Engineering": [
+                {
+                    "label": "مهندسی صنایع",
+                    "value": "Industrial Engineering",
+                },
                 {
                     "label": "مهندسی فناوری اطلاعات - تجارت الکترونیک",
                     "value": "Information Technology Engineering - Electronic Commerce",
@@ -580,6 +596,14 @@ data = {
                 {
                     "label": "فیزیک اپتیک لیزر",
                     "value": "Laser Optics Physics",
+                },
+                {
+                    "label": "فیزیک اتمی و مولکولی",
+                    "value": "Atomic and Molecular Physics",
+                },
+                {
+                    "label": "فیزیک حالت جامد",
+                    "value": "Solid State Physics",
                 },
             ],
             "School of Management Economy and Progress Engineering": [

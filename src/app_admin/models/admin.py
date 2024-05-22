@@ -16,6 +16,9 @@ class Admin(models.Model):
         department_member = "department_member", _("Department Member")
 
     class AdminSchoolsOptions(models.TextChoices):
+        Department_of_Test = "Department of Test", _(
+            "Department of Test",
+        )
         Department_of_Chemistry = "Department of Chemistry", _(
             "Department of Chemistry"
         )
@@ -66,6 +69,7 @@ class Admin(models.Model):
         )
 
     class AdminFieldsOptions(models.TextChoices):
+        Test = "Test", _("Test")
         Architecture = "Architecture", _("Architecture")
         Industrial_Design = "Industrial Design", _("Industrial Design")
         Chemical_Engineering = "Chemical Engineering", _("Chemical Engineering")
