@@ -239,7 +239,7 @@ class AdminRuleSerializer(serializers.ModelSerializer):
 
 
 class AdminDetailApplicationSerializer(serializers.ModelSerializer):
-    degree = serializers.CharField(source="get_degree_display", read_only=True)
+    degree_display = serializers.CharField(source="get_degree_display", read_only=True)
     faculty = serializers.CharField(source="get_faculty_display", read_only=True)
     field_of_study = serializers.CharField(
         source="get_field_of_study_display", read_only=True
@@ -266,6 +266,7 @@ class AdminDetailApplicationSerializer(serializers.ModelSerializer):
             "id",
             "tracking_id",
             "degree",
+            "degree_display",
             "faculty",
             "field_of_study",
             "status",
@@ -496,9 +497,9 @@ class AdminSubmitApplicationLetterSerializer(serializers.Serializer):
             else "Miss",
             "<<full_name>>": str(attrs["application"].full_name),
             "<<faculty>>": str(attrs["application"].faculty),
-            "<<field_of_study>>": str(attrs["application"].field_of_study),
+            "<<field_of_study>>": f"{str(attrs['application'].faculty)} - {str(attrs['application'].field_of_study)}",
             "<<count_semesters>>": str(attrs["count_semesters"]),
-            "<<count_years>>": str(attrs["count_semesters"] / 2),
+            "<<count_years>>": str(int(attrs["count_semesters"] / 2)),
             "<<fee>>": str(attrs["fee"]),
             "<<semesters_year>>": str(attrs["semesters_year"]),
             "<<semesters_season>>": str(attrs["semesters_season"]),

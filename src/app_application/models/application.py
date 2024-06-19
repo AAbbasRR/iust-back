@@ -494,7 +494,8 @@ class Application(GeneralDateModel):
             "user__user_address__city": fitz.Point(175, 226),
             "user__user_address__city_code": fitz.Point(445, 226),
             "user__user_address__address": fitz.Point(175, 245),
-            "field_of_study": fitz.Point(445, 306),
+            "faculty": fitz.Point(363, 309),
+            "field_of_study": fitz.Point(465, 309),
             "user__user_high_school__field_of_study": fitz.Point(175, 360),
             "user__user_high_school__gpa": fitz.Point(445, 360),
             "user__user_high_school__country": fitz.Point(175, 377),
@@ -626,6 +627,46 @@ class Application(GeneralDateModel):
                     fontsize=10,
                     color=(0, 0, 0),
                 )
+
+        document = self.application_document
+
+        # List of file fields to check
+        file_fields = [
+            "curriculum_vitae",
+            "personal_photo",
+            "valid_passport",
+            "high_school_certificate",
+            "trans_script_high_school_certificate",
+            "bachelor_degree",
+            "trans_script_bachelor_degree",
+            "master_degree",
+            "trans_script_master_degree",
+            "supporting_letter",
+        ]
+
+        # Function to convert an image file to a PDF
+        def image_to_pdf(image_path):
+            img_doc = fitz.open()  # Create a new empty PDF
+            img_doc.new_page(width=595, height=842)  # A4 size page
+            img_page = img_doc.load_page(0)
+            img_page.insert_image(img_page.rect, filename=image_path)
+            return img_doc
+
+        # Append non-null files to the PDF
+        for field in file_fields:
+            file = getattr(document, field)
+            if file:  # If the file field is not null
+                file_path = file.path
+                file_extension = file_path.split(".")[-1].upper()
+                if file_extension in ["JPEG", "PNG", "JPG"]:
+                    additional_pdf = image_to_pdf(file_path)
+                elif file_extension == "PDF":
+                    additional_pdf = fitz.open(file_path)
+                else:
+                    continue
+
+                pdf_document.insert_pdf(additional_pdf)
+                additional_pdf.close()
 
         pdf_bytes = pdf_document.write()
 
