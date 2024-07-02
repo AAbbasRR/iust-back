@@ -23,7 +23,9 @@ class AdminLoginSerializer(serializers.Serializer):
             user_obj.set_last_login()
             user_token = Token.objects.get(user=user_obj)
             return {
+                "id": user_obj.id,
                 "sub": user_obj.sub,
+                "email": user_obj.email,
                 "is_superuser": user_obj.is_superuser,
                 "is_staff": user_obj.is_staff,
                 "username": user_obj.username,
@@ -31,4 +33,5 @@ class AdminLoginSerializer(serializers.Serializer):
                 "full_name": user_obj.get_full_name(),
                 "auth_token": user_token.key,
                 "can_issuance_letter": user_obj.can_issuance_letter,
+                "is_agent": user_obj.is_agent,
             }
