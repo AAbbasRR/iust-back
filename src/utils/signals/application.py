@@ -2,7 +2,7 @@ from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django.db import IntegrityError
 
-from app_application.models import ApplicationModel
+from app_application.models import ApplicationModel, DocumentModel
 
 from utils.functions import generate_number
 
@@ -13,6 +13,7 @@ from jalali_date import date2jalali
 @receiver(post_save, sender=ApplicationModel)
 def create_application_handler(sender, instance, **kwargs):
     if kwargs["created"]:
+        DocumentModel.objects.create(application=instance, user=instance.user)
         while True:
             try:
                 date_now = datetime.now()
