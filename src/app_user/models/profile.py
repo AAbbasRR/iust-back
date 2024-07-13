@@ -58,7 +58,6 @@ class Profile(GeneralDateModel):
     age = models.PositiveIntegerField(default=1, verbose_name=_("Age"))
     gender = models.CharField(
         max_length=6,
-        null=True,
         choices=ProfileGenderOptions.choices,
         default=ProfileGenderOptions.Male,
         verbose_name=_("Gender"),
@@ -76,14 +75,12 @@ class Profile(GeneralDateModel):
     )
     english_status = models.CharField(
         max_length=9,
-        null=True,
         choices=ProfileLanguageOptions.choices,
         default=ProfileLanguageOptions.Good,
         verbose_name=_("English Status"),
     )
     persian_status = models.CharField(
         max_length=9,
-        null=True,
         choices=ProfileLanguageOptions.choices,
         default=ProfileLanguageOptions.Good,
         verbose_name=_("Persian Status"),

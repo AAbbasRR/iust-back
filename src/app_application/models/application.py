@@ -477,201 +477,204 @@ class Application(GeneralDateModel):
             return None
 
     def update_application_file(self):
-        pdf_document = fitz.open("final.pdf")
+        try:
+            pdf_document = fitz.open("final.pdf")
 
-        page_0_points = {
-            "user__user_profile__first_name": fitz.Point(175, 105),
-            "user__user_profile__last_name": fitz.Point(445, 105),
-            "user__user_profile__nationality": fitz.Point(175, 140),
-            "user__user_profile__birth_date": fitz.Point(445, 122),
-            "user__user_profile__mother_language": fitz.Point(445, 140),
-            "user__user_profile__other_languages": fitz.Point(175, 157),
-            "user__email": fitz.Point(445, 175),
-            "user__user_address__postal_code": fitz.Point(175, 192),
-            "user__user_profile__phone_number": fitz.Point(445, 192),
-            "user__user_address__country": fitz.Point(175, 209),
-            "user__user_address__country_code": fitz.Point(445, 209),
-            "user__user_address__city": fitz.Point(175, 226),
-            "user__user_address__city_code": fitz.Point(445, 226),
-            "user__user_address__address": fitz.Point(175, 245),
-            "faculty": fitz.Point(363, 309),
-            "field_of_study": fitz.Point(465, 309),
-            "user__user_high_school__field_of_study": fitz.Point(175, 360),
-            "user__user_high_school__gpa": fitz.Point(445, 360),
-            "user__user_high_school__country": fitz.Point(175, 377),
-            "user__user_high_school__city": fitz.Point(445, 377),
-            "user__user_bachelor_degree__field_of_study": fitz.Point(175, 415),
-            "user__user_bachelor_degree__date_of_graduation": fitz.Point(445, 415),
-            "user__user_bachelor_degree__university": fitz.Point(175, 430),
-            "user__user_bachelor_degree__gpa": fitz.Point(445, 430),
-            "user__user_bachelor_degree__country": fitz.Point(175, 448),
-            "user__user_bachelor_degree__city": fitz.Point(445, 448),
-            "user__user_master_degree__field_of_study": fitz.Point(175, 484),
-            "user__user_master_degree__date_of_graduation": fitz.Point(445, 484),
-            "user__user_master_degree__university": fitz.Point(175, 502),
-            "user__user_master_degree__gpa": fitz.Point(445, 502),
-            "user__user_master_degree__country": fitz.Point(175, 520),
-            "user__user_master_degree__city": fitz.Point(445, 520),
-            "user__user_latest_occupation__occupation": fitz.Point(175, 555),
-            "user__user_latest_occupation__organization": fitz.Point(445, 555),
-            "user__user_latest_occupation__country": fitz.Point(175, 572),
-            "user__user_latest_occupation__from_date": fitz.Point(445, 572),
-            "user__user_latest_occupation__to_date": fitz.Point(490, 572),
-        }
-        page_1_points = {
-            "full_name": fitz.Point(175, 110),
-            "create_at__date.": fitz.Point(445, 110),
-            "comments": fitz.Point(175, 128),
-        }
-        page_0_boolean_points = {
-            "user__user_profile__gender": {
-                "Male": fitz.Point(175, 122),
-                "FeMale": fitz.Point(210, 122),
-            },
-            "user__user_profile__english_status": {
-                "Weak": fitz.Point(444, 157),
-                "Good": fitz.Point(482, 157),
-                "Excellent": fitz.Point(522, 157),
-            },
-            "user__user_profile__persian_status": {
-                "Weak": fitz.Point(177, 174),
-                "Good": fitz.Point(214, 174),
-                "Excellent": fitz.Point(255, 174),
-            },
-            "degree": {
-                "Bachelor": fitz.Point(175, 308),
-                "Master": fitz.Point(222, 308),
-                "P.H.D": fitz.Point(262, 308),
-            },
-            "application_document__curriculum_vitae": {
-                "True": fitz.Point(310, 608),
-                "False": fitz.Point(355, 608),
-            },
-            "application_document__personal_photo": {
-                "True": fitz.Point(310, 625),
-                "False": fitz.Point(355, 625),
-            },
-            "application_document__valid_passport": {
-                "True": fitz.Point(310, 642),
-                "False": fitz.Point(355, 643),
-            },
-            "application_document__master_degree": {
-                "True": fitz.Point(310, 659),
-                "False": fitz.Point(355, 660),
-            },
-            "application_document__bachelor_degree": {
-                "True": fitz.Point(310, 677),
-                "False": fitz.Point(355, 678),
-            },
-            "application_document__high_school_certificate": {
-                "True": fitz.Point(310, 695),
-                "False": fitz.Point(355, 695),
-            },
-            "application_document__trans_script_master_degree": {
-                "True": fitz.Point(310, 712),
-                "False": fitz.Point(355, 712),
-            },
-            "application_document__trans_script_bachelor_degree": {
-                "True": fitz.Point(310, 730),
-                "False": fitz.Point(355, 729),
-            },
-            "application_document__trans_script_high_school_certificate": {
-                "True": fitz.Point(310, 747),
-                "False": fitz.Point(355, 747),
-            },
-        }
-        page_1_boolean_points = {
-            "financial_self_support": {
-                "True": fitz.Point(311, 59),
-                "False": fitz.Point(356, 59),
-            },
-            "application_document__supporting_letter": {
-                "True": fitz.Point(311, 76),
-                "False": fitz.Point(356, 76),
-            },
-        }
+            page_0_points = {
+                "user__user_profile__first_name": fitz.Point(175, 105),
+                "user__user_profile__last_name": fitz.Point(445, 105),
+                "user__user_profile__nationality": fitz.Point(175, 140),
+                "user__user_profile__birth_date": fitz.Point(445, 122),
+                "user__user_profile__mother_language": fitz.Point(445, 140),
+                "user__user_profile__other_languages": fitz.Point(175, 157),
+                "user__email": fitz.Point(445, 175),
+                "user__user_address__postal_code": fitz.Point(175, 192),
+                "user__user_profile__phone_number": fitz.Point(445, 192),
+                "user__user_address__country": fitz.Point(175, 209),
+                "user__user_address__country_code": fitz.Point(445, 209),
+                "user__user_address__city": fitz.Point(175, 226),
+                "user__user_address__city_code": fitz.Point(445, 226),
+                "user__user_address__address": fitz.Point(175, 245),
+                "faculty": fitz.Point(363, 309),
+                "field_of_study": fitz.Point(465, 309),
+                "user__user_high_school__field_of_study": fitz.Point(175, 360),
+                "user__user_high_school__gpa": fitz.Point(445, 360),
+                "user__user_high_school__country": fitz.Point(175, 377),
+                "user__user_high_school__city": fitz.Point(445, 377),
+                "user__user_bachelor_degree__field_of_study": fitz.Point(175, 415),
+                "user__user_bachelor_degree__date_of_graduation": fitz.Point(445, 415),
+                "user__user_bachelor_degree__university": fitz.Point(175, 430),
+                "user__user_bachelor_degree__gpa": fitz.Point(445, 430),
+                "user__user_bachelor_degree__country": fitz.Point(175, 448),
+                "user__user_bachelor_degree__city": fitz.Point(445, 448),
+                "user__user_master_degree__field_of_study": fitz.Point(175, 484),
+                "user__user_master_degree__date_of_graduation": fitz.Point(445, 484),
+                "user__user_master_degree__university": fitz.Point(175, 502),
+                "user__user_master_degree__gpa": fitz.Point(445, 502),
+                "user__user_master_degree__country": fitz.Point(175, 520),
+                "user__user_master_degree__city": fitz.Point(445, 520),
+                "user__user_latest_occupation__occupation": fitz.Point(175, 555),
+                "user__user_latest_occupation__organization": fitz.Point(445, 555),
+                "user__user_latest_occupation__country": fitz.Point(175, 572),
+                "user__user_latest_occupation__from_date": fitz.Point(445, 572),
+                "user__user_latest_occupation__to_date": fitz.Point(490, 572),
+            }
+            page_1_points = {
+                "full_name": fitz.Point(175, 110),
+                "create_at__date.": fitz.Point(445, 110),
+                "comments": fitz.Point(175, 128),
+            }
+            page_0_boolean_points = {
+                "user__user_profile__gender": {
+                    "Male": fitz.Point(175, 122),
+                    "FeMale": fitz.Point(210, 122),
+                },
+                "user__user_profile__english_status": {
+                    "Weak": fitz.Point(444, 157),
+                    "Good": fitz.Point(482, 157),
+                    "Excellent": fitz.Point(522, 157),
+                },
+                "user__user_profile__persian_status": {
+                    "Weak": fitz.Point(177, 174),
+                    "Good": fitz.Point(214, 174),
+                    "Excellent": fitz.Point(255, 174),
+                },
+                "degree": {
+                    "Bachelor": fitz.Point(175, 308),
+                    "Master": fitz.Point(222, 308),
+                    "P.H.D": fitz.Point(262, 308),
+                },
+                "application_document__curriculum_vitae": {
+                    "True": fitz.Point(310, 608),
+                    "False": fitz.Point(355, 608),
+                },
+                "application_document__personal_photo": {
+                    "True": fitz.Point(310, 625),
+                    "False": fitz.Point(355, 625),
+                },
+                "application_document__valid_passport": {
+                    "True": fitz.Point(310, 642),
+                    "False": fitz.Point(355, 643),
+                },
+                "application_document__master_degree": {
+                    "True": fitz.Point(310, 659),
+                    "False": fitz.Point(355, 660),
+                },
+                "application_document__bachelor_degree": {
+                    "True": fitz.Point(310, 677),
+                    "False": fitz.Point(355, 678),
+                },
+                "application_document__high_school_certificate": {
+                    "True": fitz.Point(310, 695),
+                    "False": fitz.Point(355, 695),
+                },
+                "application_document__trans_script_master_degree": {
+                    "True": fitz.Point(310, 712),
+                    "False": fitz.Point(355, 712),
+                },
+                "application_document__trans_script_bachelor_degree": {
+                    "True": fitz.Point(310, 730),
+                    "False": fitz.Point(355, 729),
+                },
+                "application_document__trans_script_high_school_certificate": {
+                    "True": fitz.Point(310, 747),
+                    "False": fitz.Point(355, 747),
+                },
+            }
+            page_1_boolean_points = {
+                "financial_self_support": {
+                    "True": fitz.Point(311, 59),
+                    "False": fitz.Point(356, 59),
+                },
+                "application_document__supporting_letter": {
+                    "True": fitz.Point(311, 76),
+                    "False": fitz.Point(356, 76),
+                },
+            }
 
-        for index in range(2):
-            page = pdf_document.load_page(index)
-            text_points = locals()[f"page_{index}_points"]
-            for text_points_key in text_points:
-                callable_value = text_points_key.split(".")
-                nested_attrs = callable_value[0].split("__")
-                nested_obj = reduce(getattr, nested_attrs, self)
-                value = nested_obj if nested_obj is not None else ""
-                if len(callable_value) > 1:
-                    value = value()
-                page.insert_text(
-                    text_points[text_points_key],
-                    str(value),
-                    fontsize=8,
-                    color=(0, 0, 0),
-                )
-            boolean_points = locals()[f"page_{index}_boolean_points"]
-            for boolean_points_key in boolean_points:
-                callable_value = boolean_points_key.split(".")
-                nested_attrs = callable_value[0].split("__")
-                try:
+            for index in range(2):
+                page = pdf_document.load_page(index)
+                text_points = locals()[f"page_{index}_points"]
+                for text_points_key in text_points:
+                    callable_value = text_points_key.split(".")
+                    nested_attrs = callable_value[0].split("__")
                     nested_obj = reduce(getattr, nested_attrs, self)
-                    if nested_attrs[0] == "application_document":
-                        value = True if nested_obj != "" else False
+                    value = nested_obj if nested_obj is not None else ""
+                    if len(callable_value) > 1:
+                        value = value()
+                    page.insert_text(
+                        text_points[text_points_key],
+                        str(value),
+                        fontsize=8,
+                        color=(0, 0, 0),
+                    )
+                boolean_points = locals()[f"page_{index}_boolean_points"]
+                for boolean_points_key in boolean_points:
+                    callable_value = boolean_points_key.split(".")
+                    nested_attrs = callable_value[0].split("__")
+                    try:
+                        nested_obj = reduce(getattr, nested_attrs, self)
+                        if nested_attrs[0] == "application_document":
+                            value = True if nested_obj != "" else False
+                        else:
+                            value = nested_obj
+                    except:
+                        value = False
+                    if len(callable_value) > 1:
+                        value = value()
+                    page.insert_text(
+                        boolean_points[boolean_points_key][str(value)],
+                        "X",
+                        fontsize=10,
+                        color=(0, 0, 0),
+                    )
+
+            document = self.application_document
+
+            # List of file fields to check
+            file_fields = [
+                "curriculum_vitae",
+                "personal_photo",
+                "valid_passport",
+                "high_school_certificate",
+                "trans_script_high_school_certificate",
+                "bachelor_degree",
+                "trans_script_bachelor_degree",
+                "master_degree",
+                "trans_script_master_degree",
+                "supporting_letter",
+            ]
+
+            # Function to convert an image file to a PDF
+            def image_to_pdf(image_path):
+                img_doc = fitz.open()  # Create a new empty PDF
+                img_doc.new_page(width=595, height=842)  # A4 size page
+                img_page = img_doc.load_page(0)
+                img_page.insert_image(img_page.rect, filename=image_path)
+                return img_doc
+
+            # Append non-null files to the PDF
+            for field in file_fields:
+                file = getattr(document, field)
+                if file:  # If the file field is not null
+                    file_path = file.path
+                    file_extension = file_path.split(".")[-1].upper()
+                    if file_extension in ["JPEG", "PNG", "JPG"]:
+                        additional_pdf = image_to_pdf(file_path)
+                    elif file_extension == "PDF":
+                        additional_pdf = fitz.open(file_path)
                     else:
-                        value = nested_obj
-                except:
-                    value = False
-                if len(callable_value) > 1:
-                    value = value()
-                page.insert_text(
-                    boolean_points[boolean_points_key][str(value)],
-                    "X",
-                    fontsize=10,
-                    color=(0, 0, 0),
-                )
+                        continue
 
-        document = self.application_document
+                    pdf_document.insert_pdf(additional_pdf)
+                    additional_pdf.close()
 
-        # List of file fields to check
-        file_fields = [
-            "curriculum_vitae",
-            "personal_photo",
-            "valid_passport",
-            "high_school_certificate",
-            "trans_script_high_school_certificate",
-            "bachelor_degree",
-            "trans_script_bachelor_degree",
-            "master_degree",
-            "trans_script_master_degree",
-            "supporting_letter",
-        ]
+            pdf_bytes = pdf_document.write()
 
-        # Function to convert an image file to a PDF
-        def image_to_pdf(image_path):
-            img_doc = fitz.open()  # Create a new empty PDF
-            img_doc.new_page(width=595, height=842)  # A4 size page
-            img_page = img_doc.load_page(0)
-            img_page.insert_image(img_page.rect, filename=image_path)
-            return img_doc
+            self.application_file.save(
+                "application_file.pdf", ContentFile(pdf_bytes), save=True
+            )
 
-        # Append non-null files to the PDF
-        for field in file_fields:
-            file = getattr(document, field)
-            if file:  # If the file field is not null
-                file_path = file.path
-                file_extension = file_path.split(".")[-1].upper()
-                if file_extension in ["JPEG", "PNG", "JPG"]:
-                    additional_pdf = image_to_pdf(file_path)
-                elif file_extension == "PDF":
-                    additional_pdf = fitz.open(file_path)
-                else:
-                    continue
-
-                pdf_document.insert_pdf(additional_pdf)
-                additional_pdf.close()
-
-        pdf_bytes = pdf_document.write()
-
-        self.application_file.save(
-            "application_file.pdf", ContentFile(pdf_bytes), save=True
-        )
-
-        pdf_document.close()
+            pdf_document.close()
+        except Exception:
+            pass
