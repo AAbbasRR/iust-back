@@ -1,4 +1,8 @@
+from django.db.models import Q
+
 from rest_framework import generics, status, response
+
+from app_application.models import ApplicationModel
 
 from utils import BaseVersioning
 from utils.permissions import IsAuthenticatedPermission
@@ -50,10 +54,9 @@ class UserProfileDetailView(generics.GenericAPIView):
             complete += 1
         if high_school.field_of_study is not None:
             complete += 1
-        user_applications = user.user_application.all()
-        agent_applications = user.agent_applications.all()
-        all_applications = user_applications.union(agent_applications)
-        number_of_all_applications = all_applications.count()
+        number_of_all_applications = ApplicationModel.objects.filter(
+            Q(user=user) | Q(agent=user)
+        ).count()
         have_notification = user.user_notifications.filter(view_status=False).exists()
         return response.Response(
             {
