@@ -35,10 +35,13 @@ class AddressSerializer(serializers.ModelSerializer):
         if self.request:
             self.user = self.request.user
             self.method = self.request.method
-            if self.user.is_agent:
-                self.fields["email"] = serializers.EmailField(
-                    required=True, write_only=True
-                )
+            try:
+                if self.user.is_agent:
+                    self.fields["email"] = serializers.EmailField(
+                        required=True, write_only=True
+                    )
+            except Exception:
+                pass
 
     def update(self, instance, validated_data):
         if self.user.is_agent:
