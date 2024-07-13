@@ -17,11 +17,15 @@ class HighSchoolSerializer(serializers.ModelSerializer):
         )
         extra_kwargs = {
             "id": {"read_only": True},
-            "country": {"required": True},
-            "city": {"required": True},
-            "date_of_graduation": {"required": True},
+            "country": {"required": True, "allow_null": False, "allow_blank": False},
+            "city": {"required": True, "allow_null": False, "allow_blank": False},
+            "date_of_graduation": {"required": True, "allow_null": False},
             "gpa": {"required": True},
-            "field_of_study": {"required": True},
+            "field_of_study": {
+                "required": True,
+                "allow_null": False,
+                "allow_blank": False,
+            },
         }
 
     def __init__(self, *args, **kwargs):
