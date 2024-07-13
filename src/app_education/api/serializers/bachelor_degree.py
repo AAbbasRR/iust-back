@@ -28,6 +28,7 @@ class BachelorDegreeSerializer(serializers.ModelSerializer):
             "field_of_study": {
                 "required": True,
                 "allow_null": False,
+                "allow_blank": False,
             },
             "university": {"required": True, "allow_null": False, "allow_blank": False},
         }
@@ -38,18 +39,10 @@ class BachelorDegreeSerializer(serializers.ModelSerializer):
         if self.request:
             self.user = self.request.user
             self.method = self.request.method
-            if self.method == "GET":
-                for field_name, field in self.fields.items():
-                    field.required = False
-                    field.allow_blank = True
-                    field.allow_null = True
-            try:
-                if self.user.is_agent:
-                    self.fields["email"] = serializers.EmailField(
-                        required=True, write_only=True
-                    )
-            except Exception:
-                pass
+            if self.user.is_agent:
+                self.fields["email"] = serializers.EmailField(
+                    required=True, write_only=True
+                )
 
     def update(self, instance, validated_data):
         if self.user.is_agent:

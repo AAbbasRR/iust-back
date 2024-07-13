@@ -59,18 +59,10 @@ class ProfileSerializer(serializers.ModelSerializer):
         if self.request:
             self.user = self.request.user
             self.method = self.request.method
-            if self.method == "GET":
-                for field_name, field in self.fields.items():
-                    field.required = False
-                    field.allow_blank = True
-                    field.allow_null = True
-            try:
-                if self.user.is_agent:
-                    self.fields["email"] = serializers.EmailField(
-                        required=True, write_only=True
-                    )
-            except Exception:
-                pass
+            if self.user.is_agent:
+                self.fields["email"] = serializers.EmailField(
+                    required=True, write_only=True
+                )
 
     def to_internal_value(self, data):
         data = data.copy()
