@@ -18,20 +18,18 @@ class MasterDegreeSerializer(serializers.ModelSerializer):
         )
         extra_kwargs = {
             "id": {"read_only": True},
-            "country": {"required": True, "allow_null": False, "allow_blank": False},
-            "city": {"required": True, "allow_null": False, "allow_blank": False},
+            "country": {"required": True, "allow_null": False},
+            "city": {"required": True, "allow_null": False},
             "date_of_graduation": {
                 "required": True,
                 "allow_null": False,
-                "allow_blank": False,
             },
             "gpa": {"required": True},
             "field_of_study": {
                 "required": True,
                 "allow_null": False,
-                "allow_blank": False,
             },
-            "university": {"required": True, "allow_null": False, "allow_blank": False},
+            "university": {"required": True, "allow_null": False},
         }
 
     def __init__(self, *args, **kwargs):
