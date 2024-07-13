@@ -41,7 +41,7 @@ class ProfileSerializer(serializers.ModelSerializer):
             "other_languages": {"required": False},
             "english_status": {"required": True, "allow_null": False},
             "persian_status": {"required": True, "allow_null": False},
-            "profile": {"required": True, "write_only": True},
+            "profile": {"required": False, "write_only": True},
             "profile_url": {"read_only": True},
         }
 
