@@ -34,13 +34,21 @@ class ProfileSerializer(serializers.ModelSerializer):
             "first_name": {"required": True},
             "last_name": {"required": True},
             "birth_date": {"required": True},
-            "gender": {"required": True, "allow_null": False},
+            "gender": {"required": True, "allow_null": False, "allow_blank": False},
             "nationality": {"required": True},
             "passport_number": {"required": True},
             "mother_language": {"required": False},
             "other_languages": {"required": False},
-            "english_status": {"required": True, "allow_null": False},
-            "persian_status": {"required": True, "allow_null": False},
+            "english_status": {
+                "required": True,
+                "allow_null": False,
+                "allow_blank": False,
+            },
+            "persian_status": {
+                "required": True,
+                "allow_null": False,
+                "allow_blank": False,
+            },
             "profile": {"required": False, "write_only": True},
             "profile_url": {"read_only": True},
         }
@@ -51,6 +59,11 @@ class ProfileSerializer(serializers.ModelSerializer):
         if self.request:
             self.user = self.request.user
             self.method = self.request.method
+            if self.method == "GET":
+                for field_name, field in self.fields.items():
+                    field.required = False
+                    field.allow_blank = True
+                    field.allow_null = True
             try:
                 if self.user.is_agent:
                     self.fields["email"] = serializers.EmailField(
