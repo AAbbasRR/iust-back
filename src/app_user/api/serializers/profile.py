@@ -51,9 +51,6 @@ class ProfileSerializer(serializers.ModelSerializer):
         if self.request:
             self.user = self.request.user
             self.method = self.request.method
-            if self.method in ["PUT"]:
-                for field_name, field in self.fields.items():
-                    field.required = False
             if self.user.is_agent:
                 self.fields["email"] = serializers.EmailField(
                     required=True, write_only=True
