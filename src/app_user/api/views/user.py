@@ -50,15 +50,16 @@ class UserProfileDetailView(generics.GenericAPIView):
             complete += 1
         if high_school.field_of_study is not None:
             complete += 1
-        number_of_applications = user.user_application.count()
-        number_of_applications_agent = user.agent_applications.count()
+        user_applications = user.user_application.all()
+        agent_applications = user.agent_applications.all()
+        all_applications = user_applications.union(agent_applications)
+        number_of_all_applications = all_applications.count()
         have_notification = user.user_notifications.filter(view_status=False).exists()
         return response.Response(
             {
                 "full_name": f"{user_profile.first_name} {user_profile.last_name}",
                 "profile_url": user_profile.profile_url(self.request),
-                "number_applications": number_of_applications
-                + number_of_applications_agent,
+                "number_applications": number_of_all_applications,
                 "notification": have_notification,
                 "complete_percent": (complete / 17) * 100,
             },
