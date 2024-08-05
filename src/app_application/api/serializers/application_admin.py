@@ -535,6 +535,7 @@ class AdminSubmitApplicationLetterSerializer(serializers.Serializer):
 
         doc_bytes_stream = BytesIO()
         doc.save(doc_bytes_stream)
+        doc_bytes_stream.seek(0)
 
         attrs["application"].application_letter.save(
             "application_letter.docx",
@@ -542,17 +543,15 @@ class AdminSubmitApplicationLetterSerializer(serializers.Serializer):
             save=True,
         )
 
-        # Save the DOCX to a temporary file
-        with tempfile.NamedTemporaryFile(
-            suffix=".docx", delete=False
-        ) as temp_docx_file:
-            temp_docx_file.write(doc_bytes_stream.getvalue())
-            temp_docx_path = temp_docx_file.name
+        docx_file_path = attrs["application"].application_letter.path
 
-        # Convert DOCX to PDF using docx2pdf
-        pdf_stream = BytesIO()
-        convert(temp_docx_path, pdf_stream)
-        pdf_stream.seek(0)
+        # Convert DOCX to PDF
+        pdf_path = docx_file_path.replace(".docx", ".pdf")
+        convert(docx_file_path, pdf_path)
+        # Read the PDF file and prepare it for email
+        with open(pdf_path, "rb") as f:
+            pdf_bytes = f.read()
+        pdf_stream = BytesIO(pdf_bytes)
 
         # Send email with PDF attachment
         subject = "Your Application Letter"
@@ -568,7 +567,8 @@ class AdminSubmitApplicationLetterSerializer(serializers.Serializer):
             "application/pdf",
         )
 
-        os.remove(temp_docx_path)
+        # Clean up temporary files
+        os.remove(pdf_path)
         pdf_stream.close()
         doc_bytes_stream.close()
         attrs.pop("application")
