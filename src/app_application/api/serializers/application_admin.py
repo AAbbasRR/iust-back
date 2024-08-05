@@ -23,6 +23,7 @@ from docx import Document
 from io import BytesIO
 from docx2pdf import convert
 import tempfile
+import subprocess
 import os
 
 
@@ -555,6 +556,14 @@ class AdminSubmitApplicationLetterSerializer(serializers.Serializer):
         pdf_file_path = tempfile.NamedTemporaryFile(suffix=".pdf", delete=False).name
 
         convert(temp_docx_path, pdf_file_path)
+
+        # Read the PDF into memory
+        subprocess.run(
+            ["soffice", "--headless", "--convert-to", "pdf", temp_docx_path], check=True
+        )
+
+        # Move the generated PDF to the desired path
+        os.rename(temp_docx_path.replace(".docx", ".pdf"), pdf_file_path)
 
         # Read the PDF into memory
         with open(pdf_file_path, "rb") as pdf_file:
