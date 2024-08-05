@@ -553,33 +553,31 @@ class AdminSubmitApplicationLetterSerializer(serializers.Serializer):
 
         # Convert DOCX to PDF using pypandoc
         pdf_file_path = tempfile.NamedTemporaryFile(suffix=".pdf", delete=False).name
-        try:
-            pypandoc.convert_file(temp_docx_path, "pdf", outputfile=pdf_file_path)
+        pypandoc.convert_file(temp_docx_path, "pdf", outputfile=pdf_file_path)
 
-            # Read the PDF into memory
-            with open(pdf_file_path, "rb") as pdf_file:
-                pdf_bytes = pdf_file.read()
-                pdf_stream = BytesIO(pdf_bytes)
+        # Read the PDF into memory
+        with open(pdf_file_path, "rb") as pdf_file:
+            pdf_bytes = pdf_file.read()
+            pdf_stream = BytesIO(pdf_bytes)
 
-                # Send email with PDF attachment
-                subject = "Your Application Letter"
-                body = "Please find the attached PDF document."
-                to_email = "recipient@example.com"
+            # Send email with PDF attachment
+            subject = "Your Application Letter"
+            body = "Please find the attached PDF document."
+            to_email = "recipient@example.com"
 
-                user_email = ManageMailService(attrs["application"].user.email)
-                user_email.send_email_to_user_with_attachments(
-                    subject,
-                    body,
-                    "application_letter.pdf",
-                    pdf_stream.read(),
-                    "application/pdf",
-                )
-        finally:
-            # Clean up temporary files
-            os.remove(temp_docx_path)
-            os.remove(pdf_file_path)
-            doc_bytes_stream.close()
-            pdf_stream.close()
+            user_email = ManageMailService(attrs["application"].user.email)
+            user_email.send_email_to_user_with_attachments(
+                subject,
+                body,
+                "application_letter.pdf",
+                pdf_stream.read(),
+                "application/pdf",
+            )
+        # Clean up temporary files
+        os.remove(temp_docx_path)
+        os.remove(pdf_file_path)
+        doc_bytes_stream.close()
+        pdf_stream.close()
 
         attrs.pop("application")
 
