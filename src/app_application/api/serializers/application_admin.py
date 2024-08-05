@@ -533,56 +533,54 @@ class AdminSubmitApplicationLetterSerializer(serializers.Serializer):
                                         text = inline[i].text.replace(key, value)
                                         inline[i].text = text
 
-            # Save DOCX to a temporary file
-            doc_bytes_stream = BytesIO()
-            doc.save(doc_bytes_stream)
-            doc_bytes_stream.seek(0)
+        # Save DOCX to a temporary file
+        doc_bytes_stream = BytesIO()
+        doc.save(doc_bytes_stream)
+        doc_bytes_stream.seek(0)
 
-            with tempfile.NamedTemporaryFile(
-                suffix=".docx", delete=False
-            ) as temp_docx_file:
-                temp_docx_file.write(doc_bytes_stream.getvalue())
-                temp_docx_path = temp_docx_file.name
+        with tempfile.NamedTemporaryFile(
+            suffix=".docx", delete=False
+        ) as temp_docx_file:
+            temp_docx_file.write(doc_bytes_stream.getvalue())
+            temp_docx_path = temp_docx_file.name
 
-            # Save the DOCX file to the model
-            attrs["application"].application_letter.save(
-                "application_letter.docx",
-                ContentFile(doc_bytes_stream.getvalue()),
-                save=True,
-            )
+        # Save the DOCX file to the model
+        attrs["application"].application_letter.save(
+            "application_letter.docx",
+            ContentFile(doc_bytes_stream.getvalue()),
+            save=True,
+        )
 
-            # Convert DOCX to PDF using pypandoc
-            pdf_file_path = tempfile.NamedTemporaryFile(
-                suffix=".pdf", delete=False
-            ).name
-            try:
-                pypandoc.convert_file(temp_docx_path, "pdf", outputfile=pdf_file_path)
+        # Convert DOCX to PDF using pypandoc
+        pdf_file_path = tempfile.NamedTemporaryFile(suffix=".pdf", delete=False).name
+        try:
+            pypandoc.convert_file(temp_docx_path, "pdf", outputfile=pdf_file_path)
 
-                # Read the PDF into memory
-                with open(pdf_file_path, "rb") as pdf_file:
-                    pdf_bytes = pdf_file.read()
-                    pdf_stream = BytesIO(pdf_bytes)
+            # Read the PDF into memory
+            with open(pdf_file_path, "rb") as pdf_file:
+                pdf_bytes = pdf_file.read()
+                pdf_stream = BytesIO(pdf_bytes)
 
-                    # Send email with PDF attachment
-                    subject = "Your Application Letter"
-                    body = "Please find the attached PDF document."
-                    to_email = "recipient@example.com"
+                # Send email with PDF attachment
+                subject = "Your Application Letter"
+                body = "Please find the attached PDF document."
+                to_email = "recipient@example.com"
 
-                    user_email = ManageMailService(attrs["application"].user.email)
-                    user_email.send_email_to_user_with_attachments(
-                        subject,
-                        body,
-                        "application_letter.pdf",
-                        pdf_stream.read(),
-                        "application/pdf",
-                    )
-            finally:
-                # Clean up temporary files
-                os.remove(temp_docx_path)
-                os.remove(pdf_file_path)
-                doc_bytes_stream.close()
-                pdf_stream.close()
+                user_email = ManageMailService(attrs["application"].user.email)
+                user_email.send_email_to_user_with_attachments(
+                    subject,
+                    body,
+                    "application_letter.pdf",
+                    pdf_stream.read(),
+                    "application/pdf",
+                )
+        finally:
+            # Clean up temporary files
+            os.remove(temp_docx_path)
+            os.remove(pdf_file_path)
+            doc_bytes_stream.close()
+            pdf_stream.close()
 
-            attrs.pop("application")
+        attrs.pop("application")
 
-            return attrs
+        return attrs
