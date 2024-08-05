@@ -142,6 +142,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 LANGUAGES = [
     ("en", _("English")),
     ("fa", _("Persian")),
+    ("ar", _("Arabic")),
 ]
 LANGUAGE_CODE = "en"
 TIME_ZONE = "UTC"

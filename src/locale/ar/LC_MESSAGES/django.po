@@ -6,452 +6,450 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-05 19:52+0330\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"POT-Creation-Date: 2024-08-05 19:53+0330\n"
+"PO-Revision-Date: 2024-07-09 13:19+0330\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #: Abrat/settings.py:143
-#, fuzzy
-#| msgid "English Status"
 msgid "English"
-msgstr "وضعیت بلد بودن زبان انگلیسی"
+msgstr "الإنجليزية"
 
 #: Abrat/settings.py:144
-#, fuzzy
-#| msgid "Persian Status"
 msgid "Persian"
-msgstr "وضعیت بلد بودن زبان فارسی"
+msgstr "حالة اعرف اللغة الفارسیة"
 
 #: Abrat/settings.py:145
 msgid "Arabic"
-msgstr "عربی"
+msgstr "عربي"
 
 #: app_admin/apps.py:8
 msgid "App Admin"
-msgstr "اپلیکیشن مدیریت"
+msgstr "تطبیق الادارة"
 
 #: app_admin/apps.py:9
 msgid "App Admins"
-msgstr "اپلیکیشن مدیران"
+msgstr "تطبیق المدیرین"
 
 #: app_admin/models/admin.py:14
 msgid "Faculty Director"
-msgstr "مدیر دانشکده"
+msgstr "مدیر الکلیة"
 
 #: app_admin/models/admin.py:15
 msgid "Department Head"
-msgstr "مدیر گروه"
+msgstr "مدیر الگروب"
 
 #: app_admin/models/admin.py:16
 msgid "Department Member"
-msgstr "عضو گروه"
+msgstr "عضوالمجموعة ( عضو الگروب )"
 
 #: app_admin/models/admin.py:20 app_application/models/application.py:32
 #, fuzzy
 #| msgid "Department of Chemistry"
 msgid "Department of Test"
-msgstr "دانشکده  شيمي"
+msgstr "کلیة الکیمیاء"
 
 #: app_admin/models/admin.py:23 app_application/models/application.py:35
 msgid "Department of Chemistry"
-msgstr "دانشکده  شيمي"
+msgstr "کلیة الکیمیاء"
 
 #: app_admin/models/admin.py:26 app_application/models/application.py:38
 msgid "Department of Foreign Language"
-msgstr "دانشکده علوم پايه"
+msgstr "کلیة العلوم الأساسیة"
 
 #: app_admin/models/admin.py:30 app_application/models/application.py:42
 msgid "School of Architecture and Environmental Design"
-msgstr "دانشکده معماري و شهرسازي"
+msgstr "کلیة المعماریة والتخطیط العمرانی"
 
 #: app_admin/models/admin.py:33 app_application/models/application.py:45
 msgid "School of Automotive Engineering"
-msgstr "دانشکده مهندسي خودرو"
+msgstr "کلیة هندسة السیارات"
 
 #: app_admin/models/admin.py:37 app_application/models/application.py:49
 msgid "School of Chemical Petroleum and Gas Engineering"
-msgstr "دانشکده مهندسي شيمي، نفت و گاز"
+msgstr "کلیة الهندسة الکیمیائیة للنفط والغاز"
 
 #: app_admin/models/admin.py:40 app_application/models/application.py:52
 msgid "School of Civil Engineering"
-msgstr "دانشکده مهندسي عمران"
+msgstr "کلیة الهندسة العمران"
 
 #: app_admin/models/admin.py:43 app_application/models/application.py:55
 msgid "School of Computer Engineering"
-msgstr "دانشکده مهندسی کامپیوتر"
+msgstr "کلیة هندسة الحاسوب"
 
 #: app_admin/models/admin.py:46 app_application/models/application.py:58
 msgid "School of Electrical Engineering"
-msgstr "دانشکده مهندسي برق"
+msgstr "کلیة الهندسة الکهربائیة"
 
 #: app_admin/models/admin.py:49 app_application/models/application.py:61
 msgid "School of Industrial Engineering"
-msgstr "دانشکده مهندسي صنايع"
+msgstr "کلیة الهندسة الصناعیة"
 
 #: app_admin/models/admin.py:51 app_application/models/application.py:63
 msgid "School of Mathematics"
-msgstr "دانشکده  رياضي"
+msgstr "کلیة الریاضیات"
 
 #: app_admin/models/admin.py:53 app_application/models/application.py:65
 msgid "School of Mechanical Engineering"
-msgstr "دانشکده مهندسي مکانيک"
+msgstr "کلیة الهندسة المیکانیکیة"
 
 #: app_admin/models/admin.py:57 app_application/models/application.py:69
 msgid "School of Metallurgy and Materials Engineering"
-msgstr "دانشکده مواد و متالورژي"
+msgstr "کلیة المواد المعدنیة"
 
 #: app_admin/models/admin.py:60 app_application/models/application.py:72
 msgid "School of Advanced Technologies"
-msgstr "دانشکده فناوريهای نوين"
+msgstr "کلیة تقنیات جدیدة ( تکنولوجیا جدیدة )"
 
 #: app_admin/models/admin.py:62 app_application/models/application.py:74
 msgid "School of Physics"
-msgstr "دانشکده  فيزيک"
+msgstr "کلیة الفیزیاء"
 
 #: app_admin/models/admin.py:65 app_application/models/application.py:77
 msgid "School of Management Economy and Progress Engineering"
-msgstr "دانشکده مهندسي پيشرفت"
+msgstr "کلیة الهندسة المتقدمة ( تطویر )"
 
 #: app_admin/models/admin.py:68 app_application/models/application.py:80
 msgid "School of Railway Engineering"
-msgstr "دانشکده مهندسي راه آهن"
+msgstr "کلیة هندسة السکک الحدیدیة"
 
 #: app_admin/models/admin.py:72 app_application/models/application.py:84
 msgid "Test"
-msgstr "تست"
+msgstr "امتحان"
 
 #: app_admin/models/admin.py:73 app_application/models/application.py:85
 msgid "Architecture"
-msgstr "معماری"
+msgstr "معماریة ( بنیان )"
 
 #: app_admin/models/admin.py:74 app_application/models/application.py:86
 msgid "Industrial Design"
-msgstr "طراحی صنعتی"
+msgstr "التصمیم الصناعی"
 
 #: app_admin/models/admin.py:75 app_application/models/application.py:87
 msgid "Chemical Engineering"
-msgstr "مهندسی شیمی"
+msgstr "مهندس کیمیائی"
 
 #: app_admin/models/admin.py:76 app_application/models/application.py:88
 msgid "Civil Engineering"
-msgstr "مهندسی عمران"
+msgstr "مهندس مدنی"
 
 #: app_admin/models/admin.py:77 app_application/models/application.py:89
 msgid "Hardware Engineering"
-msgstr "مهندسی سخت افزار"
+msgstr "هندسة المعدات"
 
 #: app_admin/models/admin.py:78 app_application/models/application.py:90
 msgid "Software Engineering"
-msgstr "مهندسی نرم افزار"
+msgstr "هندسة البرمجیات"
 
 #: app_admin/models/admin.py:79 app_application/models/application.py:91
 msgid "Communication Systems"
-msgstr "سیستم های ارتباطی"
+msgstr "نظم الاتصالات"
 
 #: app_admin/models/admin.py:80 app_application/models/application.py:92
 msgid "Power Systems"
-msgstr "سیستم های قدرت"
+msgstr "أنظمة القوة"
 
 #: app_admin/models/admin.py:81 app_application/models/application.py:93
 msgid "Electronics"
-msgstr "الکترونیک"
+msgstr "الکترونیه"
 
 #: app_admin/models/admin.py:82 app_application/models/application.py:94
 msgid "Control Systems"
-msgstr "سیستمهای کنترل"
+msgstr "أنظمة التحکم"
 
 #: app_admin/models/admin.py:83 app_application/models/application.py:95
 msgid "Industrial Engineering"
-msgstr "مهندسی صنایع"
+msgstr "هندسة صناعیة"
 
 #: app_admin/models/admin.py:85 app_application/models/application.py:97
 msgid "Mathematics and Its Applications"
-msgstr "ریاضیات و کاربردهای آن"
+msgstr "الریاضیات وتطبیقاتها"
 
 #: app_admin/models/admin.py:87 app_application/models/application.py:99
 msgid "Mechanical Engineering"
-msgstr "مهندسی مکانیک"
+msgstr "مهندس میکانیکی"
 
 #: app_admin/models/admin.py:91 app_application/models/application.py:103
 msgid "Material and Metallurgical Engineering"
-msgstr "مهندسی مواد و متالورژی"
+msgstr "هندسة المواد المعدنیة"
 
 #: app_admin/models/admin.py:93 app_application/models/application.py:105
 msgid "Atomic and Molecular Physics"
-msgstr "فیزیک اتمی و مولکولی"
+msgstr "الفیزیاء الذریة والجزیئیة"
 
 #: app_admin/models/admin.py:95 app_application/models/application.py:107
 msgid "Solid State Physics"
-msgstr "فیزیک حالت جامد"
+msgstr "فیزیاء الحالة الصلبیة"
 
 #: app_admin/models/admin.py:97 app_application/models/application.py:109
 msgid "Railway Transportation Engineering"
-msgstr "مهندسی حمل و نقل ریلی"
+msgstr "هندسة النقل بالسکک الحدیدیة"
 
 #: app_admin/models/admin.py:100 app_application/models/application.py:112
 msgid "Railway Rolling Stock Engineering"
-msgstr "مهندسی سهام نورد راه آهن"
+msgstr "هندسة السکک الحدیدیةو البناء"
 
 #: app_admin/models/admin.py:104 app_application/models/application.py:116
 msgid "Railway Track and Structures Engineering"
-msgstr "مهندسی راه آهن و سازه"
+msgstr "الکیمیاء التحلیلیة"
 
 #: app_admin/models/admin.py:106 app_application/models/application.py:118
 msgid "Analytical Chemistry"
-msgstr "شیمی تجزیه"
+msgstr "الکیمیاء المعدنیة"
 
 #: app_admin/models/admin.py:107 app_application/models/application.py:119
 msgid "Inorganic Chemistry"
-msgstr "شیمی معدنی"
+msgstr "الکیمیاء المعدنیة"
 
 #: app_admin/models/admin.py:108 app_application/models/application.py:120
 msgid "Organic Chemistry"
-msgstr "شیمی ارگانیک"
+msgstr "الکیمیاء العضویة"
 
 #: app_admin/models/admin.py:109 app_application/models/application.py:121
 msgid "Physical Chemistry"
-msgstr "شیمی فیزیک"
+msgstr "الکیمیاء الفیزیائیة"
 
 #: app_admin/models/admin.py:110 app_application/models/application.py:122
 msgid "Nano-Chemistry"
-msgstr "نانو شیمی"
+msgstr "کیمیاء النانو"
 
 #: app_admin/models/admin.py:114 app_application/models/application.py:126
 msgid "Teaching English as a Foreign Language"
-msgstr "تدریس زبان انگلیسی به عنوان یک زبان خارجی"
+msgstr "تعلیم اللغة الإنجلیزیة کلغة أجنبیة"
 
 #: app_admin/models/admin.py:115 app_application/models/application.py:127
 msgid "Regional Planning"
-msgstr "برنامه ریزی منطقه ای"
+msgstr "التخطیط الاقلیمی"
 
 #: app_admin/models/admin.py:116 app_application/models/application.py:128
 msgid "Architecture - Housing"
-msgstr "معماری - مسکن"
+msgstr "معماریة _ السکن"
 
 #: app_admin/models/admin.py:118 app_application/models/application.py:130
 msgid "Architecture - Sustainable"
-msgstr "معماری - پایدار"
+msgstr "معماریة _ مستقر"
 
 #: app_admin/models/admin.py:121 app_application/models/application.py:133
 msgid "Architecture - Technology"
-msgstr "معماری - فناوری"
+msgstr "معماریة_ تکنولوجیا"
 
 #: app_admin/models/admin.py:126 app_application/models/application.py:138
 msgid "Architecture - Cultural and Educational Spaces"
-msgstr "معماری - فضاهای فرهنگی و آموزشی"
+msgstr "معماریة - مساحات ثقافیة التعلیمیة"
 
 #: app_admin/models/admin.py:128 app_application/models/application.py:140
 msgid "Architecture - Health Care Spaces"
-msgstr "معماری - فضاهای مراقبت بهداشتی"
+msgstr "معماریة - مساحات الرعائة الصحیة"
 
 #: app_admin/models/admin.py:131 app_application/models/application.py:143
 msgid "Land Spaces Architecture"
-msgstr "معماری فضاهای زمین"
+msgstr "معماری _ مساحات الارض"
 
 #: app_admin/models/admin.py:137 app_application/models/application.py:149
 msgid ""
 "Conservation and Restoration of Historical Buildings and Fabrics – "
 "Conservation and Restoration of Urban Heritage"
-msgstr "حفاظت و مرمت ابنیه و پارچه های تاریخی - حفاظت و احیای میراث شهری"
+msgstr "حفاظ وترمیم الابنیة التاریخیة و احیاء المیراث"
 
 #: app_admin/models/admin.py:143 app_application/models/application.py:155
 msgid ""
 "Conservation and Restoration of Historical Buildings and Fabrics – "
 "Conservation and Restoration of Architectural Heritage"
-msgstr "حفاظت و مرمت ابنیه و پارچه های تاریخی - حفاظت و احیای میراث شهری"
+msgstr "حفاظ وترمیم الابنیة التاریخیة واحیاء المیراث"
 
 #: app_admin/models/admin.py:145 app_application/models/application.py:157
 msgid "Urban Design"
-msgstr "طراحی شهری"
+msgstr "التصمیم الحضری"
 
 #: app_admin/models/admin.py:146 app_application/models/application.py:158
 msgid "Urban Planning"
-msgstr "برنامه ریزی شهری"
+msgstr "التخطیط العمرانی ( حضری )"
 
 #: app_admin/models/admin.py:150 app_application/models/application.py:162
 msgid "Automotive Engineering - Automobile Dynamic Systems Design"
-msgstr "مهندسی خودرو - طراحی سیستم های دینامیک خودرو"
+msgstr "هندسة السیارات _ تصمیم الأنظمة الدینامیکیة للمرکبات"
 
 #: app_admin/models/admin.py:152 app_application/models/application.py:164
 msgid "Automotive Engineering - Power Train"
-msgstr "مهندسی خودرو - قطار برق"
+msgstr "هندسة السیارات _ قطار الکهربائی"
 
 #: app_admin/models/admin.py:157 app_application/models/application.py:169
 msgid "Automotive Engineering - Body and Structure"
-msgstr "مهندسی خودرو - بدنه و سازه"
+msgstr "هندسة السیارات _ الکترونیات السیارات والهندسة الکهربائیة"
 
 #: app_admin/models/admin.py:161 app_application/models/application.py:173
 msgid ""
 "Automotive Engineering - Automotive Electronics & Electrical Engineering"
-msgstr "مهندسی خودرو - الکترونیک خودرو و مهندسی برق"
+msgstr "هندسة السیارات_ الکترونیات  السیارات والهندسة الکهربائیة"
 
 #: app_admin/models/admin.py:163 app_application/models/application.py:175
 msgid "Process Modeling Simulation & Control"
-msgstr "شبیه سازی و کنترل مدل سازی فرآیند"
+msgstr "محاکاة والتحکم فی نمذجة العملیات"
 
 #: app_admin/models/admin.py:165 app_application/models/application.py:177
 msgid "Mineral Chemical Engineering"
-msgstr "مهندسی شیمی معدنی"
+msgstr "الهندسة الکیمیائیة المعدنیة"
 
 #: app_admin/models/admin.py:167 app_application/models/application.py:179
 msgid "Separation Processes"
-msgstr "فرایندهای جداسازی"
+msgstr "عملیات الفصل ( فصل العملیات )"
 
 #: app_admin/models/admin.py:168 app_application/models/application.py:180
 msgid "Kinetic and Catalysis"
-msgstr "سینتیک و کاتالیز"
+msgstr "الحرکیة والحفر  ( المحفز الحرکی )"
 
 #: app_admin/models/admin.py:169 app_application/models/application.py:181
 msgid "Thermodynamics"
-msgstr "ترمودینامیک"
+msgstr "الدینامیکا الحراریة"
 
 #: app_admin/models/admin.py:170 app_application/models/application.py:182
 msgid "Polymer Engineering"
-msgstr "مهندسی پلیمر"
+msgstr "هندسة البولیمر"
 
 #: app_admin/models/admin.py:172 app_application/models/application.py:184
 msgid "Hydrocarbon Reservoir Engineering"
-msgstr "مهندسی مخازن هیدروکربن"
+msgstr "هندسة الخزانات الهیدروکربونیة"
 
 #: app_admin/models/admin.py:175 app_application/models/application.py:187
 msgid "Process Design Engineering"
-msgstr "مهندسی طراحی فرآیند"
+msgstr "هندسة تصمیم العملیات"
 
 #: app_admin/models/admin.py:177 app_application/models/application.py:189
 msgid "Structural Engineering"
-msgstr "مهندسی سازه"
+msgstr "هندسة إنشائی"
 
 #: app_admin/models/admin.py:178 app_application/models/application.py:190
 msgid "Earthquake Engineering"
-msgstr "مهندسی زلزله"
+msgstr "مهندسی زلزلة"
 
 #: app_admin/models/admin.py:181 app_application/models/application.py:194
 msgid "Construction Management and Engineering"
-msgstr "مدیریت و مهندسی ساخت و ساز"
+msgstr "الإدارة والهندسة بناء"
 
 #: app_admin/models/admin.py:184 app_application/models/application.py:196
 msgid "Geotechnical Engineering"
-msgstr "مهندسی ژئوتکنیک"
+msgstr "مهندس جیوتقنیة"
 
 #: app_admin/models/admin.py:187 app_application/models/application.py:199
 msgid "Road and Transportation Engineering"
-msgstr "مهندسی راه و ترابری"
+msgstr "هندسة الطرق والنقل"
 
 #: app_admin/models/admin.py:189 app_application/models/application.py:201
 msgid "Transportation"
-msgstr "حمل و نقل"
+msgstr "مواصلات"
 
 #: app_admin/models/admin.py:191 app_application/models/application.py:203
 msgid "Water Resources Management"
-msgstr "مدیریت منابع آب"
+msgstr "إدارة الموارد المائیة"
 
 #: app_admin/models/admin.py:196 app_application/models/application.py:208
 msgid "Water Engineering and Hydraulic Structures"
-msgstr "مهندسی آب و سازه های هیدرولیک"
+msgstr "هندسة المیاه والهیاکل الهیدرولیکیة"
 
 #: app_admin/models/admin.py:198 app_application/models/application.py:210
 msgid "Environmental Engineering"
-msgstr "مهندسی محیط زیست"
+msgstr "هندسة البیئة"
 
 #: app_admin/models/admin.py:201 app_application/models/application.py:213
 msgid "Marine Structures Engineering"
-msgstr "مهندسی سازه های دریایی"
+msgstr "مهندس إنشائی بحری"
 
 #: app_admin/models/admin.py:204 app_application/models/application.py:216
 msgid "Artificial Intelligence & Robotics"
-msgstr "هوش مصنوعی و رباتیک"
+msgstr "الذکاء الاصناعی والروبوتیة"
 
 #: app_admin/models/admin.py:207 app_application/models/application.py:219
 msgid "Computer Systems Architecture"
-msgstr "معماری سیستم های کامپیوتری"
+msgstr "معماریة أنظمة الحاسوب"
 
 #: app_admin/models/admin.py:211 app_application/models/application.py:223
 msgid "Computer Engineering - Computer Networks"
-msgstr "مهندسی کامپیوتر - شبکه های کامپیوتری"
+msgstr "هندسة الحاسوب - شبکات الحاسب"
 
 #: app_admin/models/admin.py:213 app_application/models/application.py:225
 msgid "Bio-Electrics"
-msgstr "بیو الکتریک"
+msgstr "الکهربائیة الحیویة"
 
 #: app_admin/models/admin.py:215 app_application/models/application.py:227
 msgid "Digital Electronic Systems"
-msgstr "سیستم های الکترونیک دیجیتال"
+msgstr "الأنظمة الالکترونیة الرقمیة"
 
 #: app_admin/models/admin.py:218 app_application/models/application.py:230
 msgid "Electronic Integrated Circuits"
-msgstr "مدارهای مجتمع الکترونیکی"
+msgstr "الدوائر الإلکترونیة المتکاملة"
 
 #: app_admin/models/admin.py:223 app_application/models/application.py:235
 msgid "Electrical Machines and Power Electronics"
-msgstr "ماشین های الکتریکی و الکترونیک قدرت"
+msgstr "الآلات الکهربائیة والکترونیات القوی"
 
 #: app_admin/models/admin.py:225 app_application/models/application.py:237
 msgid "Electromagnetic Fields and Waves"
-msgstr "میدان ها و امواج الکترومغناطیسی"
+msgstr "المجالات والموجات الکهرومغناطیسیة"
 
 #: app_admin/models/admin.py:229 app_application/models/application.py:241
 msgid "Information Technology Engineering - Electronic Commerce"
-msgstr "مهندسی فناوری اطلاعات - تجارت الکترونیک"
+msgstr "هندسة تکنولوجیا المعلومات  -التجارة الإلکترونیة"
 
 #: app_admin/models/admin.py:231 app_application/models/application.py:243
 msgid "Systems Optimization"
-msgstr "بهینه سازی سیستم"
+msgstr "تحسین النظام"
 
 #: app_admin/models/admin.py:234 app_application/models/application.py:246
 msgid "Supply Chain and Logistic Engineering"
-msgstr "زنجیره تامین و مهندسی لجستیک"
+msgstr "مهندس سلسلة التورید والخدمات اللوجستیة"
 
 #: app_admin/models/admin.py:236 app_application/models/application.py:248
 msgid "Engineering Management"
-msgstr "مدیریت مهندسی"
+msgstr "الإدارة الهندسیة"
 
 #: app_admin/models/admin.py:238 app_application/models/application.py:250
 msgid "Socio-Economic Macro Systems"
-msgstr "سیستم های کلان اجتماعی-اقتصادی"
+msgstr "النظم الاجتماعیة الکلیة _ اقتصادی"
 
 #: app_admin/models/admin.py:240 app_application/models/application.py:252
 msgid "Project Management"
-msgstr "مدیریت پروژه"
+msgstr "ادارة مشروع"
 
 #: app_admin/models/admin.py:241 app_application/models/application.py:253
 msgid "Financial Engineering"
-msgstr "مهندسی مالی"
+msgstr "الهندسة المالیة"
 
 #: app_admin/models/admin.py:243 app_application/models/application.py:255
 msgid "Pure Mathematics - Algebra"
-msgstr "ریاضیات محض - جبر"
+msgstr "الریاضیات البحتة _ الجبر"
 
 #: app_admin/models/admin.py:246 app_application/models/application.py:258
 msgid "Pure Mathematics - Geometry"
-msgstr "ریاضی محض - هندسه"
+msgstr "الریاضیات البحتة _ الجبر"
 
 #: app_admin/models/admin.py:249 app_application/models/application.py:261
 msgid "Pure Mathematics - Analysis"
-msgstr "ریاضیات محض - تجزیه و تحلیل"
+msgstr "الریاضیات البحتة _ التحلیل"
 
 #: app_admin/models/admin.py:254 app_application/models/application.py:266
 msgid "Applied Mathematics - Numerical Analysis"
-msgstr "ریاضی کاربردی - تحلیل عددی"
+msgstr "الریاضیات التطبیقیة _ التحلیل العددی"
 
 #: app_admin/models/admin.py:258 app_application/models/application.py:270
 msgid "Applied Mathematics - Operation Research"
-msgstr "ریاضیات کاربردی - تحقیق در عملیات"
+msgstr "الریاضیات التطبیقیة _ بحوث العملیات"
 
 #: app_admin/models/admin.py:259 app_application/models/application.py:271
 msgid "Mathematics Statistics"
-msgstr "آمار ریاضیات"
+msgstr "إحصائیات الریاضیات"
 
 #: app_admin/models/admin.py:260 app_application/models/application.py:272
 msgid "Applied Design"
-msgstr "طراحی کاربردی"
+msgstr "تصمیم وظیفیة"
 
 #: app_admin/models/admin.py:261 app_application/models/application.py:273
 msgid "Energy Conversion"
@@ -459,143 +457,143 @@ msgstr "Energy Conversion"
 
 #: app_admin/models/admin.py:262 app_application/models/application.py:274
 msgid "Manufacturing"
-msgstr "تولید"
+msgstr "إنتاج"
 
 #: app_admin/models/admin.py:263 app_application/models/application.py:275
 msgid "Biomechanics"
-msgstr "بیومکانیک"
+msgstr "المیکانیکا الحیویة"
 
 #: app_admin/models/admin.py:264 app_application/models/application.py:276
 msgid "Extractive Metallurgy"
-msgstr "متالورژی استخراجی"
+msgstr "المعادن الاستخراجیة"
 
 #: app_admin/models/admin.py:265 app_application/models/application.py:277
 msgid "Ceramics Engineering"
-msgstr "مهندسی سرامیک"
+msgstr "هندسة السیرامیک"
 
 #: app_admin/models/admin.py:266 app_application/models/application.py:278
 msgid "Materials Selection"
-msgstr "انتخاب مواد"
+msgstr "اختیارالمواد"
 
 #: app_admin/models/admin.py:267 app_application/models/application.py:279
 msgid "Bio-Materials"
-msgstr "مواد زیستی"
+msgstr "المواد البیولوجیة"
 
 #: app_admin/models/admin.py:268 app_application/models/application.py:280
 msgid "Metals Casting"
-msgstr "ریخته گری فلزات"
+msgstr "مسبک المعادن"
 
 #: app_admin/models/admin.py:269 app_application/models/application.py:281
 msgid "Metals Forming"
-msgstr "شکل گیری فلزات"
+msgstr "تشکیل المعادن"
 
 #: app_admin/models/admin.py:270 app_application/models/application.py:282
 msgid "Nanotechnology - Materials"
-msgstr "نانو فناوری - مواد"
+msgstr "تکنولوجیا النانو - المواد"
 
 #: app_admin/models/admin.py:273 app_application/models/application.py:285
 msgid "Energy Systems - Energy and Environment"
-msgstr "سیستم های انرژی - انرژی و محیط زیست"
+msgstr "إنظمة الطاقة - الطاقة والبیئة"
 
 #: app_admin/models/admin.py:275 app_application/models/application.py:287
 msgid "Satellite Engineering"
-msgstr "مهندسی ماهواره"
+msgstr "هندسة الأقمار الصناعیة"
 
 #: app_admin/models/admin.py:276 app_application/models/application.py:288
 msgid "Photonics"
-msgstr "فتونیک"
+msgstr "الضوئیات"
 
 #: app_admin/models/admin.py:278 app_application/models/application.py:290
 msgid "Condensed Matter Physics"
-msgstr "فیزیک ماده متراکم"
+msgstr "فیزیاء المادة المکثفة"
 
 #: app_admin/models/admin.py:280 app_application/models/application.py:292
 msgid "Laser Optics Physics"
-msgstr "فیزیک اپتیک لیزر"
+msgstr "فیزیاء بصریات اللیزر"
 
 #: app_admin/models/admin.py:283 app_application/models/application.py:295
 msgid "Master of Business Administration (MBA) - Marketing"
-msgstr "کارشناس ارشد مدیریت بازرگانی (MBA) - بازاریابی"
+msgstr "ماجستیر ادارة اعمال (MBA) - تسویق"
 
 #: app_admin/models/admin.py:287 app_application/models/application.py:299
 msgid "Master of Business Administration (MBA) - Strategy"
-msgstr "کارشناس ارشد مدیریت بازرگانی (MBA) - استراتژی"
+msgstr "ماجستیر ادارة اعمال (MBA) - استراتیجیة"
 
 #: app_admin/models/admin.py:291 app_application/models/application.py:303
 msgid "Management of Technology (MOT) - Technological Innovation"
-msgstr "مدیریت فناوری (MOT) - نوآوری فناوری"
+msgstr "إدارة التکنولوجیا (MOT) - الابتکار التکنولوجی"
 
 #: app_admin/models/admin.py:295 app_application/models/application.py:307
 msgid "Management of Technology (MOT) - Technological Transfer"
-msgstr "مدیریت فناوری (MOT) - انتقال فناوری"
+msgstr "إدارة التکنولوجیا (MOT) - نقل التکنولوجیا"
 
 #: app_admin/models/admin.py:299 app_application/models/application.py:311
 msgid "Management of Technology (MOT) - Research & Development Policies"
-msgstr "مدیریت فناوری (MOT) - سیاست های تحقیق و توسعه"
+msgstr "إدارة التکنولوجیا(MOT) - سیاسات البحث والتطویر"
 
 #: app_admin/models/admin.py:303 app_application/models/application.py:315
 msgid "Information Technology Management-E-Business"
-msgstr "مدیریت فناوری اطلاعات - کسب و کار الکترونیکی"
+msgstr "إدارة تقنیة المعلومات - الأعمال الإلکترونیة"
 
 #: app_admin/models/admin.py:306 app_application/models/application.py:318
 msgid "Entrepreneurship - New Businesses"
-msgstr "کارآفرینی - کسب و کارهای جدید"
+msgstr "ریادة الأعمال- أعمال جدیدة"
 
 #: app_admin/models/admin.py:310 app_application/models/application.py:322
 msgid "Industrial Engineering - Macro Systems"
-msgstr "مهندسی صنایع - سیستم های کلان"
+msgstr "هندسة صناعیة- أنظمة الماکرو"
 
 #: app_admin/models/admin.py:313 app_application/models/application.py:325
 msgid "Economic Development and Planning"
-msgstr "توسعه اقتصادی و برنامه ریزی"
+msgstr "النموالإقتصادی والتخطیط"
 
 #: app_admin/models/admin.py:316 app_application/models/application.py:328
 msgid "Economic Systems Planning"
-msgstr "برنامه ریزی سیستم های اقتصادی"
+msgstr "تخطیط النظم الاقتصادیة"
 
 #: app_admin/models/admin.py:319 app_application/models/application.py:331
 msgid "Electric Railways Engineering"
-msgstr "مهندسی راه آهن برق"
+msgstr "هندسة السکک الحدیدیة الکهربائیة"
 
 #: app_admin/models/admin.py:322 app_application/models/application.py:334
 msgid "Railway Safety Engineering"
-msgstr "مهندسی ایمنی راه آهن"
+msgstr "هندسة سلامة السکک الحدیدیة"
 
 #: app_admin/models/admin.py:325 app_application/models/application.py:337
 msgid "Railway Control and Signaling"
-msgstr "کنترل و سیگنالینگ راه آهن"
+msgstr "التحکم فی إشارات السکک الحدیدیة"
 
 #: app_admin/models/admin.py:327 app_application/models/application.py:339
 msgid "Urbanism"
-msgstr "شهرسازی"
+msgstr "حضری"
 
 #: app_admin/models/admin.py:328 app_application/models/application.py:340
 msgid "Quality & Productivity"
-msgstr "کیفیت و بهره وری"
+msgstr "الجودة والإنتاجیة"
 
 #: app_admin/models/admin.py:330 app_application/models/application.py:342
 msgid "Applied Mathematics - Statistics"
-msgstr "ریاضی کاربردی - آمار"
+msgstr "الریاضیات التطبیقیة - إحصائیات"
 
 #: app_admin/models/admin.py:333 app_application/models/application.py:345
 msgid "Dynamics Control and Vibration"
-msgstr "کنترل دینامیک و لرزش"
+msgstr "التحکم الدینامیکی فی الاهتزاز"
 
 #: app_admin/models/admin.py:335 app_application/models/application.py:347
 msgid "Solid Mechanics"
-msgstr "مکانیک جامدات"
+msgstr "المیکانیکا الصلبة"
 
 #: app_admin/models/admin.py:336 app_application/models/application.py:348
 msgid "Materials Engineering"
-msgstr "مهندسی مواد"
+msgstr "هندسة المواد"
 
 #: app_admin/models/admin.py:339 app_application/models/application.py:351
 msgid "Management of Iranian Public Organization"
-msgstr "مدیریت سازمان عمومی ایران"
+msgstr "إدارة المنظمة العامة لإیران"
 
 #: app_admin/models/admin.py:342 app_application/models/application.py:354
 msgid "Science of Technology Policy"
-msgstr "سیاست علم فناوری"
+msgstr "سیاسة العلوم والتکنولوجیا"
 
 #: app_admin/models/admin.py:349 app_application/models/application.py:373
 #: app_application/models/documents.py:41 app_application/models/timeline.py:32
@@ -606,105 +604,103 @@ msgstr "سیاست علم فناوری"
 #: app_occupation/models/latest_occupation.py:30 app_user/models/address.py:23
 #: app_user/models/profile.py:39 app_user/models/user.py:77
 msgid "User"
-msgstr "کاربر"
+msgstr "مستخدم"
 
 #: app_admin/models/admin.py:355
 msgid "Role"
-msgstr "وظیفه"
+msgstr "واجب"
 
 #: app_admin/models/admin.py:358
 msgid "Schools"
-msgstr "دانشکده ها"
+msgstr "کلیات"
 
 #: app_admin/models/admin.py:365
 msgid "Fields"
-msgstr "درس های تحصیلی"
+msgstr "الدروس الاکادیمیة"
 
 #: app_application/api/serializers/application_admin.py:68
-#, fuzzy
-#| msgid "Tracking ID"
 msgid "tracking_id"
-msgstr "کد پیگیری"
+msgstr "شفرة التتبع"
 
 #: app_application/api/serializers/application_admin.py:69
 msgid "degree"
-msgstr "مدرک"
+msgstr "درجة"
 
 #: app_application/api/serializers/application_admin.py:70
 msgid "faculty"
-msgstr "دانشکده"
+msgstr "کلیة"
 
 #: app_application/api/serializers/application_admin.py:71
 msgid "field_of_study"
-msgstr "رشته تحصییلی"
+msgstr "مجال الدراسة"
 
 #: app_application/api/serializers/application_admin.py:72
 msgid "status"
-msgstr "وضعیت"
+msgstr "الموقف"
 
 #: app_application/api/serializers/application_admin.py:73
 msgid "jalali_created_at"
-msgstr "جلالی کد ایجاد"
+msgstr "رمز إنشاءجلالی"
 
 #: app_application/api/serializers/application_admin.py:74
 msgid "user_id"
-msgstr "آیدی"
+msgstr "بطاقة تعریف"
 
 #: app_application/api/serializers/application_admin.py:75
 msgid "user_agent"
-msgstr "ایجنت"
+msgstr "عامل"
 
 #: app_application/api/serializers/application_admin.py:76
 msgid "user_full_name"
-msgstr "نام و نام خانوادگی"
+msgstr "اسمی ولقبی"
 
 #: app_application/api/serializers/application_admin.py:77
 msgid "user_gender"
-msgstr "جنسیت"
+msgstr "یاهوی _ یاهی"
 
 #: app_application/api/serializers/application_admin.py:78
 msgid "user_country"
-msgstr "کشور"
+msgstr "دولة"
 
 #: app_application/api/serializers/application_admin.py:79
 msgid "user_age"
-msgstr "سن"
+msgstr "عمر"
 
 #: app_application/api/serializers/application_admin.py:80
 msgid "user_applications_count"
-msgstr "تعداد پرونده های کاربر"
+msgstr "عددملفات المستخدم"
 
 #: app_application/api/serializers/application_admin.py:371
 #: app_application/api/serializers/application_admin.py:375
 msgid "Superuser"
-msgstr "مدیر اصلی"
+msgstr "المدیر الرئیسی"
 
 #: app_application/api/serializers/application_admin.py:490
 #: app_application/models/application.py:26
 #: app_application/models/documents.py:35 app_application/models/referral.py:19
 #: app_application/models/timeline.py:26
 msgid "Application"
-msgstr "پرونده"
+msgstr "ملف"
 
 #: app_application/apps.py:8
 msgid "App Application"
-msgstr "اپلیکیشن پرونده"
+msgstr "تطبیق الملف"
 
 #: app_application/apps.py:9
 msgid "App Applications"
-msgstr "اپلیکیشن پرونده ها"
+msgstr "تطبیق الملفات"
 
 #: app_application/models/application.py:27
 msgid "Applications"
-msgstr "پرونده ها"
+msgstr "وثائق"
 
 #: app_application/models/application.py:358
 msgid "Not Completed"
-msgstr "تکمیل نشده"
+msgstr "غیرمکتمل"
 
 #: app_application/models/application.py:359
 msgid "Current"
-msgstr "در حال بررسی"
+msgstr "تحت الدراسة"
 
 #: app_application/models/application.py:360
 msgid "Accepted"
@@ -712,143 +708,143 @@ msgstr "تایید"
 
 #: app_application/models/application.py:361
 msgid "Rejected"
-msgstr "رد"
+msgstr "الرفض"
 
 #: app_application/models/application.py:362
 #: app_application/models/timeline.py:20
 msgid "Need To Edit"
-msgstr "نیاز به تغییر"
+msgstr "الحاجة للتغییر"
 
 #: app_application/models/application.py:365
 msgid "Bachelor"
-msgstr "کارشناسی"
+msgstr "باکالوریوس"
 
 #: app_application/models/application.py:366
 msgid "Master"
-msgstr "کارشناسی ارشد"
+msgstr "ماجستیر"
 
 #: app_application/models/application.py:367
 msgid "P.H.D"
-msgstr "دکتری"
+msgstr "درجة الدکتوراه"
 
 #: app_application/models/application.py:381
 msgid "Agent Email"
-msgstr "ایمیل ایجنت"
+msgstr "البرید الإلکترونی للوکیل"
 
 #: app_application/models/application.py:388
 msgid "Tracking ID"
-msgstr "کد پیگیری"
+msgstr "شفرة التتبع"
 
 #: app_application/models/application.py:391
 msgid "Full Name"
-msgstr "نام و نام خانوادگی"
+msgstr "اسمی ولقبی"
 
 #: app_application/models/application.py:393
 msgid "Comments"
-msgstr "نظرات"
+msgstr "تعلیقات"
 
 #: app_application/models/application.py:395
 msgid "Applied Program"
-msgstr "برنامه کاربری"
+msgstr "برنامج المستخدم"
 
 #: app_application/models/application.py:398
 msgid "Financial Self Support"
-msgstr "خود حمایت مالی"
+msgstr "الدعم الذاتی المالی"
 
 #: app_application/models/application.py:404
 #: app_application/models/timeline.py:38 app_chat/models/chat_room.py:39
 #: app_notification/models/notification.py:33
 msgid "Status"
-msgstr "وضعیت"
+msgstr "حالة"
 
 #: app_application/models/application.py:410
 msgid "Degree"
-msgstr "مدرک"
+msgstr "درجة"
 
 #: app_application/models/application.py:415
 msgid "Faculty"
-msgstr "دانشکده"
+msgstr "کلیة"
 
 #: app_application/models/application.py:420 utils/general_models.py:67
 msgid "Field Of Study"
-msgstr "رشته تحصیلی"
+msgstr "مجال الدراسة"
 
 #: app_application/models/application.py:422
 msgid "step"
-msgstr "مرحله"
+msgstr "سطح"
 
 #: app_application/models/application.py:427
 #, fuzzy
 #| msgid "Application"
 msgid "Application File"
-msgstr "پرونده"
+msgstr "ملف"
 
 #: app_application/models/application.py:433
 #, fuzzy
 #| msgid "Application"
 msgid "Application Letter"
-msgstr "پرونده"
+msgstr "ملف"
 
 #: app_application/models/documents.py:25
 msgid "Document"
-msgstr "مدرک"
+msgstr "درجة"
 
 #: app_application/models/documents.py:26
 msgid "Documents"
-msgstr "مدارک"
+msgstr "درجات"
 
 #: app_application/models/documents.py:50
 msgid "Curriculum Vitae"
-msgstr "رزومه"
+msgstr "السیرة الذاتیة"
 
 #: app_application/models/documents.py:59
 msgid "Personal photo"
-msgstr "عکس شخصی"
+msgstr "صورة الشخص"
 
 #: app_application/models/documents.py:68
 msgid "Valid"
-msgstr "معتبر"
+msgstr "موثق"
 
 #: app_application/models/documents.py:77
 msgid "High School Certificate"
-msgstr "مدرک دبیرستان"
+msgstr "درجة  المدرسة الثانویة"
 
 #: app_application/models/documents.py:86
 msgid "Trans Script High School Certificate"
-msgstr "مدرک ترنس اسکریپت دبیرستان"
+msgstr "درجة التخرج من المرحلة الثانویة"
 
 #: app_application/models/documents.py:95
 #: app_education/models/bachelor_degree.py:11
 msgid "Bachelor Degree"
-msgstr "مدرک کارشناسی"
+msgstr "درجة الباکالوریوس"
 
 #: app_application/models/documents.py:104
 msgid "Trans Script Bachelor Degree"
-msgstr "مدرک ترانس اسکریپت کارشناسی"
+msgstr "نسخة من درجة البکالوریوس"
 
 #: app_application/models/documents.py:113
 msgid "Master Degree"
-msgstr "مدرک کارشناسی ارشد"
+msgstr "درجة ماجستیر"
 
 #: app_application/models/documents.py:122
 msgid "Trans Script Master Degree"
-msgstr "مدرک ترانس اسکریپت کارشناسی ارشد"
+msgstr "نسخة درجة ماجستیر"
 
 #: app_application/models/documents.py:131
 msgid "Supporting Letter"
-msgstr "نامه حمایت مالی"
+msgstr "خطاب الدعم المالی"
 
 #: app_application/models/referral.py:25
 msgid "Origin User"
-msgstr "کاربر ارجاع دهنده"
+msgstr "المستخدم المحیل"
 
 #: app_application/models/referral.py:31
 msgid "Destination User"
-msgstr "کاربر ارجاع شده"
+msgstr "المستخدم مشارإلیه"
 
 #: app_application/models/referral.py:35
 msgid "Is Enabled"
-msgstr "وضعیت فعال بودن"
+msgstr "الحالة النشطة"
 
 #: app_application/models/timeline.py:16
 msgid "Confirmation"
@@ -856,59 +852,59 @@ msgstr "تایید"
 
 #: app_application/models/timeline.py:17
 msgid "Rejection"
-msgstr "رد"
+msgstr "الرفض"
 
 #: app_application/models/timeline.py:18
 msgid "Investigation"
-msgstr "نیاز به بررسی بیشتر"
+msgstr "بحاجة الی مزید من المراجعة"
 
 #: app_application/models/timeline.py:19
 msgid "Referral"
-msgstr "ارجاع"
+msgstr "مرجع"
 
 #: app_application/models/timeline.py:40 app_chat/models/chat_room.py:71
 #: app_notification/models/notification.py:27
 msgid "Message"
-msgstr "پیغام"
+msgstr "رسالة"
 
 #: app_chat/api/serializers/ticket.py:49
 #: app_chat/api/serializers/tickets_admin.py:49
 #: app_chat/api/serializers/tickets_admin.py:168
 #: app_chat/models/chat_room.py:63
 msgid "Chat Room"
-msgstr "صفحه چت"
+msgstr "صفحة الدردشة"
 
 #: app_chat/api/views/ticket.py:46 app_chat/api/views/tickets_admin.py:63
 msgid "Ticket"
-msgstr "تیکت"
+msgstr "تذکرة"
 
 #: app_chat/apps.py:8 app_chat/apps.py:9
 msgid "App Chat"
-msgstr "اپلیکیشن چت"
+msgstr "تطبیق الدردشة"
 
 #: app_chat/models/chat_room.py:19
 msgid "LOW"
-msgstr "کم"
+msgstr "قلیل"
 
 #: app_chat/models/chat_room.py:20
 msgid "Medium"
-msgstr "متوسط"
+msgstr "متوسط ( وسط )"
 
 #: app_chat/models/chat_room.py:21
 msgid "High"
-msgstr "زیاد"
+msgstr "عالیة ( کثیر )"
 
 #: app_chat/models/chat_room.py:24
 msgid "Waiting For An Answer"
-msgstr "منتظر پاسخ"
+msgstr "بانتظارالرد"
 
 #: app_chat/models/chat_room.py:25
 msgid "Has Been Answered"
-msgstr "پاسخ داده شده"
+msgstr "إجابة المعطاة"
 
 #: app_chat/models/chat_room.py:26
 msgid "Closed"
-msgstr "بسته"
+msgstr "مغلق"
 
 #: app_chat/models/chat_room.py:28 app_notification/models/notification.py:26
 msgid "Title"
@@ -916,68 +912,68 @@ msgstr "عنوان"
 
 #: app_chat/models/chat_room.py:30
 msgid "Members"
-msgstr "اعضا"
+msgstr "اعضاء"
 
 #: app_chat/models/chat_room.py:33
 msgid "Room Id"
-msgstr "کد چت"
+msgstr "کلمة مرور الدردشة ( کود الدردشة )"
 
 #: app_chat/models/chat_room.py:45
 msgid "Priority"
-msgstr "اولویت"
+msgstr "أولویة"
 
 #: app_chat/models/chat_room.py:73
 msgid "Image"
-msgstr "عکس"
+msgstr "صورة ( طلقة )"
 
 #: app_education/apps.py:8
 msgid "App Education"
-msgstr "اپلیکیشن آموزش"
+msgstr "تطبیق التعلم"
 
 #: app_education/apps.py:9
 msgid "App Educations"
-msgstr "اپلیکیشن آموزش ها"
+msgstr "تطبیق التدریبات"
 
 #: app_education/models/bachelor_degree.py:12
 msgid "Bachelor Degrees"
-msgstr "مدارک کارشناسی"
+msgstr "درجات باکالوریوس"
 
 #: app_education/models/bachelor_degree.py:22
 #: app_education/models/master_degree.py:22
 msgid "University"
-msgstr "دانشگاه"
+msgstr "جامعة"
 
 #: app_education/models/high_school.py:11
 msgid "High School"
-msgstr "دبیرستان"
+msgstr "المدرسة الثانویة"
 
 #: app_education/models/high_school.py:12
 msgid "High Schools"
-msgstr "دبیرستان ها"
+msgstr "المدارس الثانویة"
 
 #: app_education/models/master_degree.py:11
 msgid "MasterDegree"
-msgstr "مدرک کارشناسی"
+msgstr "درجة باکالوریوس"
 
 #: app_education/models/master_degree.py:12
 msgid "Master Degrees"
-msgstr "مدارک کارشناسی ارشد"
+msgstr "درجات ماجستیر"
 
 #: app_frequently_question/apps.py:8
 msgid "App Frequently Question"
-msgstr "اپلیکیشن سوال متداول"
+msgstr "تطبیق السوال شائع"
 
 #: app_frequently_question/apps.py:9
 msgid "App Frequently Questions"
-msgstr "اپلیکیشن سوالات متداول"
+msgstr "تطبیق السوالات شائع"
 
 #: app_frequently_question/models/frequently_question.py:7
 msgid "Frequently Question"
-msgstr "سوال متداول"
+msgstr "سوال شائع"
 
 #: app_frequently_question/models/frequently_question.py:8
 msgid "Frequently Questions"
-msgstr "سوالات متداول"
+msgstr "سوالات شائع"
 
 #: app_frequently_question/models/frequently_question.py:12
 msgid "Question"
@@ -985,143 +981,143 @@ msgstr "سوال"
 
 #: app_frequently_question/models/frequently_question.py:14
 msgid "Answer"
-msgstr "پاسخ"
+msgstr "إجابة"
 
 #: app_notification/api/views/notification.py:45
 msgid "Notification"
-msgstr "اطلاعیه"
+msgstr "إشعارات"
 
 #: app_notification/apps.py:8
 msgid "App Notification"
-msgstr "اپلیکیشن اطلاعیه"
+msgstr "تطبیق الإخطار"
 
 #: app_notification/apps.py:9
 msgid "App Notifications"
-msgstr "اپلیکیشن اطلاعیه ها"
+msgstr "تطبیق الإخطارات"
 
 #: app_notification/models/notification.py:15
 msgid "Information"
-msgstr "اطلاع دهی"
+msgstr "إعلام"
 
 #: app_notification/models/notification.py:16
 msgid "Success"
-msgstr "موفق"
+msgstr "ناجح"
 
 #: app_notification/models/notification.py:17
 msgid "Warning"
-msgstr "اخطار"
+msgstr "تحذیر"
 
 #: app_notification/models/notification.py:18
 msgid "Error"
-msgstr "خطا"
+msgstr "خطاء"
 
 #: app_notification/models/notification.py:28
 msgid "View Status"
-msgstr "وضعیت دیده شدن"
+msgstr "حالة رویة"
 
 #: app_occupation/apps.py:8
 msgid "App Occupation"
-msgstr "اپلیکیشن شغل"
+msgstr "تطبیق مهنة"
 
 #: app_occupation/apps.py:9
 msgid "App Occupations"
-msgstr "اپلیکیشن شغل ها"
+msgstr "تطبیق المهن"
 
 #: app_occupation/models/latest_occupation.py:15
 msgid "Latest Occupation"
-msgstr "اخرین شغل"
+msgstr "آخروظیفة"
 
 #: app_occupation/models/latest_occupation.py:16
 msgid "Latest Occupations"
-msgstr "آخرین شغل ها"
+msgstr "آخرالوظائف"
 
 #: app_occupation/models/latest_occupation.py:20 app_user/models/profile.py:28
 msgid "Other"
-msgstr "دیگر"
+msgstr "سائر"
 
 #: app_occupation/models/latest_occupation.py:21
 msgid "Academician"
-msgstr "دانشگاهیان"
+msgstr "جمعیة"
 
 #: app_occupation/models/latest_occupation.py:22
 msgid "Government Employee"
-msgstr "کارمند دولتی"
+msgstr "موظف عمومی"
 
 #: app_occupation/models/latest_occupation.py:23
 msgid "Industrial Employee"
-msgstr "کارمند صنعتی"
+msgstr "موظف الصناعی"
 
 #: app_occupation/models/latest_occupation.py:24
 msgid "Student"
-msgstr "دانش آموز"
+msgstr "طالب"
 
 #: app_occupation/models/latest_occupation.py:36
 msgid "Occupation"
-msgstr "شغل"
+msgstr "مهنة"
 
 #: app_occupation/models/latest_occupation.py:39
 msgid "Organization"
-msgstr "نام سازمان"
+msgstr "اسم المنظمة"
 
 #: app_occupation/models/latest_occupation.py:41
 msgid "From Date"
-msgstr "از تاریخ"
+msgstr "من تاریخ"
 
 #: app_occupation/models/latest_occupation.py:42
 msgid "To Date"
-msgstr "تا تاریخ"
+msgstr "الی تاریخ"
 
 #: app_occupation/models/latest_occupation.py:43
 msgid "Description"
-msgstr "توضیحات"
+msgstr "تفسیرات"
 
 #: app_user/api/views/change_password.py:28
 msgid "Change password Successfully"
-msgstr "تغییر رمز عبور موفقیت آمیز بود"
+msgstr "تم تغییر کلمة المرور بنجاح"
 
 #: app_user/apps.py:8
 msgid "App User"
-msgstr "اپلیکیشن کاربر"
+msgstr "تطبیق المستخدم"
 
 #: app_user/apps.py:9
 msgid "App Users"
-msgstr "اپلیکیشن کاربران"
+msgstr "تطبیق المستخدمین"
 
 #: app_user/models/address.py:15 app_user/models/address.py:32
 msgid "Address"
-msgstr "آدرس"
+msgstr "عنوان"
 
 #: app_user/models/address.py:16
 msgid "Addresses"
-msgstr "آدرس ها"
+msgstr "عناوین"
 
 #: app_user/models/address.py:26
 msgid "Country Code"
-msgstr "کد کشور"
+msgstr "الرقم الدولة"
 
 #: app_user/models/address.py:29
 msgid "Postal Code"
-msgstr "کد پستی"
+msgstr "رمز بریدی"
 
 #: app_user/models/address.py:31
 msgid "City Code"
-msgstr "کد شهر"
+msgstr "رمز المدینة"
 
 #: app_user/models/profile.py:21 app_user/models/profile.py:45
 msgid "Profile"
-msgstr "پروفایل"
+msgstr "الملف الشخصی"
 
 #: app_user/models/profile.py:22
 msgid "Profiles"
-msgstr "پروفایل ها"
+msgstr "ملاف الشخصی"
 
 #: app_user/models/profile.py:26
 msgid "Male"
-msgstr "آقا"
+msgstr "السید"
 
 #: app_user/models/profile.py:27
 msgid "FeMale"
-msgstr "خانم"
+msgstr "سیدة"
 
 #: app_user/models/profile.py:31
 msgid "Weak"
@@ -1129,263 +1125,257 @@ msgstr "ضعیف"
 
 #: app_user/models/profile.py:32
 msgid "Good"
-msgstr "خوب"
+msgstr "جید"
 
 #: app_user/models/profile.py:33
 msgid "Excellent"
-msgstr "عالی"
+msgstr "ممتاز"
 
 #: app_user/models/profile.py:48
 msgid "Phone Number"
-msgstr "شماره موبایل"
+msgstr "رقم التلیفون"
 
 #: app_user/models/profile.py:51
 msgid "First Name"
-msgstr "نام"
+msgstr "اسمی"
 
 #: app_user/models/profile.py:53
 msgid "Last Name"
-msgstr "نام خانوادگی"
+msgstr "لقبی"
 
 #: app_user/models/profile.py:56
 msgid "Birth Date"
-msgstr "تاریخ تولد"
+msgstr "تاریخ میلاد"
 
 #: app_user/models/profile.py:58
 msgid "Age"
-msgstr "سن"
+msgstr "عمر"
 
 #: app_user/models/profile.py:63
 msgid "Gender"
-msgstr "جنسیت"
+msgstr "یاهو یاهی"
 
 #: app_user/models/profile.py:66
 msgid "Nationality"
-msgstr "ملیت"
+msgstr "جنسیة"
 
 #: app_user/models/profile.py:69
 msgid "Mother Language"
-msgstr "زبان مادری"
+msgstr "اللغة الأم"
 
 #: app_user/models/profile.py:74
 msgid "Other Languages"
-msgstr "زبان های دیگر"
+msgstr "لغات اخری"
 
 #: app_user/models/profile.py:80
 msgid "English Status"
-msgstr "وضعیت بلد بودن زبان انگلیسی"
+msgstr "حالة إتقان اللغة الإنجلزیة"
 
 #: app_user/models/profile.py:86
 msgid "Persian Status"
-msgstr "وضعیت بلد بودن زبان فارسی"
+msgstr "حالة إتقان اللغة الفارسیة"
 
 #: app_user/models/profile.py:89
-#, fuzzy
-#| msgid "Phone Number"
 msgid "Passport Number"
-msgstr "شماره موبایل"
+msgstr "رقم التلیفون"
 
 #: app_user/models/user.py:78
 msgid "Users"
-msgstr "کاربران"
+msgstr "مستخدمین"
 
 #: app_user/models/user.py:91
 msgid "Sub Code"
-msgstr "کد پرسنلی"
+msgstr "قانون شوون الموظفین"
 
 #: app_user/models/user.py:94
 msgid "Picture URL"
-msgstr "لینک عکس پروفایل"
+msgstr "رابط الصورة الشخصی"
 
 #: app_user/models/user.py:100
 msgid "Email"
-msgstr "ایمیل"
+msgstr "رسائل البرید الإلکترونی"
 
 #: app_user/models/user.py:105
 msgid "Is Active"
-msgstr "وضعیت فعال بودن"
+msgstr "الحالة النشطة"
 
 #: app_user/models/user.py:107
 msgid "Is Agent"
-msgstr "وضعیت ایجنت بودن"
+msgstr "حالة الوکیل"
 
 #: app_user/models/user.py:108
 msgid "Is Locked"
-msgstr "قفل بودن حساب"
+msgstr "حساب مغلق"
 
 #: app_user/models/user.py:113
 msgid "Admin Role"
-msgstr "سطح مدیر"
+msgstr "مستوی المدیر"
 
 #: app_user/models/user.py:116
 msgid "Can Issuance Letter"
-msgstr "توانایی امضا نامه"
+msgstr "يمكن إصدار خطاب"
 
 #: utils/base_errors.py:13
 #, python-brace-format
 msgid "parameter {param_name} is required"
-msgstr "پارامتر {param_name} اجباری است"
+msgstr "بارامتر {param_name} إلزامیة"
 
 #: utils/base_errors.py:14
 #, python-brace-format
 msgid "{object} Not Found"
-msgstr "{object} پیدا نشد"
+msgstr "{object} غیر موجود"
 
 #: utils/base_errors.py:15
 msgid "Invalid Access Token Or Expired"
-msgstr "کلید دسترسی اشتباه است یا منقضی شده است"
+msgstr "مفتاح الوصول خاطی یا منتهی الصلاحیة"
 
 #: utils/base_errors.py:18
 msgid "URL Not Found."
-msgstr "درخواست پیدا نشد"
+msgstr "لم یتم العثورعلی الطلب."
 
 #: utils/base_errors.py:19
 msgid "Server Error."
-msgstr "خطای سمت سرویس دهنده"
+msgstr "الخطا من جانب مقدم السرفی."
 
 #: utils/base_errors.py:23
 msgid "User Must Have Email."
-msgstr "کاربر نیاز به یک ایمیل دارد"
+msgstr "المستخدم یحتاج الی برید الکترونی."
 
 #: utils/base_errors.py:24
 msgid "User Must Have Password."
-msgstr "کاربر نیاز به یک رمزعبور دارد"
+msgstr "المستخدم یحتاج الی کلمة مرور."
 
 #: utils/base_errors.py:25
 msgid "User Account With Email Exists."
-msgstr "حساب کاربری با این ایمیل موجود میباشد"
+msgstr "حساب المستخدم موجود مع هذا البرید الکترونی."
 
 #: utils/base_errors.py:27
 msgid "User Account Is Active."
-msgstr "حساب کاربری تایید شده است"
+msgstr "تم التحقق من حساب المستخدم."
 
 #: utils/base_errors.py:29
 msgid "Invalid Email or Password."
-msgstr "ایمیل یا رمز عبور اشتباه است"
+msgstr "یوجد خطأ فی کلمة المرور والبرید الکترونی."
 
 #: utils/base_errors.py:30
 msgid "User Account Not Active."
-msgstr "حساب کاربری فعال نمیباشد"
+msgstr "حساب المستخدم غیر نشط."
 
 #: utils/base_errors.py:31
-#, fuzzy
-#| msgid "User Account Is Active."
 msgid "Your Account Is Locked"
-msgstr "حساب کاربری تایید شده است"
+msgstr "حساب تم التحقق منه"
 
 #: utils/base_errors.py:33
 msgid "User Not Found"
-msgstr "کاربر پیدا نشد"
+msgstr "لم یتم العثور علی المستخدم"
 
 #: utils/base_errors.py:35
 msgid ""
 "You Do Not Have Access To Change The Password, Please Try Again First Step."
-msgstr "شما نمیتوانید رمز عبور خود را تغییر دهید، لطفا از مرحله اول تلاش کنید"
+msgstr "أنت لا تسطیع ان تغیر کلمة مرورک یرجی المحاولة من."
 
 #: utils/base_errors.py:37
 msgid "Password And Repeat Password Did Not Match."
-msgstr "رمز عبور جدید و تکرار رمز عبور با یکدیگر برابر نیستند"
+msgstr "کلمة العبورالجدیدة وتکرارها لیس نفس الشیء."
 
 #: utils/base_errors.py:39
 msgid "Old Password Is Incorrect"
-msgstr "رمزعبور قبلی اشتباه است"
+msgstr "کلمة المرور السابقة غیرصحیحة"
 
 #: utils/base_errors.py:42
 msgid "OTP Code Expired, Please Try To Resend New OTP Code."
-msgstr ""
-"کد یکبار مصرف منقضی شده است، لطفا برای درخواست ارسال کد جدید اقدام کنید"
+msgstr "انتهت صلاحیة رمز الاستخدام لمرة واحدة یرجی تقدیم الطلب لارسال الرمز."
 
 #: utils/base_errors.py:43
 msgid "Invalid OTP Code, Please Try Again."
-msgstr "کد یکبار مصرف اشتباه است، لطفا مجددا سعی کنید"
+msgstr "الرمز القابل للتصرف خاطی حاول مرة اخری."
 
 #: utils/base_errors.py:44
 msgid "OTP Code Has Already Been Sent."
-msgstr "کد یکبار مصرف هم اکنون ارسال شده است"
+msgstr "تم الان أرسال رمز الاستخدام لمرة واحدة."
 
 #: utils/base_errors.py:47
 msgid "\"tracking_id\" Not Found Or Is Invalid"
-msgstr "\"tracking_id\" پیدا نشد یا اشتباه است"
+msgstr "\"tracking_id\" غیرمعثور علیه یا الخطاء"
 
 #: utils/base_errors.py:49
 msgid ""
 "cant create this application with field of study, you have already "
 "application"
 msgstr ""
-"نمیتوان درخواست را با رشته انتخابی ایجاد کرد زیرا از قبل همچین درخواستی ثبت "
-"شده است"
+"لا یمکن إنشاء طلب باستخدام الحقل المختار لأن هذا الطلب قدتم تسجیلبة بالفعل"
 
 #: utils/base_errors.py:51
 #, python-brace-format
 msgid "Only \"{formats}\" formats are allowed."
-msgstr "فقط فرمت های \"{formats}\" قابل قبول است"
+msgstr "التنسیقات \"{formats}\" فقط هی المقبولة."
 
 #: utils/base_errors.py:52
 msgid "The File Size Is To Many Large"
-msgstr "حجم فایل ارسالی زیاد است"
+msgstr "حجم الملف المرسل کبیر"
 
 #: utils/base_errors.py:55
 msgid "User Is Not Admin"
-msgstr "شما مدیر نیستید"
+msgstr "أنت لست المدیر"
 
 #: utils/base_errors.py:58
 msgid "Message Success Viewed"
-msgstr "پیغام با موفقیت دیده شد"
+msgstr "تم عرض الرسالة بنجاح"
 
 #: utils/base_errors.py:62
 msgid "You Do Not Have Permission For Referral This Application"
-msgstr "شما دسترسی برای ارجاع دادن این پرونده را ندارید"
+msgstr "لیس لدیک حق الوصول لإحالة هذا الملف لایمکنک"
 
 #: utils/base_errors.py:64
 msgid "Cant Referral Application To User"
-msgstr "نمیتوان پرونده را به کاربر مورد نظر ارجاع داد"
+msgstr "لایمکن إحالة الملف إلی المستخدم المقصود"
 
 #: utils/base_errors.py:68
 msgid "You Do Not Have Permission For This Application"
-msgstr "شما دسترسی به این پرونده ندارید"
+msgstr "لیس لدیک حق الوصول إلی هذا الملف"
 
 #: utils/base_errors.py:70
 msgid "You Cant Edit Application Status"
-msgstr "شما نمیتوانید در این پرونده تغییری ایجاد کنید"
+msgstr "لایمکنک إجراء تغییرات لی هذاالملف"
 
 #: utils/base_errors.py:71
 msgid "Cant Create Comment For This Application"
-msgstr "نمیتوان برای این پرونده نظر ثبت کرد"
+msgstr "لا یمکن تسجیل الرأی فی هذاالملف"
 
 #: utils/classes.py:103
 msgid "Active Your Account"
-msgstr "فعال کردن حساب کاربری"
+msgstr "الحساب نشط ( تفعیل حساب المستخدم )"
 
 #: utils/classes.py:104
 msgid "Forget Your Account Password"
-msgstr "فراموشی رمز عبور حساب کاربری"
+msgstr "نسیت کلمة مرور الحساب"
 
 #: utils/general_models.py:12
 msgid "Created Time"
-msgstr "زمان ایجاد"
+msgstr "وقت الخلق"
 
 #: utils/general_models.py:13
 msgid "Updated Time"
-msgstr "آخرین زمان تغییر"
+msgstr "وقت التحديث"
 
 #: utils/general_models.py:37
 msgid "Country"
-msgstr "کشور"
+msgstr "دولة"
 
 #: utils/general_models.py:43
 msgid "City"
-msgstr "شهر"
+msgstr "مدینه"
 
 #: utils/general_models.py:56
 msgid "Date Of Graduation"
-msgstr "تاریخ فارغ التحصیلی"
+msgstr "تاريخ التخرج"
 
 #: utils/general_models.py:61
 msgid "GPA"
-msgstr "معدل"
+msgstr "المعدل التراكمي"
 
 #~ msgid "Is Group"
-#~ msgstr "وضعیت گروه بودن"
+#~ msgstr "حالة المجموعة"
 
 #~ msgid "Is Ticket"
-#~ msgstr "وضعیت تیکت بودن"
+#~ msgstr "حالة التذکرة"
