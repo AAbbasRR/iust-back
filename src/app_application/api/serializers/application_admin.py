@@ -21,8 +21,7 @@ from utils.classes import ManageMailService
 
 from docx import Document
 from io import BytesIO
-from docx2pdf import convert
-import tempfile
+import pypandoc
 import os
 
 
@@ -545,12 +544,8 @@ class AdminSubmitApplicationLetterSerializer(serializers.Serializer):
 
         docx_file_path = attrs["application"].application_letter.path
 
-        # Convert DOCX to PDF
-        pdf_path = docx_file_path.replace(".docx", ".pdf")
-        convert(docx_file_path, pdf_path)
-        # Read the PDF file and prepare it for email
-        with open(pdf_path, "rb") as f:
-            pdf_bytes = f.read()
+        # Convert DOCX to PDF using pypandoc
+        pdf_bytes = pypandoc.convert_file(docx_file_path, "pdf", format="docx")
         pdf_stream = BytesIO(pdf_bytes)
 
         # Send email with PDF attachment
@@ -568,7 +563,6 @@ class AdminSubmitApplicationLetterSerializer(serializers.Serializer):
         )
 
         # Clean up temporary files
-        os.remove(pdf_path)
         pdf_stream.close()
         doc_bytes_stream.close()
         attrs.pop("application")
