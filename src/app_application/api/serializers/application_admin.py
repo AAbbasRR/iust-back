@@ -21,7 +21,7 @@ from utils.classes import ManageMailService
 
 from docx import Document
 from io import BytesIO
-import pypandoc
+from docx2pdf import convert
 import tempfile
 import os
 
@@ -551,9 +551,10 @@ class AdminSubmitApplicationLetterSerializer(serializers.Serializer):
             save=True,
         )
 
-        # Convert DOCX to PDF using pypandoc
+        # Convert DOCX to PDF using docx2pdf
         pdf_file_path = tempfile.NamedTemporaryFile(suffix=".pdf", delete=False).name
-        pypandoc.convert_file(temp_docx_path, "pdf", outputfile=pdf_file_path)
+
+        convert(temp_docx_path, pdf_file_path)
 
         # Read the PDF into memory
         with open(pdf_file_path, "rb") as pdf_file:
@@ -575,9 +576,11 @@ class AdminSubmitApplicationLetterSerializer(serializers.Serializer):
             )
         # Clean up temporary files
         os.remove(temp_docx_path)
-        os.remove(pdf_file_path)
+        if pdf_file_path and os.path.exists(pdf_file_path):
+            os.remove(pdf_file_path)
+        if pdf_stream:
+            pdf_stream.close()
         doc_bytes_stream.close()
-        pdf_stream.close()
 
         attrs.pop("application")
 
