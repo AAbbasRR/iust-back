@@ -1,4 +1,4 @@
-from django.core.mail import EmailMultiAlternatives
+from django.core.mail import EmailMultiAlternatives, EmailMessage
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.utils.translation import gettext_lazy as _
@@ -115,6 +115,20 @@ class ManageMailService:
             subject, text_content, settings.EMAIL_HOST_USER, [target_email]
         )
         email.attach_alternative(html_content, "text/html")
+        email.send()
+        return True
+
+    def send_email_to_user_with_attachments(
+        self, subject, body, file_name, file, file_type
+    ):
+        target_email = self.receiver_email
+        email = EmailMessage(
+            subject,
+            body,
+            settings.EMAIL_HOST_USER,
+            [target_email],
+        )
+        email.attach(file_name, file, file_type)
         email.send()
         return True
 

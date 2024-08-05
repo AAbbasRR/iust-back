@@ -17,10 +17,13 @@ from app_admin.models import AdminModel
 from app_notification.models import NotificationModel
 
 from utils.base_errors import BaseErrors
+from utils.classes import ManageMailService
 
 from docx import Document
 from io import BytesIO
 from docx2pdf import convert
+import tempfile
+import os
 
 
 class AdminApplicationListSerializer(serializers.ModelSerializer):
@@ -539,6 +542,34 @@ class AdminSubmitApplicationLetterSerializer(serializers.Serializer):
             save=True,
         )
 
+        # Save the DOCX to a temporary file
+        with tempfile.NamedTemporaryFile(
+            suffix=".docx", delete=False
+        ) as temp_docx_file:
+            temp_docx_file.write(doc_bytes_stream.getvalue())
+            temp_docx_path = temp_docx_file.name
+
+        # Convert DOCX to PDF using docx2pdf
+        pdf_stream = BytesIO()
+        convert(temp_docx_path, pdf_stream)
+        pdf_stream.seek(0)
+
+        # Send email with PDF attachment
+        subject = "Your Application Letter"
+        body = "Please find the attached PDF document."
+        to_email = "recipient@example.com"
+
+        user_email = ManageMailService(attrs["application"].user.email)
+        user_email.send_email_to_user_with_attachments(
+            subject,
+            body,
+            "application_letter.pdf",
+            pdf_stream.read(),
+            "application/pdf",
+        )
+
+        os.remove(temp_docx_path)
+        pdf_stream.close()
         doc_bytes_stream.close()
         attrs.pop("application")
 
