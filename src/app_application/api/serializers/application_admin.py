@@ -22,6 +22,7 @@ from utils.classes import ManageMailService
 from docx import Document
 from io import BytesIO
 import pypandoc
+import tempfile
 import os
 
 
@@ -532,39 +533,56 @@ class AdminSubmitApplicationLetterSerializer(serializers.Serializer):
                                         text = inline[i].text.replace(key, value)
                                         inline[i].text = text
 
-        doc_bytes_stream = BytesIO()
-        doc.save(doc_bytes_stream)
-        doc_bytes_stream.seek(0)
+            # Save DOCX to a temporary file
+            doc_bytes_stream = BytesIO()
+            doc.save(doc_bytes_stream)
+            doc_bytes_stream.seek(0)
 
-        attrs["application"].application_letter.save(
-            "application_letter.docx",
-            ContentFile(doc_bytes_stream.getvalue()),
-            save=True,
-        )
+            with tempfile.NamedTemporaryFile(
+                suffix=".docx", delete=False
+            ) as temp_docx_file:
+                temp_docx_file.write(doc_bytes_stream.getvalue())
+                temp_docx_path = temp_docx_file.name
 
-        docx_file_path = attrs["application"].application_letter.path
+            # Save the DOCX file to the model
+            attrs["application"].application_letter.save(
+                "application_letter.docx",
+                ContentFile(doc_bytes_stream.getvalue()),
+                save=True,
+            )
 
-        # Convert DOCX to PDF using pypandoc
-        pdf_bytes = pypandoc.convert_file(docx_file_path, "pdf", format="docx")
-        pdf_stream = BytesIO(pdf_bytes)
+            # Convert DOCX to PDF using pypandoc
+            pdf_file_path = tempfile.NamedTemporaryFile(
+                suffix=".pdf", delete=False
+            ).name
+            try:
+                pypandoc.convert_file(temp_docx_path, "pdf", outputfile=pdf_file_path)
 
-        # Send email with PDF attachment
-        subject = "Your Application Letter"
-        body = "Please find the attached PDF document."
-        to_email = "recipient@example.com"
+                # Read the PDF into memory
+                with open(pdf_file_path, "rb") as pdf_file:
+                    pdf_bytes = pdf_file.read()
+                    pdf_stream = BytesIO(pdf_bytes)
 
-        user_email = ManageMailService(attrs["application"].user.email)
-        user_email.send_email_to_user_with_attachments(
-            subject,
-            body,
-            "application_letter.pdf",
-            pdf_stream.read(),
-            "application/pdf",
-        )
+                    # Send email with PDF attachment
+                    subject = "Your Application Letter"
+                    body = "Please find the attached PDF document."
+                    to_email = "recipient@example.com"
 
-        # Clean up temporary files
-        pdf_stream.close()
-        doc_bytes_stream.close()
-        attrs.pop("application")
+                    user_email = ManageMailService(attrs["application"].user.email)
+                    user_email.send_email_to_user_with_attachments(
+                        subject,
+                        body,
+                        "application_letter.pdf",
+                        pdf_stream.read(),
+                        "application/pdf",
+                    )
+            finally:
+                # Clean up temporary files
+                os.remove(temp_docx_path)
+                os.remove(pdf_file_path)
+                doc_bytes_stream.close()
+                pdf_stream.close()
 
-        return attrs
+            attrs.pop("application")
+
+            return attrs
