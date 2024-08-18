@@ -135,6 +135,13 @@ class ManageMailService:
     def send_otp_code(self, title):
         redis_management = Redis(self.receiver_email, f"{title}_otp_code")
         otp_code = redis_management.create_and_set_otp_key()
-        content = {"title": title, "otp_code": otp_code}
+        content = {
+            "title": "verification",
+            "data": {
+                "title": self.subjects[title],
+                "otp_code": otp_code,
+                "description": "You can verify your user account through the code sent below, please do not share this code with other people.",
+            },
+        }
         self.send_email_to_user(self.subjects[title], content)
         return otp_code

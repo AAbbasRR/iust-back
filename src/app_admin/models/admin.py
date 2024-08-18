@@ -16,9 +16,6 @@ class Admin(models.Model):
         department_member = "department_member", _("Department Member")
 
     class AdminSchoolsOptions(models.TextChoices):
-        Department_of_Test = "Department of Test", _(
-            "Department of Test",
-        )
         Department_of_Chemistry = "Department of Chemistry", _(
             "Department of Chemistry"
         )

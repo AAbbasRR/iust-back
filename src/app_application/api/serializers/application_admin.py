@@ -21,7 +21,6 @@ from utils.classes import ManageMailService
 
 from docx import Document
 from io import BytesIO
-from docx2pdf import convert
 import tempfile
 import subprocess
 import os
@@ -501,7 +500,7 @@ class AdminSubmitApplicationLetterSerializer(serializers.Serializer):
             else "Miss",
             "<<full_name>>": str(attrs["application"].full_name),
             "<<faculty>>": str(attrs["application"].faculty),
-            "<<field_of_study>>": f"{str(attrs['application'].faculty)} - {str(attrs['application'].field_of_study)}",
+            "<<field_of_study>>": f"{str(attrs['application'].faculty).split('Department of ' if 'Department of ' in str(attrs['application'].faculty) else 'School of ')[1]} - {str(attrs['application'].field_of_study)}",
             "<<count_semesters>>": str(attrs["count_semesters"]),
             "<<count_years>>": str(int(attrs["count_semesters"] / 2)),
             "<<fee>>": str(attrs["fee"]),
@@ -565,9 +564,14 @@ class AdminSubmitApplicationLetterSerializer(serializers.Serializer):
             pdf_stream = BytesIO(pdf_bytes)
 
             # Send email with PDF attachment
-            subject = "Your Application Letter"
-            body = "Please find the attached PDF document."
-            to_email = "recipient@example.com"
+            subject = "Acceptance Letter"
+            body = {
+                "title": "acceptance_letter",
+                "data": {
+                    "title": "Acceptance Letter",
+                    "description": "Congratulations, your application to study at IUST University has been approved. You can read more information in the attached file",
+                },
+            }
 
             user_email = ManageMailService(attrs["application"].user.email)
             user_email.send_email_to_user_with_attachments(
