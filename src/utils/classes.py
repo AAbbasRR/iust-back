@@ -122,7 +122,7 @@ class ManageMailService:
         self, subject, body, file_name, file, file_type
     ):
         target_email = self.receiver_email
-        html_content = render_to_string("email/email.html", {"content": content})
+        html_content = render_to_string("email/email.html", {"content": body})
         text_content = strip_tags(html_content)
         email = EmailMessage(
             subject,
