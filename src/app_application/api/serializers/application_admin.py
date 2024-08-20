@@ -581,6 +581,15 @@ class AdminSubmitApplicationLetterSerializer(serializers.Serializer):
                 pdf_stream.read(),
                 "application/pdf",
             )
+            if attrs["application"].agent is not None:
+                user_email = ManageMailService(attrs["application"].agent.email)
+                user_email.send_email_to_user_with_attachments(
+                    subject,
+                    body,
+                    "application_letter.pdf",
+                    pdf_stream.read(),
+                    "application/pdf",
+                )
         # Clean up temporary files
         os.remove(temp_docx_path)
         if pdf_file_path and os.path.exists(pdf_file_path):
