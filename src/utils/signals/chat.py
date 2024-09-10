@@ -23,7 +23,7 @@ def create_ticket_handler(sender, instance, **kwargs):
         superusers = UserModel.objects.filter(is_superuser=True)
         for user in superusers:
             superuser_mail = ManageMailService(user.email)
-            user = instance.members.first()
+            user = instance.user
             superuser_mail.send_email_to_user(
                 subject="تیکت جدید",
                 content={
@@ -39,10 +39,10 @@ def create_ticket_handler(sender, instance, **kwargs):
 @receiver(post_save, sender=MessageModel)
 def create_ticket_message_handler(sender, instance, **kwargs):
     if kwargs["created"]:
-        superusers = instance.chat_room.members.exclude(user=instance.user)
-        for user in superusers:
-            superuser_mail = ManageMailService(user.email)
-            user = instance.members.first()
+        superuser = instance.chat_room.admin
+        if superuser is not None:
+            superuser_mail = ManageMailService(superuser.email)
+            user = instance.user
             superuser_mail.send_email_to_user(
                 subject="پیام جدید",
                 content={

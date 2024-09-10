@@ -26,8 +26,21 @@ class ChatRoom(GeneralDateModel):
         Closed = "Closed", _("Closed")
 
     title = models.CharField(max_length=75, verbose_name=_("Title"))
-    members = models.ManyToManyField(
-        UserModel, related_name="user_chat_rooms", verbose_name=_("Members")
+    user = models.ForeignKey(
+        UserModel,
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE,
+        related_name="user_chat_rooms",
+        verbose_name=_("User"),
+    )
+    admin = models.ForeignKey(
+        UserModel,
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE,
+        related_name="admin_chat_rooms",
+        verbose_name=_("Admin"),
     )
     room_id = models.CharField(
         max_length=250, blank=True, null=True, verbose_name=_("Room Id")

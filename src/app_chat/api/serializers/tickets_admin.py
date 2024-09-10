@@ -62,7 +62,7 @@ class AdminMessageSerializers(serializers.ModelSerializer):
             chat_room=chat_room_obj, user=self.user, **validated_data
         )
         chat_room_obj.status = ChatRoomModel.ChatRoomStatusOptions.Has_Been_Answered
-        chat_room_obj.members.add(self.user)
+        chat_room_obj.admin = self.user
         chat_room_obj.save()
         return message_obj
 
@@ -146,7 +146,7 @@ class AdminChatRoomRetrieveSerializer(serializers.ModelSerializer):
         ).data
 
     def get_can_close(self, obj):
-        return obj.members.filter(pk=self.user.pk).exists()
+        return obj.admin == self.user
 
 
 class AdminCloseTicketSerializers(serializers.Serializer):
