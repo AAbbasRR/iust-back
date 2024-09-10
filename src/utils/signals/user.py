@@ -23,6 +23,19 @@ def create_user_handler(sender, instance, **kwargs):
         if instance.is_agent:
             instance.locked = True
             instance.save()
+            superusers = UserModel.objects.filter(is_superuser=True)
+            for user in superusers:
+                superuser_mail = ManageMailService(user.email)
+                superuser_mail.send_email_to_user(
+                    subject="ایجنت جدید",
+                    content={
+                        "title": "message",
+                        "data": {
+                            "title": f"یک ایجنت جدید ثبت نام کرده است.",
+                            "description": f"یک ایجنت جدید با ایمیل {instance.email} ثبت نام کرده است و در انتظار تایید است.",
+                        },
+                    },
+                )
         Token.objects.create(user=instance)
         ProfileModel.objects.create(user=instance)
         AddressModel.objects.create(user=instance)
