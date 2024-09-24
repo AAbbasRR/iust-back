@@ -49,7 +49,19 @@ def create_ticket_message_handler(sender, instance, **kwargs):
                     "title": "message",
                     "data": {
                         "title": f"یک پیام جدید ایجاد شده است.",
-                        "description": f"یک پیام جدید از تیکت {user.user_profile.get_full_name()} با ایمیل {user.email} با موضوع {instance.title} ایجاد شده است. ",
+                        "description": f"یک پیام جدید از تیکت {user.user_profile.get_full_name()} با ایمیل {user.email} با موضوع {instance.chat_room.title} ایجاد شده است. ",
+                    },
+                },
+            )
+        else:
+            user_mail = ManageMailService(instance.chat_room.user.email)
+            user_mail.send_email_to_user(
+                subject="New Ticket Message",
+                content={
+                    "title": "message",
+                    "data": {
+                        "title": "Your ticket has been answered",
+                        "description": f"Your Ticket ({instance.chat_room.title}) Has Been Answered From Support Team",
                     },
                 },
             )
