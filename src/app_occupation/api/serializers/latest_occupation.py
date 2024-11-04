@@ -20,11 +20,11 @@ class LatestOccupationSerializer(serializers.ModelSerializer):
         extra_kwargs = {
             "id": {"read_only": True},
             "occupation": {"required": True},
-            "organization": {"required": True},
-            "from_date": {"required": True},
-            "to_date": {"required": True},
-            "country": {"required": True},
-            "city": {"required": True},
+            "organization": {"required": False},
+            "from_date": {"required": False},
+            "to_date": {"required": False},
+            "country": {"required": False},
+            "city": {"required": False},
             "description": {"required": False},
         }
 
