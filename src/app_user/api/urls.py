@@ -50,6 +50,11 @@ urlpatterns = [
         ProfileDetailUpdateView.as_view(),
         name="user_detail_update_profile",
     ),
+    path(
+        "profile/info/detail_update/",
+        ProfileInfoDetailUpdateView.as_view(),
+        name="user_info_detail_update_profile",
+    ),
     # manage address account
     path(
         "address/detail_update/",

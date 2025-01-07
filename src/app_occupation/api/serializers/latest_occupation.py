@@ -14,6 +14,7 @@ class LatestOccupationSerializer(serializers.ModelSerializer):
             "from_date",
             "to_date",
             "country",
+            "state",
             "city",
             "description",
         )
@@ -24,6 +25,7 @@ class LatestOccupationSerializer(serializers.ModelSerializer):
             "from_date": {"required": False},
             "to_date": {"required": False},
             "country": {"required": False},
+            "state": {"required": False},
             "city": {"required": False},
             "description": {"required": False},
         }

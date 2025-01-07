@@ -70,6 +70,7 @@ class AdminApplicationExportResource(resources.ModelResource):
     field_of_study = fields.Field(column_name=_("field_of_study"))
     status = fields.Field(column_name=_("status"))
     jalali_created_at = fields.Field(column_name=_("jalali_created_at"))
+    created_at = fields.Field(column_name=_("created_at"))
     user_id = fields.Field(column_name=_("user_id"))
     user_agent = fields.Field(column_name=_("user_agent"))
     user_full_name = fields.Field(column_name=_("user_full_name"))
@@ -77,6 +78,8 @@ class AdminApplicationExportResource(resources.ModelResource):
     user_country = fields.Field(column_name=_("user_country"))
     user_age = fields.Field(column_name=_("user_age"))
     user_applications_count = fields.Field(column_name=_("user_applications_count"))
+    last_comment = fields.Field(column_name=_("last_comment"))
+    last_commenter = fields.Field(column_name=_("last_commenter"))
 
     class Meta:
         model = ApplicationModel
@@ -87,6 +90,7 @@ class AdminApplicationExportResource(resources.ModelResource):
             "field_of_study",
             "status",
             "jalali_created_at",
+            "created_at",
             "user_id",
             "user_agent",
             "user_full_name",
@@ -94,6 +98,8 @@ class AdminApplicationExportResource(resources.ModelResource):
             "user_country",
             "user_age",
             "user_applications_count",
+            "last_comment",
+            "last_commenter",
         )
 
     def dehydrate_degree(self, obj):
@@ -108,14 +114,14 @@ class AdminApplicationExportResource(resources.ModelResource):
     def dehydrate_field_of_study(self, obj):
         return obj.get_field_of_study_display()
 
-    def dehydrate_university_status(self, obj):
-        return obj.get_university_status_display()
-
-    def dehydrate_faculty_status(self, obj):
-        return obj.get_faculty_status_display()
+    def dehydrate_status(self, obj):
+        return obj.get_status_display()
 
     def dehydrate_jalali_created_at(self, obj):
         return obj.jalali_created_at()
+
+    def dehydrate_created_at(self, obj):
+        return obj.created_at()
 
     def dehydrate_user_id(self, obj):
         return obj.user.id
@@ -137,6 +143,26 @@ class AdminApplicationExportResource(resources.ModelResource):
 
     def dehydrate_user_applications_count(self, obj):
         return obj.user.user_application.count()
+
+    def dehydrate_last_comment(self, obj):
+        message = (
+            obj.application_timeline.exclude(status="Referral")
+            .order_by("-create_at")
+            .first()
+        )
+        if message is None:
+            return None
+        return f"{message.get_status_display()}: {message.message}"
+
+    def dehydrate_last_commenter(self, obj):
+        message = (
+            obj.application_timeline.exclude(status="Referral")
+            .order_by("-create_at")
+            .first()
+        )
+        if message is None:
+            return None
+        return f"{message.user.user_profile.get_full_name()} - {message.user.email}"
 
 
 class AdminDocumentApplicationSerializer(serializers.ModelSerializer):

@@ -10,7 +10,7 @@ from .forget_password import (
     CompleteForgetPasswordView,
 )
 from .change_password import ChangePasswordView
-from .profile import ProfileDetailUpdateView
+from .profile import ProfileDetailUpdateView, ProfileInfoDetailUpdateView
 from .address import AddressDetailUpdateView
 from .user import UserProfileDetailView
 from .admin_detail import AdminDetailDataView

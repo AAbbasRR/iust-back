@@ -110,13 +110,19 @@ class AdminDetailApplicationView(generics.RetrieveAPIView):
 
     def get_queryset(self):
         if self.request.user.is_superuser is True:
-            return ApplicationModel.objects.all().exclude(
-                status=ApplicationModel.ApplicationStatusOptions.Not_Completed
+            return (
+                ApplicationModel.objects.all()
+                .exclude(status=ApplicationModel.ApplicationStatusOptions.Not_Completed)
+                .distinct()
             )
         else:
-            return ApplicationModel.objects.filter(
-                application_referral__destination_user=self.request.user
-            ).exclude(status=ApplicationModel.ApplicationStatusOptions.Not_Completed)
+            return (
+                ApplicationModel.objects.filter(
+                    application_referral__destination_user=self.request.user
+                )
+                .exclude(status=ApplicationModel.ApplicationStatusOptions.Not_Completed)
+                .distinct()
+            )
 
 
 class AdminUpdateApplicationView(generics.UpdateAPIView):

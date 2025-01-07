@@ -39,8 +39,8 @@ def create_ticket_handler(sender, instance, **kwargs):
 @receiver(post_save, sender=MessageModel)
 def create_ticket_message_handler(sender, instance, **kwargs):
     if kwargs["created"]:
-        superuser = instance.chat_room.admin
-        if superuser is not None:
+        if instance.user == instance.chat_room.user:
+            superuser = instance.chat_room.admin
             superuser_mail = ManageMailService(superuser.email)
             user = instance.user
             superuser_mail.send_email_to_user(

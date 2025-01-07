@@ -10,6 +10,7 @@ from app_education.api.serializers.bachelor_degree import BachelorDegreeSerializ
 from app_education.api.serializers.master_degree import MasterDegreeSerializer
 from app_occupation.api.serializers.latest_occupation import LatestOccupationSerializer
 
+from utils.classes import ManageMailService
 from utils.base_errors import BaseErrors
 
 UserModel = get_user_model()
@@ -146,6 +147,17 @@ class ApplicationSerializer(serializers.ModelSerializer):
                 and application_obj.full_name is not None
                 and have_document
             ):
+                user_mail = ManageMailService(application_obj.user.email)
+                user_mail.send_email_to_user(
+                    subject="New Application",
+                    content={
+                        "title": "message",
+                        "data": {
+                            "title": "Your Application successfully Created.",
+                            "description": f"You have created a new application with a tracking code {application_obj.tracking_id}, please wait while it is checked. ",
+                        },
+                    },
+                )
                 application_obj.status = (
                     ApplicationModel.ApplicationStatusOptions.Current
                 )
@@ -209,6 +221,18 @@ class ApplicationSerializer(serializers.ModelSerializer):
                             status=TimeLineModel.TimeLineStatusOptions.Referral,
                             message="رفع ایرادات از سمت کاربر",
                         )
+                else:
+                    user_mail = ManageMailService(instance.user.email)
+                    user_mail.send_email_to_user(
+                        subject="New Application",
+                        content={
+                            "title": "message",
+                            "data": {
+                                "title": "Your Application successfully Created.",
+                                "description": f"You have created a new application with a tracking code {instance.tracking_id}, please wait while it is checked. ",
+                            },
+                        },
+                    )
                 instance.status = ApplicationModel.ApplicationStatusOptions.Current
             instance.save()
             instance.update_application_file()

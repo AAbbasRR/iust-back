@@ -13,6 +13,7 @@ class AddressSerializer(serializers.ModelSerializer):
         fields = (
             "id",
             "country",
+            "state",
             "city",
             "country_code",
             "postal_code",
@@ -22,6 +23,7 @@ class AddressSerializer(serializers.ModelSerializer):
         extra_kwargs = {
             "id": {"read_only": True},
             "country": {"required": True},
+            "state": {"required": True},
             "city": {"required": True},
             "country_code": {"required": False},
             "postal_code": {"required": False},

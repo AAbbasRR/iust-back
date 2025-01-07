@@ -90,3 +90,62 @@ class ProfileSerializer(serializers.ModelSerializer):
             setattr(instance, field_name, validated_data[field_name])
         instance.save()
         return instance
+
+
+class ProfileInfoSerializer(serializers.ModelSerializer):
+    profile_url = serializers.SerializerMethodField("get_profile_url")
+
+    class Meta:
+        model = ProfileModel
+        fields = (
+            "id",
+            "phone_number",
+            "first_name",
+            "last_name",
+            "birth_date",
+            "gender",
+            "nationality",
+            "profile",
+            "profile_url",
+        )
+        extra_kwargs = {
+            "id": {"read_only": True},
+            "phone_number": {"required": True},
+            "first_name": {"required": True},
+            "last_name": {"required": True},
+            "birth_date": {"required": True},
+            "gender": {"required": True, "allow_null": False, "allow_blank": False},
+            "nationality": {"required": True},
+            "profile": {"required": False, "write_only": True},
+            "profile_url": {"read_only": True},
+        }
+
+    def __init__(self, *args, **kwargs):
+        super(ProfileInfoSerializer, self).__init__(*args, **kwargs)
+        self.request = self.context.get("request")
+        if self.request:
+            self.user = self.request.user
+            self.method = self.request.method
+            if self.user.is_agent:
+                self.fields["email"] = serializers.EmailField(
+                    required=True, write_only=True
+                )
+
+    def to_internal_value(self, data):
+        data = data.copy()
+        if data.get("profile") == "null":
+            data["profile"] = None
+        return super().to_internal_value(data)
+
+    def get_profile_url(self, obj):
+        return obj.profile_url(self.request)
+
+    def create(self, validated_data):
+        profile_obj = ProfileModel.objects.create(user=self.user, **validated_data)
+        return profile_obj
+
+    def update(self, instance, validated_data):
+        for field_name in validated_data:  # update profile fields
+            setattr(instance, field_name, validated_data[field_name])
+        instance.save()
+        return instance

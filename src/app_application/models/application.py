@@ -642,11 +642,26 @@ class Application(GeneralDateModel):
             ]
 
             # Function to convert an image file to a PDF
-            def image_to_pdf(image_path):
+            def image_to_pdf(image_path, field_name):
                 img_doc = fitz.open()  # Create a new empty PDF
-                img_doc.new_page(width=595, height=842)  # A4 size page
+                page_width, page_height = 595, 842  # A4 size
+                img_doc.new_page(width=page_width, height=page_height)
+
                 img_page = img_doc.load_page(0)
-                img_page.insert_image(img_page.rect, filename=image_path)
+
+                # Add the image to the page
+                img_rect = fitz.Rect(
+                    50, 50, page_width - 50, page_height - 150
+                )  # Leave some margin
+                img_page.insert_image(img_rect, filename=image_path)
+
+                # Add the file name below the image
+                text_position = fitz.Point(
+                    img_rect.x0 + 10, img_rect.y1 + 10
+                )  # Below the image
+                img_page.insert_text(
+                    text_position, field_name, fontsize=12, color=(0, 0, 0)
+                )  # Black text
                 return img_doc
 
             # Append non-null files to the PDF
@@ -656,7 +671,7 @@ class Application(GeneralDateModel):
                     file_path = file.path
                     file_extension = file_path.split(".")[-1].upper()
                     if file_extension in ["JPEG", "PNG", "JPG"]:
-                        additional_pdf = image_to_pdf(file_path)
+                        additional_pdf = image_to_pdf(file_path, field)
                     elif file_extension == "PDF":
                         additional_pdf = fitz.open(file_path)
                     else:

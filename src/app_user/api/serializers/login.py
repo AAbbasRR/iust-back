@@ -35,6 +35,7 @@ class UserLoginSerializer(serializers.Serializer):
                         "email": user_obj.email,
                         "auth_token": user_token.key,
                         "is_agent": user_obj.is_agent,
+                        "sso_signup": user_obj.sso_signup,
                     }
                 else:
                     raise exceptions.ParseError(BaseErrors.user_account_is_locked)

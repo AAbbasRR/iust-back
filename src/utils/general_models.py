@@ -36,6 +36,12 @@ class GeneralAddressModel(models.Model):
         blank=True,
         verbose_name=_("Country"),
     )
+    state = models.CharField(
+        max_length=40,
+        null=True,
+        blank=True,
+        verbose_name=_("City"),
+    )
     city = models.CharField(
         max_length=40,
         null=True,

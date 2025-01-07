@@ -22,6 +22,7 @@ class UserRegisterSerializer(serializers.ModelSerializer):
         required=True,
         write_only=True,
     )
+    sso_signup = serializers.BooleanField(required=False, default=False)
 
     class Meta:
         model = UserModel
@@ -32,6 +33,7 @@ class UserRegisterSerializer(serializers.ModelSerializer):
             validated_data["email"],
             validated_data["password"],
             validated_data["is_agent"],
+            validated_data["sso_signup"],
         )
         return user
 

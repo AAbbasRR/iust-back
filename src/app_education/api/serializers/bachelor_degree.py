@@ -10,6 +10,7 @@ class BachelorDegreeSerializer(serializers.ModelSerializer):
         fields = (
             "id",
             "country",
+            "state",
             "city",
             "date_of_graduation",
             "gpa",
@@ -19,6 +20,7 @@ class BachelorDegreeSerializer(serializers.ModelSerializer):
         extra_kwargs = {
             "id": {"read_only": True},
             "country": {"required": True, "allow_null": False, "allow_blank": False},
+            "state": {"required": True, "allow_null": False, "allow_blank": False},
             "city": {"required": True, "allow_null": False, "allow_blank": False},
             "date_of_graduation": {
                 "required": True,
