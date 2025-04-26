@@ -79,3 +79,12 @@ class GeneralEducationModel(GeneralAddressModel):
 
     class Meta:
         abstract = True
+
+
+class GeneralMultiLanguageModel(GeneralAddressModel):
+    fa_name = models.CharField(max_length=64, verbose_name=_("Faculty Name"))
+    en_name = models.CharField(max_length=64, verbose_name=_("English Name"))
+    ar_name = models.CharField(max_length=64, verbose_name=_("Arabic Name"))
+
+    class Meta:
+        abstract = True

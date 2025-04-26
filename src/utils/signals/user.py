@@ -20,22 +20,6 @@ UserModel = get_user_model()
 @receiver(post_save, sender=UserModel)
 def create_user_handler(sender, instance, **kwargs):
     if kwargs["created"]:
-        if instance.is_agent:
-            instance.locked = True
-            instance.save()
-            superusers = UserModel.objects.filter(is_superuser=True)
-            for user in superusers:
-                superuser_mail = ManageMailService(user.email)
-                superuser_mail.send_email_to_user(
-                    subject="ایجنت جدید",
-                    content={
-                        "title": "message",
-                        "data": {
-                            "title": f"یک ایجنت جدید ثبت نام کرده است.",
-                            "description": f"یک ایجنت جدید با ایمیل {instance.email} ثبت نام کرده است و در انتظار تایید است.",
-                        },
-                    },
-                )
         Token.objects.create(user=instance)
         ProfileModel.objects.create(user=instance)
         AddressModel.objects.create(user=instance)
@@ -44,5 +28,21 @@ def create_user_handler(sender, instance, **kwargs):
         MasterDegreeModel.objects.create(user=instance)
         LatestOccupationModel.objects.create(user=instance)
         if instance.is_active is False:
+            if instance.is_agent:
+                instance.locked = True
+                instance.save()
+                superusers = UserModel.objects.filter(is_superuser=True)
+                for user in superusers:
+                    superuser_mail = ManageMailService(user.email)
+                    superuser_mail.send_email_to_user(
+                        subject="ایجنت جدید",
+                        content={
+                            "title": "message",
+                            "data": {
+                                "title": f"یک ایجنت جدید ثبت نام کرده است.",
+                                "description": f"یک ایجنت جدید با ایمیل {instance.email} ثبت نام کرده است و در انتظار تایید است.",
+                            },
+                        },
+                    )
             manage_email_obj = ManageMailService(instance.email)
             manage_email_obj.send_otp_code(RedisKeys.activate_account)

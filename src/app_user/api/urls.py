@@ -31,7 +31,11 @@ urlpatterns = [
         name="user_complete_forget_password",
     ),
     # admin staffs
-    path("agents/list/", AdminAgentsListAPIView.as_view(), name="admin_agents_list"),
+    path(
+        "agents/list_create/",
+        AdminAgentsListCreateAPIView.as_view(),
+        name="admin_agents_list_crate",
+    ),
     path(
         "agents/update/<int:pk>/",
         AdminAgentUpdateAPIView.as_view(),

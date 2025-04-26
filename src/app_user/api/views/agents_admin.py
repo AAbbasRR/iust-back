@@ -16,7 +16,7 @@ from utils.versioning import BaseVersioning
 from utils.paginations import BasePagination
 
 
-class AdminAgentsListAPIView(generics.ListAPIView):
+class AdminAgentsListCreateAPIView(generics.ListCreateAPIView):
     permission_classes = [
         IsAuthenticatedPermission,
         IsAdminUserPermission,

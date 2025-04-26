@@ -19,4 +19,26 @@ urlpatterns = [
         MasterDegreeDetailUpdateView.as_view(),
         name="education_master_degree_detail_update",
     ),
+    # Admin Faculty
+    path(
+        "admin/faculties/list_craete/",
+        AdminFacultyListCreateView.as_view(),
+        name="admin_faculties_list_create",
+    ),
+    path(
+        "admin/faculties/update_delete/",
+        AdminFacultyUpdateDeleteView.as_view(),
+        name="admin_faculties_update_delete",
+    ),
+    # Admin Field Of Study
+    path(
+        "admin/field_of_study/list_create/<int:pk>/",
+        AdminFieldOfStudyListCreateView.as_view(),
+        name="admin_field_of_study_list_create",
+    ),
+    path(
+        "admin/field_of_study/update_delete/<int:pk>/",
+        AdminFieldOfStudyUpdateDeleteView.as_view(),
+        name="admin_field_of_study_update_delete",
+    ),
 ]

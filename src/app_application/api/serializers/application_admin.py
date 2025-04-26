@@ -51,10 +51,18 @@ class AdminApplicationListSerializer(serializers.ModelSerializer):
             "user",
         )
 
+    def __init__(self, *args, **kwargs):
+        super(AdminApplicationListSerializer, self).__init__(*args, **kwargs)
+        self.request = self.context.get("request")
+        if self.request:
+            self.admin_user = self.request.user
+
     def get_user(self, obj):
         return {
             "id": obj.user.id,
-            "agent": obj.agent.email if obj.agent is not None else None,
+            "agent": obj.agent.email
+            if obj.agent is not None and self.admin_user.is_superuser is True
+            else None,
             "full_name": obj.user.user_profile.get_full_name(),
             "gender": obj.user.user_profile.get_gender_display(),
             "country": obj.user.user_address.country,
@@ -127,7 +135,11 @@ class AdminApplicationExportResource(resources.ModelResource):
         return obj.user.id
 
     def dehydrate_user_agent(self, obj):
-        return obj.agent.email if obj.agent is not None else None
+        return (
+            obj.agent.email
+            if obj.agent is not None and self.user.is_superuser is True
+            else None
+        )
 
     def dehydrate_user_full_name(self, obj):
         return obj.user.user_profile.get_full_name()
@@ -335,7 +347,9 @@ class AdminDetailApplicationSerializer(serializers.ModelSerializer):
             "country": obj.user.user_address.country,
             "city": obj.user.user_address.city,
             "age": obj.user.user_profile.age,
-            "agent": obj.agent.email if obj.agent is not None else None,
+            "agent": obj.agent.email
+            if obj.agent is not None and self.user.is_superuser is True
+            else None,
             "applications_count": obj.user.user_application.count(),
         }
 
