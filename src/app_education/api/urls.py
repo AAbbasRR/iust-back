@@ -21,7 +21,7 @@ urlpatterns = [
     ),
     # Admin Faculty
     path(
-        "admin/faculties/list_craete/",
+        "admin/faculties/list_create/",
         AdminFacultyListCreateView.as_view(),
         name="admin_faculties_list_create",
     ),

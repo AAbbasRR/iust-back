@@ -65,4 +65,9 @@ urlpatterns = [
         AdminUpdateView.as_view(),
         name="admin_update_setting",
     ),
+    path(
+        "settings/list_settings/",
+        SettingsView.as_view(),
+        name="list_settings",
+    ),
 ]

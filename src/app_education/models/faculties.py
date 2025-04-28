@@ -5,10 +5,21 @@ from utils import GeneralDateModel, GeneralMultiLanguageModel
 
 
 class Faculty(GeneralDateModel, GeneralMultiLanguageModel):
+    class FacultyDegreeOptions(models.TextChoices):
+        Bachelor = "Bachelor", _("Bachelor")
+        Master = "Master", _("Master")
+        PHD = "P.H.D", _("P.H.D")
+
     class Meta:
         verbose_name = _("Faculty")
         verbose_name_plural = _("Faculties")
 
+    degree = models.CharField(
+        max_length=8,
+        choices=FacultyDegreeOptions.choices,
+        default=FacultyDegreeOptions.Bachelor,
+        verbose_name=_("Degree"),
+    )
     is_active = models.BooleanField(default=True, verbose_name=_("Is Active"))
 
 
