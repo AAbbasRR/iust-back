@@ -539,8 +539,13 @@ class AdminSubmitApplicationLetterSerializer(serializers.Serializer):
             if attrs["application"].user.user_profile.gender == "Male"
             else "Miss",
             "<<full_name>>": str(attrs["application"].full_name),
+            "<<degree>>": str(attrs["application"].degree),
             "<<faculty>>": str(attrs["application"].faculty),
             "<<field_of_study>>": f"{str(attrs['application'].faculty).split('Department of ' if 'Department of ' in str(attrs['application'].faculty) else 'School of ')[1]} - {str(attrs['application'].field_of_study)}",
+            "<<nationality>>": str(attrs["application"].user.user_profile.nationality),
+            "<<passport_number>>": str(attrs["application"].user.user_profile.passport_number),
+            "<<avg_bachelor>>": str(attrs["application"].user.user_bachelor_degree.gpa),
+            "<<avg_master>>": str(attrs["application"].user.user_master_degree.gpa),
             "<<count_semesters>>": str(attrs["count_semesters"]),
             "<<count_years>>": str(int(attrs["count_semesters"] / 2)),
             "<<fee>>": str(attrs["fee"]),
