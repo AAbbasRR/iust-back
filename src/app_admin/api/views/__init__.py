@@ -14,3 +14,5 @@ from .staffs_admin import (
     AdminStaffsCreateAPIView,
     AdminStaffsUpdateDeleteAPIView,
 )
+from .settings_admin import AdminSettingsView
+from .settings_admin import AdminUpdateView

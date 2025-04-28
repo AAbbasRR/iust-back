@@ -55,4 +55,14 @@ urlpatterns = [
         AdminReportAverageReviewTimeAPIView.as_view(),
         name="admin_average_timeline_report",
     ),
+    path(
+        "settings/admin_list_settings/",
+        AdminSettingsView.as_view(),
+        name="admin_list_settings",
+    ),
+    path(
+        "settings/admin_update_setting/",
+        AdminUpdateView.as_view(),
+        name="admin_update_setting",
+    ),
 ]

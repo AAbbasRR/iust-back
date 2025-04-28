@@ -19,6 +19,7 @@ class AdminFieldOfStudyListCreateView(generics.ListCreateAPIView):
     pagination_class = BasePagination
     serializer_class = AdminFieldOfStudySerializer
     queryset = FieldOfStudyModel.objects.all()
+    filter_fields = "faculty"
 
 
 class AdminFieldOfStudyUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):

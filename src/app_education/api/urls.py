@@ -26,13 +26,13 @@ urlpatterns = [
         name="admin_faculties_list_create",
     ),
     path(
-        "admin/faculties/update_delete/",
+        "admin/faculties/update_delete/<int:pk>/",
         AdminFacultyUpdateDeleteView.as_view(),
         name="admin_faculties_update_delete",
     ),
     # Admin Field Of Study
     path(
-        "admin/field_of_study/list_create/<int:pk>/",
+        "admin/field_of_study/list_create/",
         AdminFieldOfStudyListCreateView.as_view(),
         name="admin_field_of_study_list_create",
     ),
