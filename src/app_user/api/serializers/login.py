@@ -17,6 +17,9 @@ class UserLoginSerializer(serializers.Serializer):
         write_only=True,
     )
 
+    def validate_email(self, value):
+        return value.lower()
+
     def validate(self, attrs):
         user_obj = UserModel.objects.find_by_email(email=attrs["email"])
         if user_obj is None or user_obj.check_password(attrs["password"]) is False:

@@ -121,17 +121,16 @@ class Profile(GeneralDateModel):
         return f'{self.first_name if self.first_name is not None else ""} {self.last_name if self.last_name is not None else ""}'
 
     def get_age(self):
-        return 1
-        # today = timezone.now().date()
-        # try:
-        #     age = (
-        #         today.year
-        #         - self.birth_date.year
-        #         - (
-        #             (today.month, today.day)
-        #             < (self.birth_date.month, self.birth_date.day)
-        #         )
-        #     )
-        # except AttributeError:
-        #     age = 1
-        # return age
+        today = timezone.now().date()
+        try:
+            age = (
+                today.year
+                - self.birth_date.year
+                - (
+                    (today.month, today.day)
+                    < (self.birth_date.month, self.birth_date.day)
+                )
+            )
+        except AttributeError:
+            age = 1
+        return age
