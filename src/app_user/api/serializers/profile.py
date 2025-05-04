@@ -15,6 +15,7 @@ class ProfileSerializer(serializers.ModelSerializer):
         fields = (
             "id",
             "phone_number",
+            "iran_phone_number",
             "first_name",
             "last_name",
             "birth_date",
@@ -31,6 +32,11 @@ class ProfileSerializer(serializers.ModelSerializer):
         extra_kwargs = {
             "id": {"read_only": True},
             "phone_number": {"required": True},
+            "iran_phone_number": {
+                "required": False,
+                "allow_null": True,
+                "allow_blank": True,
+            },
             "first_name": {"required": True},
             "last_name": {"required": True},
             "birth_date": {"required": True},
@@ -100,6 +106,7 @@ class ProfileInfoSerializer(serializers.ModelSerializer):
         fields = (
             "id",
             "phone_number",
+            "iran_phone_number",
             "first_name",
             "last_name",
             "birth_date",
@@ -111,6 +118,11 @@ class ProfileInfoSerializer(serializers.ModelSerializer):
         extra_kwargs = {
             "id": {"read_only": True},
             "phone_number": {"required": True},
+            "iran_phone_number": {
+                "required": False,
+                "allow_null": True,
+                "allow_blank": True,
+            },
             "first_name": {"required": True},
             "last_name": {"required": True},
             "birth_date": {"required": True},

@@ -47,6 +47,9 @@ class Profile(GeneralDateModel):
     phone_number = models.CharField(
         max_length=50, null=True, verbose_name=_("Phone Number")
     )
+    iran_phone_number = models.CharField(
+        max_length=50, null=True, blank=True, verbose_name=_("Iran Phone Number")
+    )
     first_name = models.CharField(
         max_length=100, null=True, verbose_name=_("First Name")
     )
