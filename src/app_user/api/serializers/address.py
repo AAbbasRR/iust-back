@@ -27,7 +27,7 @@ class AddressSerializer(serializers.ModelSerializer):
             "city": {"required": True},
             "country_code": {"required": False},
             "postal_code": {"required": False},
-            "city_code": {"required": False},
+            "city_code": {"required": False, "allow_blank": True},
             "address": {"required": True},
         }
 
