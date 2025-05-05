@@ -28,6 +28,9 @@ class UserRegisterSerializer(serializers.ModelSerializer):
         model = UserModel
         fields = ("email", "password", "is_agent")
 
+    def validate_email(self, value):
+        return value.lower()
+
     def create(self, validated_data):
         user = UserModel.objects.register_user(
             validated_data["email"],

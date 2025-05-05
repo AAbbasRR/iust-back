@@ -1,6 +1,7 @@
 from rest_framework import generics
 
 from app_application.api.serializers.documents import DocumentsSerializer
+from app_application.models import DocumentModel
 
 from utils import BaseVersioning
 from utils.permissions import IsAuthenticatedPermission
@@ -25,6 +26,8 @@ class DocumentsDetailUpdateView(generics.RetrieveUpdateAPIView):
 
     def get_queryset(self):
         if self.request.user.is_agent:
-            return self.request.user.agent_applications.application_document.all()
+            applications = self.request.user.agent_applications.all()
+            documents = DocumentModel.objects.filter(application__in=applications)
+            return documents
         else:
             return self.request.user.user_documents.all()

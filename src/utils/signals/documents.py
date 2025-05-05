@@ -48,7 +48,7 @@ def auto_delete_file_on_change(sender, instance, **kwargs):
             "trans_script_master_degree",
             "supporting_letter",
         ]
-        for field_name in file_field_names:
-            if getattr(instance, field_name):
-                document_path = getattr(pre_obj, field_name).path
-                os.remove(document_path)
+        # for field_name in file_field_names:
+        #     if getattr(instance, field_name):
+        #         document_path = getattr(pre_obj, field_name).path
+        #         os.remove(document_path)

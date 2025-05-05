@@ -18,11 +18,11 @@ class ForgetPasswordSerializer(serializers.Serializer):
         self.user = None
 
     def validate_email(self, value):
-        user_obj = UserModel.objects.find_by_email(value)
+        user_obj = UserModel.objects.find_by_email(value.lower())
         if user_obj is None:
             raise exceptions.NotFound(BaseErrors.user_not_found)
         self.user = user_obj
-        return value
+        return value.lower()
 
     def validate(self, attrs):
         redis_management = Redis(

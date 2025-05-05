@@ -47,6 +47,9 @@ class Profile(GeneralDateModel):
     phone_number = models.CharField(
         max_length=50, null=True, verbose_name=_("Phone Number")
     )
+    iran_phone_number = models.CharField(
+        max_length=50, null=True, blank=True, verbose_name=_("Iran Phone Number")
+    )
     first_name = models.CharField(
         max_length=100, null=True, verbose_name=_("First Name")
     )
@@ -121,17 +124,16 @@ class Profile(GeneralDateModel):
         return f'{self.first_name if self.first_name is not None else ""} {self.last_name if self.last_name is not None else ""}'
 
     def get_age(self):
-        return 1
-        # today = timezone.now().date()
-        # try:
-        #     age = (
-        #         today.year
-        #         - self.birth_date.year
-        #         - (
-        #             (today.month, today.day)
-        #             < (self.birth_date.month, self.birth_date.day)
-        #         )
-        #     )
-        # except AttributeError:
-        #     age = 1
-        # return age
+        today = timezone.now().date()
+        try:
+            age = (
+                today.year
+                - self.birth_date.year
+                - (
+                    (today.month, today.day)
+                    < (self.birth_date.month, self.birth_date.day)
+                )
+            )
+        except AttributeError:
+            age = 1
+        return age

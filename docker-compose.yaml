@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   back:
     image: iust-backend
@@ -19,7 +17,6 @@ services:
     depends_on:
       - db
       - redis
-      - mailserver
 
   db:
     image: postgres:latest
