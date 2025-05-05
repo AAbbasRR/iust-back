@@ -41,18 +41,21 @@ def create_ticket_message_handler(sender, instance, **kwargs):
     if kwargs["created"]:
         if instance.user == instance.chat_room.user:
             superuser = instance.chat_room.admin
-            superuser_mail = ManageMailService(superuser.email)
-            user = instance.user
-            superuser_mail.send_email_to_user(
-                subject="پیام جدید",
-                content={
-                    "title": "message",
-                    "data": {
-                        "title": f"یک پیام جدید ایجاد شده است.",
-                        "description": f"یک پیام جدید از تیکت {user.user_profile.get_full_name()} با ایمیل {user.email} با موضوع {instance.chat_room.title} ایجاد شده است. ",
+            try:
+                superuser_mail = ManageMailService(superuser.email)
+                user = instance.user
+                superuser_mail.send_email_to_user(
+                    subject="پیام جدید",
+                    content={
+                        "title": "message",
+                        "data": {
+                            "title": f"یک پیام جدید ایجاد شده است.",
+                            "description": f"یک پیام جدید از تیکت {user.user_profile.get_full_name()} با ایمیل {user.email} با موضوع {instance.chat_room.title} ایجاد شده است. ",
+                        },
                     },
-                },
-            )
+                )
+            except AttributeError:
+                pass
         else:
             user_mail = ManageMailService(instance.chat_room.user.email)
             user_mail.send_email_to_user(
