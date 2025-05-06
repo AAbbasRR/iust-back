@@ -26,7 +26,7 @@ class UserRegisterSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = UserModel
-        fields = ("email", "password", "is_agent")
+        fields = ("email", "password", "is_agent", "sso_signup")
 
     def validate_email(self, value):
         return value.lower()
