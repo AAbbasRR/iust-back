@@ -19,6 +19,12 @@ urlpatterns = [
         MasterDegreeDetailUpdateView.as_view(),
         name="education_master_degree_detail_update",
     ),
+    # Faculty
+    path(
+        "faculties/list_create/",
+        FacultyListView.as_view(),
+        name="faculties_list_create",
+    ),
     # Admin Faculty
     path(
         "admin/faculties/list_create/",

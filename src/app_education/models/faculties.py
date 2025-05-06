@@ -29,7 +29,10 @@ class FieldOfStudy(GeneralDateModel, GeneralMultiLanguageModel):
         verbose_name_plural = _("Fields of Study")
 
     faculty = models.ForeignKey(
-        Faculty, on_delete=models.CASCADE, verbose_name=_("Faculty")
+        Faculty,
+        on_delete=models.CASCADE,
+        related_name="fields_of_studies",
+        verbose_name=_("Faculty"),
     )
     is_active = models.BooleanField(default=True, verbose_name=_("Is Active"))
     requires_an_interview = models.BooleanField(
