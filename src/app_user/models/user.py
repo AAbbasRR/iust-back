@@ -14,7 +14,7 @@ class UserManager(BaseUserManager):
     def create_user(self, email=None, password=None, *args, **kwargs):
         if not email:
             raise ValueError(BaseErrors.user_must_have_email)
-        user = self.model(email=self.normalize_email(email), **kwargs)
+        user = self.model(email=self.normalize_email(email.lower()), **kwargs)
         user.set_password(password)
         user.save(using=self._db)
         return user
@@ -53,7 +53,7 @@ class UserManager(BaseUserManager):
         return user
 
     def register_user(
-        self, email=None, password=None, is_agent=False, sso_signup=False
+        self, email=None, password=None, is_agent=False, sso_signup=False, **kwargs
     ):
         if not email:
             raise ValueError(BaseErrors.user_must_have_email)
@@ -61,7 +61,7 @@ class UserManager(BaseUserManager):
             raise ValueError(BaseErrors.user_must_have_password)
         with transaction.atomic():
             user = self.create_user(
-                email, password, is_agent=is_agent, sso_signup=sso_signup
+                email, password, is_agent=is_agent, sso_signup=sso_signup, **kwargs
             )
         return user
 

@@ -18,6 +18,12 @@ urlpatterns = [
     ),
     # login
     path("login/", UserLoginView.as_view(), name="user_login"),
+    # login register with google
+    path(
+        "google_auth/",
+        UserRegisterLoginGoogleAuthView.as_view(),
+        name="user_google_auth",
+    ),
     # forget password
     path("forget_password/", ForgetPasswordView.as_view(), name="user_forget_password"),
     path(

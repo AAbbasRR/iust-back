@@ -4,6 +4,7 @@ from .register import (
     UserReSendRegisterOTPCodeView,
 )
 from .login import UserLoginView
+from .google_auth import UserRegisterLoginGoogleAuthView
 from .forget_password import (
     ForgetPasswordView,
     ValidateForgetPasswordOTPView,
