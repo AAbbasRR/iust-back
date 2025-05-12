@@ -142,8 +142,8 @@ class ApplicationSerializer(serializers.ModelSerializer):
                 application_obj.degree is not None
                 and application_obj.field_of_study is not None
                 and application_obj.faculty is not None
-                and application_obj.financial_self_support is not None
-                and application_obj.applied_program is not None
+                # and application_obj.financial_self_support is not None
+                # and application_obj.applied_program is not None
                 and application_obj.full_name is not None
                 and have_document
             ):
@@ -196,8 +196,8 @@ class ApplicationSerializer(serializers.ModelSerializer):
                 instance.degree is not None
                 and instance.field_of_study is not None
                 and instance.faculty is not None
-                and instance.financial_self_support is not None
-                and instance.applied_program is not None
+                # and instance.financial_self_support is not None
+                # and instance.applied_program is not None
                 and instance.full_name is not None
                 and have_document
             ):

@@ -13,8 +13,9 @@ class UserRegisterLoginGoogleAuthSerializer(serializers.Serializer):
 
     def validate(self, attrs):
         google_response = requests.get(
-            "https://www.googleapis.com/oauth2/v1/userinfo",
+            "https://www.googleapis.com/oauth2/v3/userinfo",
             params={"access_token": attrs["access_token"]},
+            timeout=5,
         )
         if google_response.status_code != 200:
             return serializers.ValidationError(_("Invalid Google Token"))
@@ -23,7 +24,7 @@ class UserRegisterLoginGoogleAuthSerializer(serializers.Serializer):
         email = user_info.get("email")
         password = user_info.get("id")
 
-        user = UserModel.objects.find_by_email(email=email).first()
+        user = UserModel.objects.find_by_email(email=email)
         if user is None:
             user = UserModel.objects.register_user(
                 email.lower(),
