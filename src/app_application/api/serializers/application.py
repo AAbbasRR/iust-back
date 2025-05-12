@@ -116,7 +116,7 @@ class ApplicationSerializer(serializers.ModelSerializer):
         if self.user.is_agent:
             user_email = validated_data.pop("email")
             agent = self.user
-            self.user = UserModel.objects.filter(email=user_email).first()
+            self.user = UserModel.objects.find_by_email(email=user_email)
             if self.user is None:
                 self.user = UserModel.objects.create_user_with_pass(
                     email=user_email, password=self.user.password

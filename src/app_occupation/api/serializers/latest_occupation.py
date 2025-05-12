@@ -47,7 +47,7 @@ class LatestOccupationSerializer(serializers.ModelSerializer):
     def update(self, instance, validated_data):
         if self.user.is_agent:
             user_email = validated_data.pop("email")
-            user = UserModel.objects.filter(email=user_email).first()
+            user = UserModel.objects.find_by_email(email=user_email)
             if user is None:
                 user = UserModel.objects.create_user_with_pass(
                     email=user_email, password=self.user.password
