@@ -22,8 +22,8 @@ class UserManager(BaseUserManager):
     def create_user_with_pass(self, email=None, password=None, *args, **kwargs):
         if not email:
             raise ValueError(BaseErrors.user_must_have_email)
-        user = self.model(email=self.normalize_email(email), **kwargs)
-        user.password = password
+        user = self.model(email=self.normalize_email(email.lower()), **kwargs)
+        user.set_password(password)
         user.save(using=self._db)
         return user
 
@@ -31,7 +31,7 @@ class UserManager(BaseUserManager):
         if not email:
             raise ValueError(BaseErrors.user_must_have_email)
         user = self.model(
-            email=self.normalize_email(email),
+            email=self.normalize_email(email.lower()),
         )
         user.set_password(password)
         user.is_staff = True
@@ -43,7 +43,7 @@ class UserManager(BaseUserManager):
         if not email:
             raise ValueError(BaseErrors.user_must_have_email)
         user = self.model(
-            email=self.normalize_email(email),
+            email=self.normalize_email(email.lower()),
         )
         user.set_password(password)
         user.is_staff = True
@@ -52,7 +52,7 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def register_user(
+    def     register_user(
         self, email=None, password=None, is_agent=False, sso_signup=False, **kwargs
     ):
         if not email:
@@ -61,19 +61,19 @@ class UserManager(BaseUserManager):
             raise ValueError(BaseErrors.user_must_have_password)
         with transaction.atomic():
             user = self.create_user(
-                email, password, is_agent=is_agent, sso_signup=sso_signup, **kwargs
+                email.lower(), password, is_agent=is_agent, sso_signup=sso_signup, **kwargs
             )
         return user
 
     def find_by_email(self, email=None):
         if not email:
             raise ValueError(BaseErrors.user_must_have_email)
-        return self.filter(email=email).first()
+        return self.filter(email=email.lower()).first()
 
     def find_admin_by_email(self, email):
         if not email:
             raise ValueError(BaseErrors.user_must_have_email)
-        return self.filter(email=email, is_staff=True, is_active=True).first()
+        return self.filter(email=email.lower(), is_staff=True, is_active=True).first()
 
 
 class User(AbstractUser):

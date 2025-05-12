@@ -22,7 +22,7 @@ class UserRegisterLoginGoogleAuthSerializer(serializers.Serializer):
 
         user_info = google_response.json()
         email = user_info.get("email")
-        password = user_info.get("id")
+        password = user_info.get("sub")
 
         user = UserModel.objects.find_by_email(email=email)
         if user is None:
