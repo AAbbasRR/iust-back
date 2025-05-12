@@ -9,7 +9,7 @@ def validate_image_file(value):
     if not value:
         return
 
-    allowed_formats = ["JPEG", "PNG", "JPG", "PDF"]
+    allowed_formats = ["JPEG", "PNG", "JPG", "PDF", "DOC", "DOCX", "BMP"]
     file_extension = value.name.split(".")[-1].upper()
     if file_extension not in allowed_formats:
         raise ValidationError(
