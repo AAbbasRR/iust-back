@@ -1,8 +1,11 @@
 from django.contrib.auth import get_user_model
+from django.utils.translation import gettext_lazy as _
 
 from rest_framework import serializers
 
 from app_user.models import ProfileModel
+
+import re
 
 UserModel = get_user_model()
 
@@ -69,6 +72,14 @@ class ProfileSerializer(serializers.ModelSerializer):
                 self.fields["email"] = serializers.EmailField(
                     required=True, write_only=True
                 )
+
+    def validate_phone_number(self, value):
+        pattern = r"^(?:\+|00)[1-9]\d{6,14}$"
+        if not re.match(pattern, value):
+            raise serializers.ValidationError(
+                _("Invalid international phone number format.")
+            )
+        return value
 
     def to_internal_value(self, data):
         data = data.copy()
@@ -142,6 +153,14 @@ class ProfileInfoSerializer(serializers.ModelSerializer):
                 self.fields["email"] = serializers.EmailField(
                     required=True, write_only=True
                 )
+
+    def validate_phone_number(self, value):
+        pattern = r"^(?:\+|00)[1-9]\d{6,14}$"
+        if not re.match(pattern, value):
+            raise serializers.ValidationError(
+                _("Invalid international phone number format.")
+            )
+        return value
 
     def to_internal_value(self, data):
         data = data.copy()

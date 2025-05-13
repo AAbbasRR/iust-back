@@ -44,3 +44,17 @@ class ApplicationDetailUpdateView(generics.RetrieveUpdateAPIView):
             return self.request.user.agent_applications.all()
         else:
             return self.request.user.user_application.all()
+
+
+class ApplicationDeleteView(generics.DestroyAPIView):
+    permission_classes = [
+        IsAuthenticatedPermission,
+    ]
+    versioning_class = BaseVersioning
+    lookup_field = "pk"
+
+    def get_queryset(self):
+        if self.request.user.is_agent:
+            return self.request.user.agent_applications.all()
+        else:
+            return self.request.user.user_application.all()

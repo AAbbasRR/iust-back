@@ -8,7 +8,7 @@ class Faculty(GeneralDateModel, GeneralMultiLanguageModel):
     class FacultyDegreeOptions(models.TextChoices):
         Bachelor = "Bachelor", _("Bachelor")
         Master = "Master", _("Master")
-        PHD = "P.H.D", _("P.H.D")
+        PHD = "P.H.D", _("PhD")
 
     class Meta:
         verbose_name = _("Faculty")

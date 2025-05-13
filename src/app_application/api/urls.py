@@ -12,6 +12,11 @@ urlpatterns = [
         name="application_detail_update",
     ),
     path(
+        "delete/<int:pk>/",
+        ApplicationDeleteView.as_view(),
+        name="application_delete",
+    ),
+    path(
         "document/create/",
         DocumentsCreateView.as_view(),
         name="application_create_document",

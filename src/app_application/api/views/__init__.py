@@ -2,6 +2,7 @@ from .application import (
     ListAllApplicationsView,
     ApplicationCreateView,
     ApplicationDetailUpdateView,
+    ApplicationDeleteView,
 )
 from .application_admin import (
     AdminAllApplicationView,
