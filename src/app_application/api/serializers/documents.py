@@ -23,6 +23,8 @@ class DocumentsSerializer(serializers.ModelSerializer):
             "master_degree",
             "trans_script_master_degree",
             "supporting_letter",
+            "second_supporting_letter",
+            "third_supporting_letter",
         )
         extra_kwargs = {
             "id": {"read_only": True},
@@ -84,6 +86,12 @@ class DocumentsSerializer(serializers.ModelSerializer):
 
     def get_supporting_letter(self, obj):
         return obj.get_field_image_url("supporting_letter", self.request)
+
+    def get_second_supporting_letter(self, obj):
+        return obj.get_field_image_url("second_supporting_letter", self.request)
+
+    def get_third_supporting_letter(self, obj):
+        return obj.get_field_image_url("third_supporting_letter", self.request)
 
     def create(self, validated_data):
         application_obj = validated_data.pop("tracking_id", None)

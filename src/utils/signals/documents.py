@@ -19,6 +19,8 @@ def delete_document_handler(sender, instance, **kwargs):
         "master_degree",
         "trans_script_master_degree",
         "supporting_letter",
+        "second_supporting_letter",
+        "third_supporting_letter",
     ]
     for field_name in file_field_names:
         if getattr(instance, field_name):
@@ -47,6 +49,8 @@ def auto_delete_file_on_change(sender, instance, **kwargs):
             "master_degree",
             "trans_script_master_degree",
             "supporting_letter",
+            "second_supporting_letter",
+            "third_supporting_letter",
         ]
         # for field_name in file_field_names:
         #     if getattr(instance, field_name):

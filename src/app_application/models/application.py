@@ -319,6 +319,8 @@ class Application(GeneralDateModel):
                 "master_degree",
                 "trans_script_master_degree",
                 "supporting_letter",
+                "second_supporting_letter",
+                "third_supporting_letter",
             ]
 
             # Function to convert an image file to a PDF

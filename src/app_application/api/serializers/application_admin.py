@@ -193,6 +193,8 @@ class AdminDocumentApplicationSerializer(serializers.ModelSerializer):
             "master_degree",
             "trans_script_master_degree",
             "supporting_letter",
+            "second_supporting_letter",
+            "third_supporting_letter",
         )
 
     def __init__(self, *args, **kwargs):
@@ -232,6 +234,12 @@ class AdminDocumentApplicationSerializer(serializers.ModelSerializer):
 
     def get_supporting_letter(self, obj):
         return obj.get_field_image_url("supporting_letter", self.request)
+
+    def get_second_supporting_letter(self, obj):
+        return obj.get_field_image_url("second_supporting_letter", self.request)
+
+    def get_third_supporting_letter(self, obj):
+        return obj.get_field_image_url("third_supporting_letter", self.request)
 
 
 class AdminApplicationTimeLineSerializer(serializers.ModelSerializer):
@@ -543,7 +551,9 @@ class AdminSubmitApplicationLetterSerializer(serializers.Serializer):
             "<<faculty>>": str(attrs["application"].faculty),
             "<<field_of_study>>": f"{str(attrs['application'].faculty).split('Department of ' if 'Department of ' in str(attrs['application'].faculty) else 'School of ')[1]} - {str(attrs['application'].field_of_study)}",
             "<<nationality>>": str(attrs["application"].user.user_profile.nationality),
-            "<<passport_number>>": str(attrs["application"].user.user_profile.passport_number),
+            "<<passport_number>>": str(
+                attrs["application"].user.user_profile.passport_number
+            ),
             "<<avg_bachelor>>": str(attrs["application"].user.user_bachelor_degree.gpa),
             "<<avg_master>>": str(attrs["application"].user.user_master_degree.gpa),
             "<<count_semesters>>": str(attrs["count_semesters"]),

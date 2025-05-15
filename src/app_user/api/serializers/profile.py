@@ -75,7 +75,9 @@ class ProfileSerializer(serializers.ModelSerializer):
 
     def validate_phone_number(self, value):
         pattern = r"^(?:\+|00)[1-9]\d{6,14}$"
-        if not re.match(pattern, value):
+        print(pattern)
+        print(value)
+        if not re.fullmatch(pattern, value):
             raise serializers.ValidationError(
                 _("Invalid international phone number format.")
             )

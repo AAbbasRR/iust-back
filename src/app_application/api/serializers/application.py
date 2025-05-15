@@ -19,6 +19,11 @@ UserModel = get_user_model()
 class ApplicationSerializer(serializers.ModelSerializer):
     user_detail = serializers.SerializerMethodField("get_user_detail")
     admin_message = serializers.SerializerMethodField("get_admin_message")
+    degree_display = serializers.CharField(source="get_degree_display", read_only=True)
+    faculty_display = serializers.SerializerMethodField("get_faculty_display")
+    field_of_study_display = serializers.SerializerMethodField(
+        "get_field_of_study_display"
+    )
 
     class Meta:
         model = ApplicationModel
@@ -30,8 +35,11 @@ class ApplicationSerializer(serializers.ModelSerializer):
             "applied_program",
             "financial_self_support",
             "degree",
+            "degree_display",
             "faculty",
+            "faculty_display",
             "field_of_study",
+            "field_of_study_display",
             "status",
             "created_at",
             "user_detail",
@@ -110,6 +118,12 @@ class ApplicationSerializer(serializers.ModelSerializer):
             if last_timeline is not None:
                 return last_timeline.message
         return ""
+
+    def get_faculty_display(self, obj):
+        return getattr(obj.faculty, f"{self.request.LANGUAGE_CODE}_name")
+
+    def get_field_of_study_display(self, obj):
+        return getattr(obj.field_of_study, f"{self.request.LANGUAGE_CODE}_name")
 
     def create(self, validated_data):
         agent = None

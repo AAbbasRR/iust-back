@@ -130,6 +130,24 @@ class Document(GeneralDateModel):
         blank=True,
         verbose_name=_("Supporting Letter"),
     )
+    second_supporting_letter = models.FileField(
+        upload_to=document_image_directory_path,
+        validators=[
+            validate_image_file,
+        ],
+        null=True,
+        blank=True,
+        verbose_name=_("Supporting Letter"),
+    )
+    third_supporting_letter = models.FileField(
+        upload_to=document_image_directory_path,
+        validators=[
+            validate_image_file,
+        ],
+        null=True,
+        blank=True,
+        verbose_name=_("Supporting Letter"),
+    )
 
     objects = DocumentManager()
 
