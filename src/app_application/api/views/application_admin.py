@@ -64,7 +64,7 @@ class AdminExportApplicationListView(generics.GenericAPIView):
             ).exclude(status=ApplicationModel.ApplicationStatusOptions.Not_Completed)
 
     def get(self, *args, **kwargs):
-        resource_class = AdminApplicationExportResource()
+        resource_class = AdminApplicationExportResource(user=self.request.user)
         dataset = resource_class.export(self.get_queryset())
 
         response = HttpResponse(dataset.xlsx, content_type="text/xlsx")
@@ -100,7 +100,7 @@ class AdminExportReferralApplicationListView(generics.GenericAPIView):
         ).distinct()
 
     def get(self, *args, **kwargs):
-        resource_class = AdminApplicationExportResource()
+        resource_class = AdminApplicationExportResource(user=self.request.user)
         dataset = resource_class.export(self.get_queryset())
 
         response = HttpResponse(dataset.xlsx, content_type="text/xlsx")

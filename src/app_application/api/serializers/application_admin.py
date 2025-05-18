@@ -110,6 +110,10 @@ class AdminApplicationExportResource(resources.ModelResource):
             "last_commenter",
         )
 
+    def __init__(self, user=None, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.user = user
+
     def dehydrate_degree(self, obj):
         return obj.get_degree_display()
 
