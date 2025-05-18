@@ -114,13 +114,13 @@ class AdminApplicationExportResource(resources.ModelResource):
         return obj.get_degree_display()
 
     def dehydrate_faculty(self, obj):
-        return obj.get_faculty_display()
+        return obj.faculty.fa_name
 
     def dehydrate_tracking_id(self, obj):
         return obj.tracking_id
 
     def dehydrate_field_of_study(self, obj):
-        return obj.get_field_of_study_display()
+        return obj.field_of_study.fa_name
 
     def dehydrate_status(self, obj):
         return obj.get_status_display()
