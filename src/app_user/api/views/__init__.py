@@ -18,5 +18,6 @@ from .admin_detail import AdminDetailDataView
 from .agents_admin import (
     AdminAgentsListCreateAPIView,
     AdminAgentUpdateAPIView,
+    AdminAgentRejectAccountAPIView,
     AdminAgentListApplicationsAPIView,
 )

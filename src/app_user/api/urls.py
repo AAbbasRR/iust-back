@@ -48,6 +48,11 @@ urlpatterns = [
         name="admin_agents_update",
     ),
     path(
+        "agents/reject/<int:pk>/",
+        AdminAgentRejectAccountAPIView.as_view(),
+        name="admin_agents_reject",
+    ),
+    path(
         "agents/list_applications/",
         AdminAgentListApplicationsAPIView.as_view(),
         name="admin_agents_applications_list",

@@ -24,7 +24,7 @@ class AdminAgentsListSerializers(serializers.ModelSerializer):
         }
 
     def create(self, validated_data):
-        return UserModel.objects.create(
+        return UserModel.objects.create_user(
             **validated_data, is_active=True, is_agent=True, locked=False
         )
 
@@ -33,6 +33,9 @@ class AdminAgentsListSerializers(serializers.ModelSerializer):
 
     def update(self, instance, validated_data):
         for field_name in validated_data:  # update agent fields
-            setattr(instance, field_name, validated_data[field_name])
+            if field_name == "password":
+                instance.change_password(validated_data[field_name])
+            else:
+                setattr(instance, field_name, validated_data[field_name])
         instance.save()
         return instance
