@@ -19,7 +19,7 @@ class AdminAgentsListSerializers(serializers.ModelSerializer):
             "locked",
         )
         extra_kwargs = {
-            "password": {"write_only": True},
+            "password": {"write_only": True, "required": False},
             "formatted_date_joined": {"read_only": True},
         }
 

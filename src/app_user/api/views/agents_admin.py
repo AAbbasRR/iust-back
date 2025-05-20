@@ -14,6 +14,7 @@ from utils.permissions import (
 )
 from utils.versioning import BaseVersioning
 from utils.paginations import BasePagination
+from utils.classes import ManageMailService
 
 
 class AdminAgentsListCreateAPIView(generics.ListCreateAPIView):
@@ -53,7 +54,8 @@ class AdminAgentRejectAccountAPIView(generics.GenericAPIView):
 
     def delete(self, request, *args, **kwargs):
         agent = self.get_object()
-        agent.send_email_to_user(
+        agent_email = ManageMailService(agent.email)
+        agent_email.send_email_to_user(
             subject="رد شدن حساب کارگزاری",
             content={
                 "title": "message",
@@ -63,8 +65,10 @@ class AdminAgentRejectAccountAPIView(generics.GenericAPIView):
                 },
             },
         )
+        agent.is_agent = False
+        agent.is_locked = False
+        agent.save()
         return response.Response(status=status.HTTP_200_OK)
-
 
 
 class AdminAgentListApplicationsAPIView(generics.ListAPIView):
