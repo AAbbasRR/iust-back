@@ -14,13 +14,13 @@ class AdminAgentsListSerializers(serializers.ModelSerializer):
             "id",
             "email",
             "password",
-            "jalali_date_joined",
+            "formatted_date_joined",
             "count_applications",
             "locked",
         )
         extra_kwargs = {
             "password": {"write_only": True},
-            "jalali_date_joined": {"read_only": True},
+            "formatted_date_joined": {"read_only": True},
         }
 
     def create(self, validated_data):

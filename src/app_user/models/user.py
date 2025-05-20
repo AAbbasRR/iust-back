@@ -148,6 +148,11 @@ class User(AbstractUser):
                 f"{settings.DATE_INPUT_FORMATS} - {settings.TIME_INPUT_FORMATS}"
             )
 
+    def formatted_date_joined(self) -> str:
+        return self.date_joined.strftime(
+            f"{settings.DATE_INPUT_FORMATS} {settings.TIME_INPUT_FORMATS}"
+        )
+
     def set_last_login(self):
         """
         :return: When the user logs in, we record her login time as the last login time
