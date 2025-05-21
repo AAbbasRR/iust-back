@@ -28,10 +28,8 @@ import os
 
 class AdminApplicationListSerializer(serializers.ModelSerializer):
     degree = serializers.CharField(source="get_degree_display", read_only=True)
-    faculty = serializers.CharField(source="get_faculty_display", read_only=True)
-    field_of_study = serializers.CharField(
-        source="get_field_of_study_display", read_only=True
-    )
+    faculty = serializers.SerializerMethodField(read_only=True)
+    field_of_study = serializers.SerializerMethodField(read_only=True)
     status = serializers.CharField(source="get_status_display", read_only=True)
     status_value = serializers.CharField(source="status", read_only=True)
 
@@ -56,6 +54,12 @@ class AdminApplicationListSerializer(serializers.ModelSerializer):
         self.request = self.context.get("request")
         if self.request:
             self.admin_user = self.request.user
+
+    def get_faculty(self, obj):
+        return obj.faculty.fa_name
+
+    def get_field_of_study(self, obj):
+        return obj.field_of_study.fa_name
 
     def get_user(self, obj):
         return {
@@ -293,10 +297,8 @@ class AdminRuleSerializer(serializers.ModelSerializer):
 
 class AdminDetailApplicationSerializer(serializers.ModelSerializer):
     degree_display = serializers.CharField(source="get_degree_display", read_only=True)
-    faculty = serializers.CharField(source="get_faculty_display", read_only=True)
-    field_of_study = serializers.CharField(
-        source="get_field_of_study_display", read_only=True
-    )
+    faculty = serializers.SerializerMethodField(read_only=True)
+    field_of_study = serializers.SerializerMethodField(read_only=True)
     status = serializers.CharField(source="get_status_display", read_only=True)
     user = serializers.SerializerMethodField("get_user")
     application_document = serializers.SerializerMethodField("get_application_document")
@@ -345,6 +347,12 @@ class AdminDetailApplicationSerializer(serializers.ModelSerializer):
             if self.method in ["PUT", "PATCH"]:
                 for field_name, field in self.fields.items():
                     field.required = False
+
+    def get_faculty(self, obj):
+        return obj.faculty.fa_name
+
+    def get_field_of_study(self, obj):
+        return obj.field_of_study.fa_name
 
     def get_application_letter_url(self, obj):
         return obj.application_letter_url(self.request)
