@@ -203,7 +203,7 @@ class AdminApplicationExportResource(resources.ModelResource):
         return obj.user.user_profile.get_full_name()
 
     def dehydrate_user_phone_number(self, obj):
-        return obj.user.user_profile.user_phone_number
+        return obj.user.user_profile.phone_number
 
     def dehydrate_user_iran_phone_number(self, obj):
         return obj.user.user_profile.iran_phone_number
