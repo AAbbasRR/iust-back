@@ -84,11 +84,35 @@ class AdminApplicationExportResource(resources.ModelResource):
     jalali_created_at = fields.Field(column_name=_("jalali_created_at"))
     created_at = fields.Field(column_name=_("created_at"))
     user_id = fields.Field(column_name=_("user_id"))
+    user_email = fields.Field(column_name=_("user_email"))
     user_agent = fields.Field(column_name=_("user_agent"))
     user_full_name = fields.Field(column_name=_("user_full_name"))
+    user_phone_number = fields.Field(column_name=_("user_phone_number"))
+    user_iran_phone_number = fields.Field(column_name=_("user_iran_phone_number"))
+    user_nationality = fields.Field(column_name=_("user_nationality"))
+    user_mother_language = fields.Field(column_name=_("user_mother_language"))
+    user_other_languages = fields.Field(column_name=_("user_other_languages"))
+    user_english_status = fields.Field(column_name=_("user_english_status"))
+    user_persian_status = fields.Field(column_name=_("user_persian_status"))
     user_gender = fields.Field(column_name=_("user_gender"))
-    user_country = fields.Field(column_name=_("user_country"))
     user_age = fields.Field(column_name=_("user_age"))
+    user_country = fields.Field(column_name=_("user_country"))
+    user_state = fields.Field(column_name=_("user_state"))
+    user_city = fields.Field(column_name=_("user_city"))
+    user_postal_code = fields.Field(column_name=_("user_postal_code"))
+    user_address = fields.Field(column_name=_("user_address"))
+    bachelor_country = fields.Field(column_name=_("bachelor_country"))
+    bachelor_date_of_graduation = fields.Field(
+        column_name=_("bachelor_date_of_graduation")
+    )
+    bachelor_gpa = fields.Field(column_name=_("bachelor_gpa"))
+    bachelor_field_of_study = fields.Field(column_name=_("bachelor_field_of_study"))
+    bachelor_university = fields.Field(column_name=_("bachelor_university"))
+    master_country = fields.Field(column_name=_("master_country"))
+    master_date_of_graduation = fields.Field(column_name=_("master_date_of_graduation"))
+    master_gpa = fields.Field(column_name=_("master_gpa"))
+    master_field_of_study = fields.Field(column_name=_("master_field_of_study"))
+    master_university = fields.Field(column_name=_("master_university"))
     user_applications_count = fields.Field(column_name=_("user_applications_count"))
     last_comment = fields.Field(column_name=_("last_comment"))
     last_commenter = fields.Field(column_name=_("last_commenter"))
@@ -104,11 +128,34 @@ class AdminApplicationExportResource(resources.ModelResource):
             "jalali_created_at",
             "created_at",
             "user_id",
+            "user_email",
             "user_agent",
             "user_full_name",
+            "user_phone_number",
+            "user_iran_phone_number",
+            "user_nationality",
+            "user_mother_language",
+            "user_other_languages",
+            "user_english_status",
+            "user_persian_status",
+            "user_passport_number",
             "user_gender",
-            "user_country",
             "user_age",
+            "user_country",
+            "user_state",
+            "user_city",
+            "user_postal_code",
+            "user_address",
+            "bachelor_country",
+            "bachelor_date_of_graduation",
+            "bachelor_gpa",
+            "bachelor_field_of_study",
+            "bachelor_university",
+            "master_country",
+            "master_date_of_graduation",
+            "master_gpa",
+            "master_field_of_study",
+            "master_university",
             "user_applications_count",
             "last_comment",
             "last_commenter",
@@ -142,6 +189,9 @@ class AdminApplicationExportResource(resources.ModelResource):
     def dehydrate_user_id(self, obj):
         return obj.user.id
 
+    def dehydrate_user_email(self, obj):
+        return obj.user.email
+
     def dehydrate_user_agent(self, obj):
         return (
             obj.agent.email
@@ -152,14 +202,80 @@ class AdminApplicationExportResource(resources.ModelResource):
     def dehydrate_user_full_name(self, obj):
         return obj.user.user_profile.get_full_name()
 
-    def dehydrate_user_gender(self, obj):
+    def dehydrate_user_phone_number(self, obj):
+        return obj.user.user_profile.user_phone_number
+
+    def dehydrate_user_iran_phone_number(self, obj):
+        return obj.user.user_profile.iran_phone_number
+
+    def dehydrate_user_nationality(self, obj):
+        return obj.user.user_profile.nationality
+
+    def dehydrate_user_mother_language(self, obj):
+        return obj.user.user_profile.mother_language
+
+    def dehydrate_user_other_languages(self, obj):
+        return obj.user.user_profile.other_languages
+
+    def dehydrate_user_english_status(self, obj):
+        return obj.user.user_profile.get_english_status_display()
+
+    def dehydrate_user_persian_status(self, obj):
+        return obj.user.user_profile.get_persian_status_display()
+
+    def dehydrate_user_passport_number(self, obj):
+        return obj.user.user_profile.passport_number
+
+    def dehydrate_user_user_gender(self, obj):
         return obj.user.user_profile.get_gender_display()
+
+    def dehydrate_user_age(self, obj):
+        return obj.user.user_profile.age
 
     def dehydrate_user_country(self, obj):
         return obj.user.user_address.country
 
-    def dehydrate_user_age(self, obj):
-        return obj.user.user_profile.age
+    def dehydrate_user_state(self, obj):
+        return obj.user.user_address.state
+
+    def dehydrate_user_city(self, obj):
+        return obj.user.user_address.city
+
+    def dehydrate_user_postal_code(self, obj):
+        return obj.user.user_address.postal_code
+
+    def dehydrate_user_address(self, obj):
+        return obj.user.user_address.address
+
+    def dehydrate_bachelor_country(self, obj):
+        return obj.user.user_bachelor_degree.country
+
+    def dehydrate_bachelor_date_of_graduation(self, obj):
+        return obj.user.user_bachelor_degree.date_of_graduation
+
+    def dehydrate_bachelor_gpa(self, obj):
+        return obj.user.user_bachelor_degree.gpa
+
+    def dehydrate_bachelor_field_of_study(self, obj):
+        return obj.user.user_bachelor_degree.field_of_study
+
+    def dehydrate_bachelor_university(self, obj):
+        return obj.user.user_bachelor_degree.university
+
+    def dehydrate_master_country(self, obj):
+        return obj.user.user_master_degree.country
+
+    def dehydrate_master_date_of_graduation(self, obj):
+        return obj.user.user_master_degree.date_of_graduation
+
+    def dehydrate_master_gpa(self, obj):
+        return obj.user.user_master_degree.gpa
+
+    def dehydrate_master_field_of_study(self, obj):
+        return obj.user.user_master_degree.field_of_study
+
+    def dehydrate_master_university(self, obj):
+        return obj.user.user_master_degree.university
 
     def dehydrate_user_applications_count(self, obj):
         return obj.user.user_application.count()
