@@ -6,3 +6,4 @@ from .bachelor_degree import (
 )
 from .master_degree import MasterDegree as MasterDegreeModel
 from .faculties import Faculty as FacultyModel, FieldOfStudy as FieldOfStudyModel
+from .groups import FacultyGroups as FacultyGroupsModel

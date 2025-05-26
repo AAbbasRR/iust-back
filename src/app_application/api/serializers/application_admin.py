@@ -226,7 +226,7 @@ class AdminApplicationExportResource(resources.ModelResource):
     def dehydrate_user_passport_number(self, obj):
         return obj.user.user_profile.passport_number
 
-    def dehydrate_user_user_gender(self, obj):
+    def dehydrate_user_gender(self, obj):
         return obj.user.user_profile.get_gender_display()
 
     def dehydrate_user_age(self, obj):

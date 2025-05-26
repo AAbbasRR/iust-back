@@ -7,3 +7,4 @@ from .field_of_study_admin import (
     AdminFieldOfStudyListCreateView,
     AdminFieldOfStudyUpdateDeleteView,
 )
+from .groups_admin import AdminFacultyGroupsListCreateView, AdminFacultyGroupsUpdateDeleteView

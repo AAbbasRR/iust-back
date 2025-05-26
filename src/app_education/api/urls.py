@@ -21,7 +21,7 @@ urlpatterns = [
     ),
     # Faculty
     path(
-        "faculties/list_create/",
+        "faculties/lists/",
         FacultyListView.as_view(),
         name="faculties_list_create",
     ),
@@ -46,5 +46,16 @@ urlpatterns = [
         "admin/field_of_study/update_delete/<int:pk>/",
         AdminFieldOfStudyUpdateDeleteView.as_view(),
         name="admin_field_of_study_update_delete",
+    ),
+# Admin Faculty Groups
+    path(
+        "admin/faculty_groups/list_create/",
+        AdminFacultyGroupsListCreateView.as_view(),
+        name="admin_faculty_groups_list_create",
+    ),
+    path(
+        "admin/faculty_groups/update_delete/<int:pk>/",
+        AdminFacultyUpdateDeleteView.as_view(),
+        name="admin_faculty_groups_update_delete",
     ),
 ]
