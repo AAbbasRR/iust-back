@@ -215,7 +215,7 @@ class Migration(migrations.Migration):
                     models.CharField(
                         choices=[
                             ("Male", "Male"),
-                            ("FeMale", "FeMale"),
+                            ("Female", "Female"),
                             ("Other", "Other"),
                         ],
                         default="Male",

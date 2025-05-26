@@ -1302,7 +1302,7 @@ msgid "Male"
 msgstr "آقا"
 
 #: app_user/models/profile.py:27
-msgid "FeMale"
+msgid "Female"
 msgstr "خانم"
 
 #: app_user/models/profile.py:31

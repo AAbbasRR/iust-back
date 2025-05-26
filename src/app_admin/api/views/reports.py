@@ -108,7 +108,7 @@ class AdminReportDiffrentBarAPIView(generics.GenericAPIView):
                         )
                         .count(),
                         "female": ApplicationModel.objects.filter(
-                            user__user_profile__gender=ProfileModel.ProfileGenderOptions.FeMale
+                            user__user_profile__gender=ProfileModel.ProfileGenderOptions.Female
                         )
                         .exclude(
                             status=ApplicationModel.ApplicationStatusOptions.Not_Completed

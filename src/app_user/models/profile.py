@@ -24,7 +24,7 @@ class Profile(GeneralDateModel):
 
     class ProfileGenderOptions(models.TextChoices):
         Male = "Male", _("Male")
-        FeMale = "FeMale", _("FeMale")
+        Female = "Female", _("Female")
         Other = "Other", _("Other")
 
     class ProfileLanguageOptions(models.TextChoices):

@@ -1301,7 +1301,7 @@ msgid "Male"
 msgstr ""
 
 #: app_user/models/profile.py:27
-msgid "FeMale"
+msgid "Female"
 msgstr ""
 
 #: app_user/models/profile.py:31

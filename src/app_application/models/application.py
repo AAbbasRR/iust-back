@@ -203,7 +203,7 @@ class Application(GeneralDateModel):
             page_0_boolean_points = {
                 "user__user_profile__gender": {
                     "Male": fitz.Point(175, 122),
-                    "FeMale": fitz.Point(210, 122),
+                    "Female": fitz.Point(210, 122),
                 },
                 "user__user_profile__english_status": {
                     "Weak": fitz.Point(444, 157),
