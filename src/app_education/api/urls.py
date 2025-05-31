@@ -20,10 +20,15 @@ urlpatterns = [
         name="education_master_degree_detail_update",
     ),
     # Faculty
+path(
+        "faculties/lists_by_degree/",
+        FacultyListByDegreeView.as_view(),
+        name="faculties_lists_by_degree",
+    ),
     path(
         "faculties/lists/",
         FacultyListView.as_view(),
-        name="faculties_list_create",
+        name="faculties_lists",
     ),
     # Admin Faculty
     path(

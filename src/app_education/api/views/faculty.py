@@ -5,12 +5,12 @@ from app_education.models import FacultyModel
 
 from utils import BaseVersioning
 from utils.paginations import BasePagination
-from utils.permissions import IsAuthenticatedPermission
+from utils.permissions import IsAuthenticatedPermission, IsAdminUserPermission
 
 from collections import defaultdict
 
 
-class FacultyListView(generics.ListAPIView):
+class FacultyListByDegreeView(generics.ListAPIView):
     permission_classes = [
         IsAuthenticatedPermission,
     ]
@@ -28,3 +28,17 @@ class FacultyListView(generics.ListAPIView):
             grouped[degree].append(faculty_data)
 
         return response.Response(grouped)
+
+
+
+class FacultyListView(generics.ListAPIView):
+    permission_classes = [
+        IsAuthenticatedPermission,
+        IsAdminUserPermission
+    ]
+    versioning_class = BaseVersioning
+    queryset = FacultyModel.objects.prefetch_related("fields_of_studies").filter(
+            is_active=True
+        )
+    serializer_class = FacultySerializer
+

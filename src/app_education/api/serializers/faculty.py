@@ -10,6 +10,7 @@ class FieldOfStudySerializer(serializers.ModelSerializer):
 
 
 class FacultySerializer(serializers.ModelSerializer):
+    degree = serializers.CharField(source="get_degree_display", read_only=True)
     fields_of_studies = serializers.SerializerMethodField(
         "get_fields_of_studies", read_only=True
     )
