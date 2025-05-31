@@ -42,9 +42,6 @@ class Command(BaseCommand):
                                     data["Master"]["data"][find_school[0]["value"]],
                                 )
                             )
-                            if len(fields_school) == 0:
-                                print(data["Master"]["data"][find_school[0]["value"]])
-                                print(_object_dict["groupname"])
                             if len(fields_school) > 0:
                                 role = AdminModel.AdminRoleOptions.department_member
                                 if bool(_object_dict["isgrouphead"]):

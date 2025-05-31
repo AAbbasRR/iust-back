@@ -11,6 +11,7 @@ UserModel = get_user_model()
 
 
 class ProfileSerializer(serializers.ModelSerializer):
+    email = serializers.SerializerMethodField()
     profile_url = serializers.SerializerMethodField("get_profile_url")
 
     class Meta:
@@ -29,11 +30,13 @@ class ProfileSerializer(serializers.ModelSerializer):
             "other_languages",
             "english_status",
             "persian_status",
+            "email",
             "profile",
             "profile_url",
         )
         extra_kwargs = {
             "id": {"read_only": True},
+            "email": {"read_only": True},
             "phone_number": {"required": True},
             "iran_phone_number": {
                 "required": False,
@@ -75,8 +78,6 @@ class ProfileSerializer(serializers.ModelSerializer):
 
     def validate_phone_number(self, value):
         pattern = r"^(?:\+|00)[1-9]\d{6,14}$"
-        print(pattern)
-        print(value)
         if not re.fullmatch(pattern, value):
             raise serializers.ValidationError(
                 _("Invalid international phone number format.")
@@ -91,6 +92,9 @@ class ProfileSerializer(serializers.ModelSerializer):
 
     def get_profile_url(self, obj):
         return obj.profile_url(self.request)
+
+    def get_email(self, obj):
+        return obj.user.email
 
     def create(self, validated_data):
         profile_obj = ProfileModel.objects.create(user=self.user, **validated_data)

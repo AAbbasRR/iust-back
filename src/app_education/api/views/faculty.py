@@ -30,15 +30,10 @@ class FacultyListByDegreeView(generics.ListAPIView):
         return response.Response(grouped)
 
 
-
 class FacultyListView(generics.ListAPIView):
-    permission_classes = [
-        IsAuthenticatedPermission,
-        IsAdminUserPermission
-    ]
+    permission_classes = [IsAuthenticatedPermission, IsAdminUserPermission]
     versioning_class = BaseVersioning
     queryset = FacultyModel.objects.prefetch_related("fields_of_studies").filter(
-            is_active=True
-        )
+        is_active=True
+    )
     serializer_class = FacultySerializer
-

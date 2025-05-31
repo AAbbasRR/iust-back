@@ -20,7 +20,7 @@ urlpatterns = [
         name="education_master_degree_detail_update",
     ),
     # Faculty
-path(
+    path(
         "faculties/lists_by_degree/",
         FacultyListByDegreeView.as_view(),
         name="faculties_lists_by_degree",
@@ -52,7 +52,7 @@ path(
         AdminFieldOfStudyUpdateDeleteView.as_view(),
         name="admin_field_of_study_update_delete",
     ),
-# Admin Faculty Groups
+    # Admin Faculty Groups
     path(
         "admin/faculty_groups/list_create/",
         AdminFacultyGroupsListCreateView.as_view(),
