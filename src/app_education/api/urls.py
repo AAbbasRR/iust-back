@@ -60,7 +60,7 @@ urlpatterns = [
     ),
     path(
         "admin/faculty_groups/update_delete/<int:pk>/",
-        AdminFacultyUpdateDeleteView.as_view(),
+        AdminFacultyGroupsUpdateDeleteView.as_view(),
         name="admin_faculty_groups_update_delete",
     ),
 ]
