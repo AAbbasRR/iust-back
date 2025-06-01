@@ -10,14 +10,22 @@ class FieldOfStudySerializer(serializers.ModelSerializer):
 
 
 class FacultySerializer(serializers.ModelSerializer):
-    degree = serializers.CharField(source="get_degree_display", read_only=True)
+    degree_display = serializers.CharField(source="get_degree_display", read_only=True)
     fields_of_studies = serializers.SerializerMethodField(
         "get_fields_of_studies", read_only=True
     )
 
     class Meta:
         model = FacultyModel
-        fields = ["id", "fa_name", "en_name", "ar_name", "degree", "fields_of_studies"]
+        fields = [
+            "id",
+            "fa_name",
+            "en_name",
+            "ar_name",
+            "degree",
+            "degree_display",
+            "fields_of_studies",
+        ]
 
     def get_fields_of_studies(self, obj):
         fields_of_studies = obj.fields_of_studies.filter(is_active=True)
