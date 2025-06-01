@@ -4,10 +4,6 @@ from app_education.models import FacultyModel
 
 
 class AdminFacultySerializer(serializers.ModelSerializer):
-    degree_display = serializers.CharField(
-        source="get_degree_display", read_only=True
-    )
-
     class Meta:
         model = FacultyModel
         fields = (
@@ -15,8 +11,6 @@ class AdminFacultySerializer(serializers.ModelSerializer):
             "fa_name",
             "en_name",
             "ar_name",
-            "degree",
-            "degree_display",
             "is_active",
         )
 

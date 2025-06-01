@@ -22,7 +22,7 @@ class FacultyGroupsSerializer(serializers.ModelSerializer):
         ]
 
     def get_faculty_display(self, obj):
-        return f"{obj.faculty.fa_name}({obj.faculty.get_degree_display()})"
+        return obj.faculty.fa_name
 
     def get_fields_display(self, obj):
         response = []

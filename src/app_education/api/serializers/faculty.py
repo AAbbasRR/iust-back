@@ -10,7 +10,6 @@ class FieldOfStudySerializer(serializers.ModelSerializer):
 
 
 class FacultySerializer(serializers.ModelSerializer):
-    degree_display = serializers.CharField(source="get_degree_display", read_only=True)
     fields_of_studies = serializers.SerializerMethodField(
         "get_fields_of_studies", read_only=True
     )
@@ -22,18 +21,22 @@ class FacultySerializer(serializers.ModelSerializer):
             "fa_name",
             "en_name",
             "ar_name",
-            "degree",
-            "degree_display",
             "fields_of_studies",
         ]
 
     def get_fields_of_studies(self, obj):
-        fields_of_studies = obj.fields_of_studies.filter(is_active=True)
-        return FieldOfStudySerializer(fields_of_studies, many=True).data
+        degree = self.context.get("degree")
+        queryset = obj.fields_of_studies.all()
+
+        if degree == "master":
+            queryset = queryset.filter(master_active=True)
+        elif degree == "phd":
+            queryset = queryset.filter(phd_active=True)
+
+        return FieldOfStudySerializer(queryset, many=True).data
 
 
 class AllFacultySerializer(serializers.ModelSerializer):
-    degree_display = serializers.CharField(source="get_degree_display", read_only=True)
     fields_of_studies = serializers.SerializerMethodField(
         "get_fields_of_studies", read_only=True
     )
@@ -45,8 +48,6 @@ class AllFacultySerializer(serializers.ModelSerializer):
             "fa_name",
             "en_name",
             "ar_name",
-            "degree",
-            "degree_display",
             "fields_of_studies",
         ]
 
