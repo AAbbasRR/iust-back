@@ -1,6 +1,9 @@
 from rest_framework import generics, response
 
-from app_education.api.serializers.faculty import FacultySerializer
+from app_education.api.serializers.faculty import (
+    FacultySerializer,
+    AllFacultySerializer,
+)
 from app_education.models import FacultyModel
 
 from utils import BaseVersioning
@@ -33,7 +36,5 @@ class FacultyListByDegreeView(generics.ListAPIView):
 class FacultyListView(generics.ListAPIView):
     permission_classes = [IsAuthenticatedPermission, IsAdminUserPermission]
     versioning_class = BaseVersioning
-    queryset = FacultyModel.objects.prefetch_related("fields_of_studies").filter(
-        is_active=True
-    )
-    serializer_class = FacultySerializer
+    queryset = FacultyModel.objects.prefetch_related("fields_of_studies").all()
+    serializer_class = AllFacultySerializer
