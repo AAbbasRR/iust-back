@@ -23,15 +23,15 @@ class FacultyListByDegreeView(generics.ListAPIView):
             is_active=True
         )
 
-        grouped = {"master": [], "phd": []}
+        grouped = {"Master": [], "P.H.D": []}
 
-        for degree in ["master", "phd"]:
+        for degree in ["Master", "P.H.D"]:
             serializer = FacultySerializer(
                 faculties,
                 many=True,
                 context={"degree": degree, "request": request},
             )
-            grouped[degree.capitalize()] = serializer.data
+            grouped[degree] = serializer.data
 
         return response.Response(grouped)
 

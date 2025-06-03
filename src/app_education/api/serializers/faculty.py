@@ -28,9 +28,9 @@ class FacultySerializer(serializers.ModelSerializer):
         degree = self.context.get("degree")
         queryset = obj.fields_of_studies.all()
 
-        if degree == "master":
+        if degree == "Master":
             queryset = queryset.filter(master_active=True)
-        elif degree == "phd":
+        elif degree == "P.H.D":
             queryset = queryset.filter(phd_active=True)
 
         return FieldOfStudySerializer(queryset, many=True).data

@@ -24,6 +24,9 @@ class ApplicationSerializer(serializers.ModelSerializer):
     field_of_study_display = serializers.SerializerMethodField(
         "get_field_of_study_display"
     )
+    application_documents = serializers.SerializerMethodField(
+        "get_application_documents"
+    )
 
     class Meta:
         model = ApplicationModel
@@ -42,6 +45,7 @@ class ApplicationSerializer(serializers.ModelSerializer):
             "field_of_study_display",
             "status",
             "created_at",
+            "application_documents",
             "user_detail",
             "admin_message",
             "step",
@@ -73,6 +77,65 @@ class ApplicationSerializer(serializers.ModelSerializer):
                     )
             except Exception:
                 pass
+
+    def get_application_documents(self, obj):
+        application_document = obj.application_documents
+        if application_document:
+            return {
+                "id": application_document.id,
+                "curriculum_vitae": application_document.get_field_image_url(
+                    "curriculum_vitae", self.request
+                ),
+                "personal_photo": application_document.get_field_image_url(
+                    "personal_photo", self.request
+                ),
+                "valid_passport": application_document.get_field_image_url(
+                    "valid_passport", self.request
+                ),
+                "high_school_certificate": application_document.get_field_image_url(
+                    "high_school_certificate", self.request
+                ),
+                "trans_script_high_school_certificate": application_document.get_field_image_url(
+                    "trans_script_high_school_certificate", self.request
+                ),
+                "bachelor_degree": application_document.get_field_image_url(
+                    "bachelor_degree", self.request
+                ),
+                "trans_script_bachelor_degree": application_document.get_field_image_url(
+                    "trans_script_bachelor_degree", self.request
+                ),
+                "master_degree": application_document.get_field_image_url(
+                    "master_degree", self.request
+                ),
+                "trans_script_master_degree": application_document.get_field_image_url(
+                    "trans_script_master_degree", self.request
+                ),
+                "supporting_letter": application_document.get_field_image_url(
+                    "supporting_letter", self.request
+                ),
+                "second_supporting_letter": application_document.get_field_image_url(
+                    "second_supporting_letter", self.request
+                ),
+                "third_supporting_letter": application_document.get_field_image_url(
+                    "third_supporting_letter", self.request
+                ),
+            }
+        else:
+            return {
+                "id": application_document.id,
+                "curriculum_vitae": "",
+                "personal_photo": "",
+                "valid_passport": "",
+                "high_school_certificate": "",
+                "trans_script_high_school_certificate": "",
+                "bachelor_degree": "",
+                "trans_script_bachelor_degree": "",
+                "master_degree": "",
+                "trans_script_master_degree": "",
+                "supporting_letter": "",
+                "second_supporting_letter": "",
+                "third_supporting_letter": "",
+            }
 
     def get_user_detail(self, obj):
         return {
