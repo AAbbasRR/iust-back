@@ -122,7 +122,6 @@ class ApplicationSerializer(serializers.ModelSerializer):
             }
         except Exception:
             return {
-                "id": application_document.id,
                 "curriculum_vitae": "",
                 "personal_photo": "",
                 "valid_passport": "",
