@@ -79,8 +79,8 @@ class ApplicationSerializer(serializers.ModelSerializer):
                 pass
 
     def get_application_documents(self, obj):
-        application_document = obj.application_documents
-        if application_document:
+        try:
+            application_document = obj.application_documents
             return {
                 "id": application_document.id,
                 "curriculum_vitae": application_document.get_field_image_url(
@@ -120,7 +120,7 @@ class ApplicationSerializer(serializers.ModelSerializer):
                     "third_supporting_letter", self.request
                 ),
             }
-        else:
+        except Exception:
             return {
                 "id": application_document.id,
                 "curriculum_vitae": "",
