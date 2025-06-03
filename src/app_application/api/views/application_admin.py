@@ -148,7 +148,7 @@ class AdminUpdateApplicationView(generics.UpdateAPIView):
                     user=self.request.user,
                     role=AdminModel.AdminRoleOptions.faculty_director,
                 )
-                .values_list("schools", flat=True)
+                .values_list("faculties_id", flat=True)
                 .distinct()
             )
             return ApplicationModel.objects.filter(

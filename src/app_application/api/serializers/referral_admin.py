@@ -35,7 +35,7 @@ class AdminCreateReferralSerializer(serializers.ModelSerializer):
 
     def validate(self, attrs):
         destination_users = attrs["destination_users"].filter(
-            Q(user_admin__schools=attrs["application"].faculty) | Q(is_superuser=True)
+            Q(user_admin__faculties=attrs["application"].faculty) | Q(is_superuser=True)
         )
         message = "ارجاع به "
         if self.user.is_superuser is True:
@@ -58,7 +58,7 @@ class AdminCreateReferralSerializer(serializers.ModelSerializer):
         else:
             user_faculty_rule = self.user.user_admin.filter(
                 role=AdminModel.AdminRoleOptions.faculty_director,
-                schools=attrs["application"].faculty,
+                faculties=attrs["application"].faculty,
             ).first()
             if user_faculty_rule is not None:
                 for index, user in enumerate(destination_users):
@@ -80,12 +80,12 @@ class AdminCreateReferralSerializer(serializers.ModelSerializer):
             else:
                 user_head_rule = self.user.user_admin.filter(
                     role=AdminModel.AdminRoleOptions.department_head,
-                    schools=attrs["application"].faculty,
+                    faculties=attrs["application"].faculty,
                     fields=attrs["application"].field_of_study,
                 ).first()
                 if user_head_rule is not None:
                     destination_users = attrs["destination_users"].filter(
-                        user_admin__schools=attrs["application"].faculty
+                        user_admin__faculties=attrs["application"].faculty
                     )
                     for index, user in enumerate(destination_users):
                         if index + 1 == len(destination_users):
