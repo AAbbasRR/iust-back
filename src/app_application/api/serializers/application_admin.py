@@ -513,7 +513,7 @@ class AdminDetailApplicationSerializer(serializers.ModelSerializer):
             Q(faculties=obj.faculty)
             & Q(role=AdminModel.AdminRoleOptions.faculty_director)
             | (
-                Q(fields=obj.field_of_study)
+                Q(fields__fields=obj.field_of_study)
                 & Q(role=AdminModel.AdminRoleOptions.department_head)
             )
         ).first()
