@@ -80,7 +80,7 @@ class ApplicationSerializer(serializers.ModelSerializer):
 
     def get_application_documents(self, obj):
         try:
-            application_document = obj.application_documents
+            application_document = obj.application_document
             return {
                 "id": application_document.id,
                 "curriculum_vitae": application_document.get_field_image_url(
