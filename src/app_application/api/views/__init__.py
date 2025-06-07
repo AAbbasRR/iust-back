@@ -8,6 +8,7 @@ from .application_admin import (
     AdminAllApplicationView,
     AdminExportApplicationListView,
     AdminDetailApplicationView,
+    AdminDeleteApplicationView,
     AdminUpdateApplicationView,
     AdminReferralApplicationListView,
     AdminExportReferralApplicationListView,

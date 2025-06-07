@@ -16,6 +16,7 @@ from app_admin.models import AdminModel
 from utils.permissions import (
     IsAuthenticatedPermission,
     IsAdminUserPermission,
+    IsSuperUserPermission,
     CanIssuanceLetterPermission,
 )
 from utils.versioning import BaseVersioning
@@ -129,6 +130,23 @@ class AdminDetailApplicationView(generics.RetrieveAPIView):
                 .exclude(status=ApplicationModel.ApplicationStatusOptions.Not_Completed)
                 .distinct()
             )
+
+
+class AdminDeleteApplicationView(generics.DestroyAPIView):
+    permission_classes = [
+        IsAuthenticatedPermission,
+        IsAdminUserPermission,
+        IsSuperUserPermission,
+    ]
+    versioning_class = BaseVersioning
+    lookup_field = "pk"
+
+    def get_queryset(self):
+        return (
+            ApplicationModel.objects.all()
+            .exclude(status=ApplicationModel.ApplicationStatusOptions.Not_Completed)
+            .distinct()
+        )
 
 
 class AdminUpdateApplicationView(generics.UpdateAPIView):

@@ -72,6 +72,8 @@ class AdminApplicationListSerializer(serializers.ModelSerializer):
             "country": obj.user.user_address.country,
             "age": obj.user.user_profile.age,
             "applications_count": obj.user.user_application.count(),
+            "bachelor_gpa": obj.user.user_bachelor_degree.gpa,
+            "master_gpa": obj.user.user_master_degree.gpa,
         }
 
 
@@ -595,7 +597,8 @@ class AdminUpdateApplicationSerializer(serializers.ModelSerializer):
 
     def update(self, instance, validated_data):
         user_rule = self.user.user_admin.filter(
-            faculties=instance.faculty, role=AdminModel.AdminRoleOptions.faculty_director
+            faculties=instance.faculty,
+            role=AdminModel.AdminRoleOptions.faculty_director,
         ).first()
         if self.user.is_superuser or user_rule is not None:
             instance.status = validated_data["status"]
