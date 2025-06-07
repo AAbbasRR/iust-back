@@ -52,7 +52,7 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def     register_user(
+    def register_user(
         self, email=None, password=None, is_agent=False, sso_signup=False, **kwargs
     ):
         if not email:
@@ -61,7 +61,11 @@ class UserManager(BaseUserManager):
             raise ValueError(BaseErrors.user_must_have_password)
         with transaction.atomic():
             user = self.create_user(
-                email.lower(), password, is_agent=is_agent, sso_signup=sso_signup, **kwargs
+                email.lower(),
+                password,
+                is_agent=is_agent,
+                sso_signup=sso_signup,
+                **kwargs,
             )
         return user
 
@@ -109,6 +113,7 @@ class User(AbstractUser):
         default=False,
         verbose_name=_("Is Active"),
     )
+    is_admin = models.BooleanField(default=False, verbose_name=_("Is Admin"))
     is_agent = models.BooleanField(default=False, verbose_name=_("Is Agent"))
     locked = models.BooleanField(default=False, verbose_name=_("Is Locked"))
     admin_role = models.CharField(

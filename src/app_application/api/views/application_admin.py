@@ -31,7 +31,10 @@ class AdminAllApplicationView(generics.ListAPIView):
     filterset_class = ApplicationListFilter
 
     def get_queryset(self):
-        if self.request.user.is_superuser is True:
+        if (
+            self.request.user.is_superuser is True
+            and self.request.user.is_admin is True
+        ):
             return (
                 ApplicationModel.objects.all()
                 .exclude(status=ApplicationModel.ApplicationStatusOptions.Not_Completed)
@@ -54,7 +57,10 @@ class AdminExportApplicationListView(generics.GenericAPIView):
     filterset_class = ApplicationListFilter
 
     def get_queryset(self):
-        if self.request.user.is_superuser is True:
+        if (
+            self.request.user.is_superuser is True
+            and self.request.user.is_admin is True
+        ):
             return ApplicationModel.objects.all().exclude(
                 status=ApplicationModel.ApplicationStatusOptions.Not_Completed
             )
@@ -115,7 +121,10 @@ class AdminDetailApplicationView(generics.RetrieveAPIView):
     lookup_field = "pk"
 
     def get_queryset(self):
-        if self.request.user.is_superuser is True:
+        if (
+            self.request.user.is_superuser is True
+            and self.request.user.is_admin is True
+        ):
             return (
                 ApplicationModel.objects.all()
                 .exclude(status=ApplicationModel.ApplicationStatusOptions.Not_Completed)
@@ -138,7 +147,10 @@ class AdminUpdateApplicationView(generics.UpdateAPIView):
     lookup_field = "pk"
 
     def get_queryset(self):
-        if self.request.user.is_superuser is True:
+        if (
+            self.request.user.is_superuser is True
+            and self.request.user.is_admin is True
+        ):
             return ApplicationModel.objects.all().exclude(
                 status=ApplicationModel.ApplicationStatusOptions.Not_Completed
             )
