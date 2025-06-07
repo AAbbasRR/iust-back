@@ -46,6 +46,8 @@ class AdminApplicationListSerializer(serializers.ModelSerializer):
             "field_of_study",
             "status",
             "status_value",
+            "bachelor_gpa",
+            "master_gpa",
             "jalali_created_at",
             "user",
         )
