@@ -32,7 +32,8 @@ class AdminApplicationListSerializer(serializers.ModelSerializer):
     field_of_study = serializers.SerializerMethodField(read_only=True)
     status = serializers.CharField(source="get_status_display", read_only=True)
     status_value = serializers.CharField(source="status", read_only=True)
-
+    bachelor_gpa = serializers.FloatField(read_only=True)
+    master_gpa = serializers.FloatField(read_only=True)
     user = serializers.SerializerMethodField("get_user")
 
     class Meta:
@@ -72,8 +73,6 @@ class AdminApplicationListSerializer(serializers.ModelSerializer):
             "country": obj.user.user_address.country,
             "age": obj.user.user_profile.age,
             "applications_count": obj.user.user_application.count(),
-            "bachelor_gpa": obj.user.user_bachelor_degree.gpa,
-            "master_gpa": obj.user.user_master_degree.gpa,
         }
 
 
