@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-25 02:34+0330\n"
+"POT-Creation-Date: 2025-06-08 03:58+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -38,556 +38,19 @@ msgstr ""
 msgid "App Admins"
 msgstr ""
 
-#: app_admin/models/admin.py:14
+#: app_admin/models/admin.py:15
 msgid "Faculty Director"
 msgstr ""
 
-#: app_admin/models/admin.py:15
+#: app_admin/models/admin.py:16
 msgid "Department Head"
 msgstr ""
 
-#: app_admin/models/admin.py:16
+#: app_admin/models/admin.py:17
 msgid "Department Member"
 msgstr ""
 
-#: app_admin/models/admin.py:20
-msgid "Department of Chemistry"
-msgstr ""
-
-#: app_admin/models/admin.py:23
-msgid "Department of Foreign Language"
-msgstr ""
-
-#: app_admin/models/admin.py:27
-msgid "School of Architecture and Environmental Design"
-msgstr ""
-
-#: app_admin/models/admin.py:30
-msgid "School of Automotive Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:34
-msgid "School of Chemical Petroleum and Gas Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:37
-msgid "School of Civil Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:40
-msgid "School of Computer Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:43
-msgid "School of Electrical Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:46
-msgid "School of Industrial Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:48
-msgid "School of Mathematics"
-msgstr ""
-
-#: app_admin/models/admin.py:50
-msgid "School of Mechanical Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:54
-msgid "School of Metallurgy and Materials Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:57
-msgid "School of Advanced Technologies"
-msgstr ""
-
-#: app_admin/models/admin.py:59
-msgid "School of Physics"
-msgstr ""
-
-#: app_admin/models/admin.py:62
-msgid "School of Management Economy and Progress Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:65
-msgid "School of Railway Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:69
-msgid "Test"
-msgstr ""
-
-#: app_admin/models/admin.py:70
-msgid "Architecture"
-msgstr ""
-
-#: app_admin/models/admin.py:71
-msgid "Industrial Design"
-msgstr ""
-
-#: app_admin/models/admin.py:72
-msgid "Chemical Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:73
-msgid "Civil Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:74
-msgid "Hardware Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:75
-msgid "Software Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:76
-msgid "Communication Systems"
-msgstr ""
-
-#: app_admin/models/admin.py:77
-msgid "Power Systems"
-msgstr ""
-
-#: app_admin/models/admin.py:78
-msgid "Electronics"
-msgstr ""
-
-#: app_admin/models/admin.py:79
-msgid "Control Systems"
-msgstr ""
-
-#: app_admin/models/admin.py:80
-msgid "Industrial Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:82
-msgid "Mathematics and Its Applications"
-msgstr ""
-
-#: app_admin/models/admin.py:84
-msgid "Mechanical Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:88
-msgid "Material and Metallurgical Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:90
-msgid "Atomic and Molecular Physics"
-msgstr ""
-
-#: app_admin/models/admin.py:92
-msgid "Solid State Physics"
-msgstr ""
-
-#: app_admin/models/admin.py:94
-msgid "Railway Transportation Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:97
-msgid "Railway Rolling Stock Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:101
-msgid "Railway Track and Structures Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:103
-msgid "Analytical Chemistry"
-msgstr ""
-
-#: app_admin/models/admin.py:104
-msgid "Inorganic Chemistry"
-msgstr ""
-
-#: app_admin/models/admin.py:105
-msgid "Organic Chemistry"
-msgstr ""
-
-#: app_admin/models/admin.py:106
-msgid "Physical Chemistry"
-msgstr ""
-
-#: app_admin/models/admin.py:107
-msgid "Nano-Chemistry"
-msgstr ""
-
-#: app_admin/models/admin.py:111
-msgid "Teaching English as a Foreign Language"
-msgstr ""
-
-#: app_admin/models/admin.py:112
-msgid "Regional Planning"
-msgstr ""
-
-#: app_admin/models/admin.py:113
-msgid "Architecture - Housing"
-msgstr ""
-
-#: app_admin/models/admin.py:115
-msgid "Architecture - Sustainable"
-msgstr ""
-
-#: app_admin/models/admin.py:118
-msgid "Architecture - Technology"
-msgstr ""
-
-#: app_admin/models/admin.py:123
-msgid "Architecture - Cultural and Educational Spaces"
-msgstr ""
-
-#: app_admin/models/admin.py:125
-msgid "Architecture - Health Care Spaces"
-msgstr ""
-
-#: app_admin/models/admin.py:128
-msgid "Land Spaces Architecture"
-msgstr ""
-
-#: app_admin/models/admin.py:134
-msgid ""
-"Conservation and Restoration of Historical Buildings and Fabrics – "
-"Conservation and Restoration of Urban Heritage"
-msgstr ""
-
-#: app_admin/models/admin.py:140
-msgid ""
-"Conservation and Restoration of Historical Buildings and Fabrics – "
-"Conservation and Restoration of Architectural Heritage"
-msgstr ""
-
-#: app_admin/models/admin.py:142
-msgid "Urban Design"
-msgstr ""
-
-#: app_admin/models/admin.py:143
-msgid "Urban Planning"
-msgstr ""
-
-#: app_admin/models/admin.py:147
-msgid "Automotive Engineering - Automobile Dynamic Systems Design"
-msgstr ""
-
-#: app_admin/models/admin.py:149
-msgid "Automotive Engineering - Power Train"
-msgstr ""
-
-#: app_admin/models/admin.py:154
-msgid "Automotive Engineering - Body and Structure"
-msgstr ""
-
-#: app_admin/models/admin.py:158
-msgid ""
-"Automotive Engineering - Automotive Electronics & Electrical Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:160
-msgid "Process Modeling Simulation & Control"
-msgstr ""
-
-#: app_admin/models/admin.py:162
-msgid "Mineral Chemical Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:164
-msgid "Separation Processes"
-msgstr ""
-
-#: app_admin/models/admin.py:165
-msgid "Kinetic and Catalysis"
-msgstr ""
-
-#: app_admin/models/admin.py:166
-msgid "Thermodynamics"
-msgstr ""
-
-#: app_admin/models/admin.py:167
-msgid "Polymer Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:169
-msgid "Hydrocarbon Reservoir Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:172
-msgid "Process Design Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:174
-msgid "Structural Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:175
-msgid "Earthquake Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:178
-msgid "Construction Management and Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:181
-msgid "Geotechnical Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:184
-msgid "Road and Transportation Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:186
-msgid "Transportation"
-msgstr ""
-
-#: app_admin/models/admin.py:188
-msgid "Water Resources Management"
-msgstr ""
-
-#: app_admin/models/admin.py:193
-msgid "Water Engineering and Hydraulic Structures"
-msgstr ""
-
-#: app_admin/models/admin.py:195
-msgid "Environmental Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:198
-msgid "Marine Structures Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:201
-msgid "Artificial Intelligence & Robotics"
-msgstr ""
-
-#: app_admin/models/admin.py:204
-msgid "Computer Systems Architecture"
-msgstr ""
-
-#: app_admin/models/admin.py:208
-msgid "Computer Engineering - Computer Networks"
-msgstr ""
-
-#: app_admin/models/admin.py:210
-msgid "Bio-Electrics"
-msgstr ""
-
-#: app_admin/models/admin.py:212
-msgid "Digital Electronic Systems"
-msgstr ""
-
-#: app_admin/models/admin.py:215
-msgid "Electronic Integrated Circuits"
-msgstr ""
-
-#: app_admin/models/admin.py:220
-msgid "Electrical Machines and Power Electronics"
-msgstr ""
-
-#: app_admin/models/admin.py:222
-msgid "Electromagnetic Fields and Waves"
-msgstr ""
-
-#: app_admin/models/admin.py:226
-msgid "Information Technology Engineering - Electronic Commerce"
-msgstr ""
-
-#: app_admin/models/admin.py:228
-msgid "Systems Optimization"
-msgstr ""
-
-#: app_admin/models/admin.py:231
-msgid "Supply Chain and Logistic Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:233
-msgid "Engineering Management"
-msgstr ""
-
-#: app_admin/models/admin.py:235
-msgid "Socio-Economic Macro Systems"
-msgstr ""
-
-#: app_admin/models/admin.py:237
-msgid "Project Management"
-msgstr ""
-
-#: app_admin/models/admin.py:238
-msgid "Financial Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:240
-msgid "Pure Mathematics - Algebra"
-msgstr ""
-
-#: app_admin/models/admin.py:243
-msgid "Pure Mathematics - Geometry"
-msgstr ""
-
-#: app_admin/models/admin.py:246
-msgid "Pure Mathematics - Analysis"
-msgstr ""
-
-#: app_admin/models/admin.py:251
-msgid "Applied Mathematics - Numerical Analysis"
-msgstr ""
-
-#: app_admin/models/admin.py:255
-msgid "Applied Mathematics - Operation Research"
-msgstr ""
-
-#: app_admin/models/admin.py:256
-msgid "Mathematics Statistics"
-msgstr ""
-
-#: app_admin/models/admin.py:257
-msgid "Applied Design"
-msgstr ""
-
-#: app_admin/models/admin.py:258
-msgid "Energy Conversion"
-msgstr ""
-
-#: app_admin/models/admin.py:259
-msgid "Manufacturing"
-msgstr ""
-
-#: app_admin/models/admin.py:260
-msgid "Biomechanics"
-msgstr ""
-
-#: app_admin/models/admin.py:261
-msgid "Extractive Metallurgy"
-msgstr ""
-
-#: app_admin/models/admin.py:262
-msgid "Ceramics Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:263
-msgid "Materials Selection"
-msgstr ""
-
-#: app_admin/models/admin.py:264
-msgid "Bio-Materials"
-msgstr ""
-
-#: app_admin/models/admin.py:265
-msgid "Metals Casting"
-msgstr ""
-
-#: app_admin/models/admin.py:266
-msgid "Metals Forming"
-msgstr ""
-
-#: app_admin/models/admin.py:267
-msgid "Nanotechnology - Materials"
-msgstr ""
-
-#: app_admin/models/admin.py:270
-msgid "Energy Systems - Energy and Environment"
-msgstr ""
-
-#: app_admin/models/admin.py:272
-msgid "Satellite Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:273
-msgid "Photonics"
-msgstr ""
-
-#: app_admin/models/admin.py:275
-msgid "Condensed Matter Physics"
-msgstr ""
-
-#: app_admin/models/admin.py:277
-msgid "Laser Optics Physics"
-msgstr ""
-
-#: app_admin/models/admin.py:280
-msgid "Master of Business Administration (MBA) - Marketing"
-msgstr ""
-
-#: app_admin/models/admin.py:284
-msgid "Master of Business Administration (MBA) - Strategy"
-msgstr ""
-
-#: app_admin/models/admin.py:288
-msgid "Management of Technology (MOT) - Technological Innovation"
-msgstr ""
-
-#: app_admin/models/admin.py:292
-msgid "Management of Technology (MOT) - Technological Transfer"
-msgstr ""
-
-#: app_admin/models/admin.py:296
-msgid "Management of Technology (MOT) - Research & Development Policies"
-msgstr ""
-
-#: app_admin/models/admin.py:300
-msgid "Information Technology Management-E-Business"
-msgstr ""
-
-#: app_admin/models/admin.py:303
-msgid "Entrepreneurship - New Businesses"
-msgstr ""
-
-#: app_admin/models/admin.py:307
-msgid "Industrial Engineering - Macro Systems"
-msgstr ""
-
-#: app_admin/models/admin.py:310
-msgid "Economic Development and Planning"
-msgstr ""
-
-#: app_admin/models/admin.py:313
-msgid "Economic Systems Planning"
-msgstr ""
-
-#: app_admin/models/admin.py:316
-msgid "Electric Railways Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:319
-msgid "Railway Safety Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:322
-msgid "Railway Control and Signaling"
-msgstr ""
-
-#: app_admin/models/admin.py:324
-msgid "Urbanism"
-msgstr ""
-
-#: app_admin/models/admin.py:325
-msgid "Quality & Productivity"
-msgstr ""
-
-#: app_admin/models/admin.py:327
-msgid "Applied Mathematics - Statistics"
-msgstr ""
-
-#: app_admin/models/admin.py:330
-msgid "Dynamics Control and Vibration"
-msgstr ""
-
-#: app_admin/models/admin.py:332
-msgid "Solid Mechanics"
-msgstr ""
-
-#: app_admin/models/admin.py:333
-msgid "Materials Engineering"
-msgstr ""
-
-#: app_admin/models/admin.py:336
-msgid "Management of Iranian Public Organization"
-msgstr ""
-
-#: app_admin/models/admin.py:339
-msgid "Science of Technology Policy"
-msgstr ""
-
-#: app_admin/models/admin.py:346 app_application/models/application.py:47
+#: app_admin/models/admin.py:23 app_application/models/application.py:47
 #: app_application/models/documents.py:41 app_application/models/timeline.py:32
 #: app_chat/models/chat_room.py:35 app_chat/models/chat_room.py:82
 #: app_education/models/bachelor_degree.py:19
@@ -595,19 +58,19 @@ msgstr ""
 #: app_education/models/master_degree.py:19
 #: app_notification/models/notification.py:24
 #: app_occupation/models/latest_occupation.py:30 app_user/models/address.py:23
-#: app_user/models/profile.py:39 app_user/models/user.py:81
+#: app_user/models/profile.py:39 app_user/models/user.py:85
 msgid "User"
 msgstr ""
 
-#: app_admin/models/admin.py:352
+#: app_admin/models/admin.py:29
 msgid "Role"
 msgstr ""
 
-#: app_admin/models/admin.py:355
+#: app_admin/models/admin.py:34
 msgid "Schools"
 msgstr ""
 
-#: app_admin/models/admin.py:362
+#: app_admin/models/admin.py:41 app_education/models/groups.py:15
 msgid "Fields"
 msgstr ""
 
@@ -620,211 +83,173 @@ msgid "Settings"
 msgstr ""
 
 #: app_admin/models/settings.py:14
-msgid "Farsi Signup terms"
+msgid "Start register date"
 msgstr ""
 
-#: app_admin/models/settings.py:17
-msgid "English Signup terms"
-msgstr ""
-
-#: app_admin/models/settings.py:20
-msgid "Arabic Signup terms"
-msgstr ""
-
-#: app_admin/models/settings.py:23
-msgid "Farsi Before sign text"
-msgstr ""
-
-#: app_admin/models/settings.py:26
-msgid "English Before sign text"
-msgstr ""
-
-#: app_admin/models/settings.py:29
-msgid "Arabic Before sign text"
-msgstr ""
-
-#: app_admin/models/settings.py:32
-msgid "Farsi Before new application text"
-msgstr ""
-
-#: app_admin/models/settings.py:35
-msgid "English Before new application text"
-msgstr ""
-
-#: app_admin/models/settings.py:38
-msgid "Arabic Before new application text"
-msgstr ""
-
-#: app_admin/models/settings.py:40
-msgid "Admin application text"
-msgstr ""
-
-#: app_admin/models/settings.py:42
-msgid "Start application date"
-msgstr ""
-
-#: app_admin/models/settings.py:44
-msgid "End application date"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:75
-msgid "tracking_id"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:76
-msgid "degree"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:77
-msgid "faculty"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:78
-msgid "field_of_study"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:79
-msgid "status"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:80
-msgid "jalali_created_at"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:81
-msgid "created_at"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:82
-msgid "user_id"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:83
-msgid "user_email"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:84
-msgid "user_agent"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:85
-msgid "user_full_name"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:86
-msgid "user_phone_number"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:87
-msgid "user_iran_phone_number"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:88
-msgid "user_nationality"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:89
-msgid "user_mother_language"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:90
-msgid "user_other_languages"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:91
-msgid "user_english_status"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:92
-msgid "user_persian_status"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:93
-msgid "user_gender"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:94
-msgid "user_age"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:95
-msgid "user_country"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:96
-msgid "user_state"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:97
-msgid "user_city"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:98
-msgid "user_postal_code"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:99
-msgid "user_address"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:100
-msgid "bachelor_country"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:101
-msgid "bachelor_date_of_graduation"
+#: app_admin/models/settings.py:16
+msgid "End register date"
 msgstr ""
 
 #: app_application/api/serializers/application_admin.py:102
-msgid "bachelor_gpa"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:103
-msgid "bachelor_field_of_study"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:104
-msgid "bachelor_university"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:105
-msgid "master_country"
-msgstr ""
-
 #: app_application/api/serializers/application_admin.py:106
-msgid "master_date_of_graduation"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:107
-msgid "master_gpa"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:108
-msgid "master_field_of_study"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:109
-msgid "master_university"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:110
-msgid "user_applications_count"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:111
-msgid "last_comment"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:112
-msgid "last_commenter"
-msgstr ""
-
-#: app_application/api/serializers/application_admin.py:536
-#: app_application/api/serializers/application_admin.py:540
+#: app_application/api/serializers/application_admin.py:619
+#: app_application/api/serializers/application_admin.py:623
 msgid "Superuser"
 msgstr ""
 
-#: app_application/api/serializers/application_admin.py:655
+#: app_application/api/serializers/application_admin.py:149
+msgid "tracking_id"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:150
+msgid "degree"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:151
+msgid "faculty"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:152
+msgid "field_of_study"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:153
+msgid "status"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:154
+msgid "jalali_created_at"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:155
+msgid "created_at"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:156
+msgid "user_id"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:157
+msgid "user_email"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:158
+msgid "user_agent"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:159
+msgid "user_full_name"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:160
+msgid "user_phone_number"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:161
+msgid "user_iran_phone_number"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:162
+msgid "user_nationality"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:163
+msgid "user_mother_language"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:164
+msgid "user_other_languages"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:165
+msgid "user_english_status"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:166
+msgid "user_persian_status"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:167
+msgid "user_gender"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:168
+msgid "user_age"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:169
+msgid "user_country"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:170
+msgid "user_state"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:171
+msgid "user_city"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:172
+msgid "user_postal_code"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:173
+msgid "user_address"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:174
+msgid "bachelor_country"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:176
+msgid "bachelor_date_of_graduation"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:178
+msgid "bachelor_gpa"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:179
+msgid "bachelor_field_of_study"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:180
+msgid "bachelor_university"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:181
+msgid "master_country"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:182
+msgid "master_date_of_graduation"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:183
+msgid "master_gpa"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:184
+msgid "master_field_of_study"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:185
+msgid "master_university"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:186
+msgid "user_applications_count"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:187
+msgid "last_comment"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:188
+msgid "last_commenter"
+msgstr ""
+
+#: app_application/api/serializers/application_admin.py:739
 #: app_application/models/application.py:27
 #: app_application/models/documents.py:35 app_application/models/referral.py:19
 #: app_application/models/timeline.py:26
@@ -864,17 +289,15 @@ msgstr ""
 msgid "Need To Edit"
 msgstr ""
 
-#: app_application/models/application.py:39 app_education/models/faculties.py:9
+#: app_application/models/application.py:39
 msgid "Bachelor"
 msgstr ""
 
 #: app_application/models/application.py:40
-#: app_education/models/faculties.py:10
 msgid "Master"
 msgstr ""
 
 #: app_application/models/application.py:41
-#: app_education/models/faculties.py:11
 msgid "PhD"
 msgstr ""
 
@@ -909,12 +332,11 @@ msgid "Status"
 msgstr ""
 
 #: app_application/models/application.py:84
-#: app_education/models/faculties.py:21
 msgid "Degree"
 msgstr ""
 
-#: app_application/models/application.py:90
-#: app_education/models/faculties.py:14 app_education/models/faculties.py:35
+#: app_application/models/application.py:90 app_education/models/faculties.py:9
+#: app_education/models/faculties.py:24 app_education/models/groups.py:14
 msgid "Faculty"
 msgstr ""
 
@@ -1094,29 +516,41 @@ msgstr ""
 msgid "University"
 msgstr ""
 
-#: app_education/models/faculties.py:15
+#: app_education/models/faculties.py:10
 msgid "Faculties"
 msgstr ""
 
-#: app_education/models/faculties.py:23 app_education/models/faculties.py:37
-#: app_user/models/user.py:110
+#: app_education/models/faculties.py:12 app_education/models/faculties.py:26
+#: app_education/models/faculties.py:27 app_user/models/user.py:114
 msgid "Is Active"
 msgstr ""
 
-#: app_education/models/faculties.py:28
+#: app_education/models/faculties.py:17
 msgid "Field of Study"
 msgstr ""
 
-#: app_education/models/faculties.py:29
+#: app_education/models/faculties.py:18
 msgid "Fields of Study"
 msgstr ""
 
-#: app_education/models/faculties.py:39
+#: app_education/models/faculties.py:29
 msgid "Require Interview"
 msgstr ""
 
-#: app_education/models/faculties.py:41
+#: app_education/models/faculties.py:31
 msgid "Max Members"
+msgstr ""
+
+#: app_education/models/groups.py:9
+msgid "Faculty Group"
+msgstr ""
+
+#: app_education/models/groups.py:10
+msgid "Faculty Groups"
+msgstr ""
+
+#: app_education/models/groups.py:12
+msgid "Name"
 msgstr ""
 
 #: app_education/models/high_school.py:11
@@ -1251,8 +685,8 @@ msgstr ""
 msgid "Invalid Google Token"
 msgstr ""
 
-#: app_user/api/serializers/profile.py:82
-#: app_user/api/serializers/profile.py:163
+#: app_user/api/serializers/profile.py:83
+#: app_user/api/serializers/profile.py:167
 msgid "Invalid international phone number format."
 msgstr ""
 
@@ -1368,35 +802,39 @@ msgstr ""
 msgid "Passport Number"
 msgstr ""
 
-#: app_user/models/user.py:82
+#: app_user/models/user.py:86
 msgid "Users"
 msgstr ""
 
-#: app_user/models/user.py:96
+#: app_user/models/user.py:100
 msgid "Sub Code"
 msgstr ""
 
-#: app_user/models/user.py:99
+#: app_user/models/user.py:103
 msgid "Picture URL"
 msgstr ""
 
-#: app_user/models/user.py:105
+#: app_user/models/user.py:109
 msgid "Email"
 msgstr ""
 
-#: app_user/models/user.py:112
+#: app_user/models/user.py:116
+msgid "Is Admin"
+msgstr ""
+
+#: app_user/models/user.py:117
 msgid "Is Agent"
 msgstr ""
 
-#: app_user/models/user.py:113
+#: app_user/models/user.py:118
 msgid "Is Locked"
 msgstr ""
 
-#: app_user/models/user.py:118
+#: app_user/models/user.py:123
 msgid "Admin Role"
 msgstr ""
 
-#: app_user/models/user.py:121
+#: app_user/models/user.py:126
 msgid "Can Issuance Letter"
 msgstr ""
 

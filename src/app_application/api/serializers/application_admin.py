@@ -12,6 +12,7 @@ from app_application.models import (
     DocumentModel,
     TimeLineModel,
 )
+from app_education.models import FacultyGroupsModel
 from app_user.models import UserModel
 from app_admin.models import AdminModel
 from app_notification.models import NotificationModel
@@ -35,6 +36,9 @@ class AdminApplicationListSerializer(serializers.ModelSerializer):
     bachelor_gpa = serializers.FloatField(read_only=True)
     master_gpa = serializers.FloatField(read_only=True)
     user = serializers.SerializerMethodField("get_user")
+    can_referral = serializers.SerializerMethodField("get_can_referral")
+    group = serializers.SerializerMethodField("get_group")
+    staffs = serializers.SerializerMethodField("get_staffs")
 
     class Meta:
         model = ApplicationModel
@@ -49,6 +53,9 @@ class AdminApplicationListSerializer(serializers.ModelSerializer):
             "bachelor_gpa",
             "master_gpa",
             "jalali_created_at",
+            "can_referral",
+            "group",
+            "staffs",
             "user",
         )
 
@@ -56,7 +63,7 @@ class AdminApplicationListSerializer(serializers.ModelSerializer):
         super(AdminApplicationListSerializer, self).__init__(*args, **kwargs)
         self.request = self.context.get("request")
         if self.request:
-            self.admin_user = self.request.user
+            self.user = self.request.user
 
     def get_faculty(self, obj):
         return obj.faculty.fa_name
@@ -64,11 +71,73 @@ class AdminApplicationListSerializer(serializers.ModelSerializer):
     def get_field_of_study(self, obj):
         return obj.field_of_study.fa_name
 
+    def get_can_referral(self, obj):
+        if self.user.is_superuser:
+            return True
+        else:
+            user_rule = self.user.user_admin.filter(
+                Q(faculties=obj.faculty)
+                & Q(role=AdminModel.AdminRoleOptions.faculty_director)
+                | (
+                    Q(fields__fields=obj.field_of_study)
+                    & Q(role=AdminModel.AdminRoleOptions.department_head)
+                )
+            ).first()
+            return user_rule is not None
+
+    def get_staffs(self, obj):
+        user_faculty_rule = self.user.user_admin.filter(
+            role=AdminModel.AdminRoleOptions.faculty_director,
+            faculties=obj.faculty,
+        ).first()
+        superusers_data = []
+        if self.user.is_superuser or user_faculty_rule is not None:
+            superusers = UserModel.objects.filter(is_superuser=True).exclude(
+                pk=self.user.id
+            )
+            for user in superusers:
+                superusers_data.append(
+                    {
+                        "id": user.id,
+                        "role": "superuser",
+                        "role_display": _("Superuser"),
+                        "sub": user.sub,
+                        "username": user.username,
+                        "full_name": user.get_full_name(),
+                        "fields_display": _("Superuser"),
+                    }
+                )
+        faculty_director = AdminModel.objects.filter(
+            faculties=obj.faculty, role=AdminModel.AdminRoleOptions.faculty_director
+        ).exclude(user__pk=self.user.id)
+        faculty_director_data = AdminRuleSerializer(faculty_director, many=True).data
+        staffs = (
+            AdminModel.objects.filter(
+                faculties=obj.faculty,
+                role__in=[
+                    AdminModel.AdminRoleOptions.department_head,
+                    AdminModel.AdminRoleOptions.department_member,
+                ],
+            )
+            .exclude(user__pk=self.user.id)
+            .order_by("fields", "role")
+        )
+        staffs_data = AdminRuleSerializer(staffs, many=True).data
+        return superusers_data + faculty_director_data + staffs_data
+
+    def get_group(self, obj):
+        faculty_group = obj.field_of_study.field_groups.filter(
+            faculty=obj.faculty
+        ).first()
+        if faculty_group:
+            return faculty_group.name
+        return None
+
     def get_user(self, obj):
         return {
             "id": obj.user.id,
             "agent": obj.agent.email
-            if obj.agent is not None and self.admin_user.is_superuser is True
+            if obj.agent is not None and self.user.is_superuser is True
             else None,
             "full_name": obj.user.user_profile.get_full_name(),
             "gender": obj.user.user_profile.get_gender_display(),
@@ -384,7 +453,7 @@ class AdminApplicationTimeLineSerializer(serializers.ModelSerializer):
 class AdminRuleSerializer(serializers.ModelSerializer):
     id = serializers.SerializerMethodField("get_id")
     role_display = serializers.CharField(source="get_role_display", read_only=True)
-    fields_display = serializers.CharField(source="get_fields_display", read_only=True)
+    fields_display = serializers.SerializerMethodField("get_fields_display")
     sub = serializers.SerializerMethodField("get_sub")
     username = serializers.SerializerMethodField("get_username")
     full_name = serializers.SerializerMethodField("get_full_name")
@@ -412,6 +481,9 @@ class AdminRuleSerializer(serializers.ModelSerializer):
 
     def get_full_name(self, obj):
         return obj.user.get_full_name()
+
+    def get_fields_display(self, obj):
+        return obj.fields.name
 
 
 class AdminDetailApplicationSerializer(serializers.ModelSerializer):
