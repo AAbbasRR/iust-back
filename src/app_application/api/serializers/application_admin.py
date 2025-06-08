@@ -483,7 +483,10 @@ class AdminRuleSerializer(serializers.ModelSerializer):
         return obj.user.get_full_name()
 
     def get_fields_display(self, obj):
-        return obj.fields.name
+        if obj.fields is not None:
+            return obj.fields.name
+        else:
+            return None
 
 
 class AdminDetailApplicationSerializer(serializers.ModelSerializer):
