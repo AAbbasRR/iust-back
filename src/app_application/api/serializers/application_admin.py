@@ -71,6 +71,7 @@ class AdminApplicationListSerializer(serializers.ModelSerializer):
             "gender": obj.user.user_profile.get_gender_display(),
             "country": obj.user.user_address.country,
             "age": obj.user.user_profile.age,
+            "passport_number": obj.user.user_profile.passport_number,
             "applications_count": obj.user.user_application.count(),
         }
 
