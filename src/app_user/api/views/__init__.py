@@ -19,5 +19,6 @@ from .agents_admin import (
     AdminAgentsListCreateAPIView,
     AdminAgentUpdateAPIView,
     AdminAgentRejectAccountAPIView,
+    AdminAgentAcceptAccountAPIView,
     AdminAgentListApplicationsAPIView,
 )

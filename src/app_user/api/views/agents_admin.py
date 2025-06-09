@@ -71,6 +71,34 @@ class AdminAgentRejectAccountAPIView(generics.GenericAPIView):
         return response.Response(status=status.HTTP_200_OK)
 
 
+class AdminAgentAcceptAccountAPIView(generics.GenericAPIView):
+    permission_classes = [
+        IsAuthenticatedPermission,
+        IsAdminUserPermission,
+        IsSuperUserPermission,
+    ]
+    versioning_class = BaseVersioning
+    queryset = UserModel.objects.filter(is_agent=True)
+    lookup_field = "pk"
+
+    def delete(self, request, *args, **kwargs):
+        agent = self.get_object()
+        agent_email = ManageMailService(agent.email)
+        agent_email.send_email_to_user(
+            subject="تایید شدن حساب کارگزاری",
+            content={
+                "title": "message",
+                "data": {
+                    "title": f"درخواست حساب کارگزاری شما رد شده است.",
+                    "description": f"کارگزار محترم حساب شما با موفقیت تایید شد. \n شما می‌توانید با استفاده از لینک زیر و وارد کردن اطلاعات حساب کاربری خود ثبت درخواست دانشجویان را وارد کرده و پیگیری نمایید.\n apply.iust.ac.ir/login\n با تشکر\nدفتر پردیس دانشجویان بین الملل دانشگاه علم و صنعت ایران ",
+                },
+            },
+        )
+        agent.is_locked = False
+        agent.save()
+        return response.Response(status=status.HTTP_200_OK)
+
+
 class AdminAgentListApplicationsAPIView(generics.ListAPIView):
     permission_classes = [
         IsAuthenticatedPermission,
