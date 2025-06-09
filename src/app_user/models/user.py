@@ -158,6 +158,11 @@ class User(AbstractUser):
             f"{settings.DATE_INPUT_FORMATS} {settings.TIME_INPUT_FORMATS}"
         )
 
+    def formatted_last_login(self) -> str:
+        return None if self.last_login is None else self.last_login.strftime(
+            f"{settings.DATE_INPUT_FORMATS} {settings.TIME_INPUT_FORMATS}"
+        )
+
     def set_last_login(self):
         """
         :return: When the user logs in, we record her login time as the last login time

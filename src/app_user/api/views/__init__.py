@@ -20,5 +20,4 @@ from .agents_admin import (
     AdminAgentUpdateAPIView,
     AdminAgentRejectAccountAPIView,
     AdminAgentAcceptAccountAPIView,
-    AdminAgentListApplicationsAPIView,
 )

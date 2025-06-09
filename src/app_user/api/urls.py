@@ -57,11 +57,6 @@ urlpatterns = [
         AdminAgentAcceptAccountAPIView.as_view(),
         name="admin_agents_accept",
     ),
-    path(
-        "agents/list_applications/",
-        AdminAgentListApplicationsAPIView.as_view(),
-        name="admin_agents_applications_list",
-    ),
     # change password
     path("change_password/", ChangePasswordView.as_view(), name="user_change_password"),
     # manage profile account

@@ -18,6 +18,7 @@ class ApplicationListFilter(FilterSet):
         field_name="user__user_address__country", lookup_expr="contains"
     )
     agent = CharFilter(field_name="agent__email", lookup_expr="contains")
+    agent_id = CharFilter(field_name="agent_id")
     gender = CharFilter(field_name="user__user_profile__gender")
     first_name = CharFilter(field_name="user__user_profile__first_name")
     last_name = CharFilter(field_name="user__user_profile__last_name")
@@ -35,6 +36,7 @@ class ApplicationListFilter(FilterSet):
             "field_of_study",
             "country",
             "agent",
+            "agent_id",
             "gender",
             "first_name",
             "last_name",

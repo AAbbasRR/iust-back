@@ -26,6 +26,7 @@ class AdminAgentsListCreateAPIView(generics.ListCreateAPIView):
     versioning_class = BaseVersioning
     pagination_class = BasePagination
     serializer_class = AdminAgentsListSerializers
+    search_fields = ["email"]
     queryset = UserModel.objects.filter(is_agent=True)
 
 
@@ -81,7 +82,7 @@ class AdminAgentAcceptAccountAPIView(generics.GenericAPIView):
     queryset = UserModel.objects.filter(is_agent=True)
     lookup_field = "pk"
 
-    def delete(self, request, *args, **kwargs):
+    def post(self, request, *args, **kwargs):
         agent = self.get_object()
         agent_email = ManageMailService(agent.email)
         agent_email.send_email_to_user(
@@ -95,18 +96,6 @@ class AdminAgentAcceptAccountAPIView(generics.GenericAPIView):
             },
         )
         agent.is_locked = False
+        agent.set_last_login()
         agent.save()
         return response.Response(status=status.HTTP_200_OK)
-
-
-class AdminAgentListApplicationsAPIView(generics.ListAPIView):
-    permission_classes = [
-        IsAuthenticatedPermission,
-        IsAdminUserPermission,
-        IsSuperUserPermission,
-    ]
-    versioning_class = BaseVersioning
-    pagination_class = BasePagination
-    serializer_class = AdminApplicationListSerializer
-    filterset_fields = ["agent"]
-    queryset = ApplicationModel.objects.filter()
