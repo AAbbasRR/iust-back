@@ -23,9 +23,7 @@ class UserSerializer(serializers.ModelSerializer):
 
 class AdminStaffsListCreateUpdateSerializer(serializers.ModelSerializer):
     role_display = serializers.CharField(source="get_role_display", read_only=True)
-    schools_display = serializers.CharField(
-        source="get_schools_display", read_only=True
-    )
+    schools_display = serializers.CharField(source="faculties", read_only=True)
     fields_display = serializers.CharField(source="get_fields_display", read_only=True)
 
     class Meta:
@@ -35,7 +33,7 @@ class AdminStaffsListCreateUpdateSerializer(serializers.ModelSerializer):
             "user",
             "role",
             "role_display",
-            "schools",
+            "faculties",
             "schools_display",
             "fields",
             "fields_display",

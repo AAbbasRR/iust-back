@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-25 02:34+0330\n"
+"POT-Creation-Date: 2025-06-08 03:58+0330\n"
 "PO-Revision-Date: 2024-07-09 13:19+0330\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -40,556 +40,19 @@ msgstr "تطبیق الادارة"
 msgid "App Admins"
 msgstr "تطبیق المدیرین"
 
-#: app_admin/models/admin.py:14
+#: app_admin/models/admin.py:15
 msgid "Faculty Director"
 msgstr "مدیر الکلیة"
 
-#: app_admin/models/admin.py:15
+#: app_admin/models/admin.py:16
 msgid "Department Head"
 msgstr "مدیر الگروب"
 
-#: app_admin/models/admin.py:16
+#: app_admin/models/admin.py:17
 msgid "Department Member"
 msgstr "عضوالمجموعة ( عضو الگروب )"
 
-#: app_admin/models/admin.py:20
-msgid "Department of Chemistry"
-msgstr "کلیة الکیمیاء"
-
-#: app_admin/models/admin.py:23
-msgid "Department of Foreign Language"
-msgstr "کلیة العلوم الأساسیة"
-
-#: app_admin/models/admin.py:27
-msgid "School of Architecture and Environmental Design"
-msgstr "کلیة المعماریة والتخطیط العمرانی"
-
-#: app_admin/models/admin.py:30
-msgid "School of Automotive Engineering"
-msgstr "کلیة هندسة السیارات"
-
-#: app_admin/models/admin.py:34
-msgid "School of Chemical Petroleum and Gas Engineering"
-msgstr "کلیة الهندسة الکیمیائیة للنفط والغاز"
-
-#: app_admin/models/admin.py:37
-msgid "School of Civil Engineering"
-msgstr "کلیة الهندسة العمران"
-
-#: app_admin/models/admin.py:40
-msgid "School of Computer Engineering"
-msgstr "کلیة هندسة الحاسوب"
-
-#: app_admin/models/admin.py:43
-msgid "School of Electrical Engineering"
-msgstr "کلیة الهندسة الکهربائیة"
-
-#: app_admin/models/admin.py:46
-msgid "School of Industrial Engineering"
-msgstr "کلیة الهندسة الصناعیة"
-
-#: app_admin/models/admin.py:48
-msgid "School of Mathematics"
-msgstr "کلیة الریاضیات"
-
-#: app_admin/models/admin.py:50
-msgid "School of Mechanical Engineering"
-msgstr "کلیة الهندسة المیکانیکیة"
-
-#: app_admin/models/admin.py:54
-msgid "School of Metallurgy and Materials Engineering"
-msgstr "کلیة المواد المعدنیة"
-
-#: app_admin/models/admin.py:57
-msgid "School of Advanced Technologies"
-msgstr "کلیة تقنیات جدیدة ( تکنولوجیا جدیدة )"
-
-#: app_admin/models/admin.py:59
-msgid "School of Physics"
-msgstr "کلیة الفیزیاء"
-
-#: app_admin/models/admin.py:62
-msgid "School of Management Economy and Progress Engineering"
-msgstr "کلیة الهندسة المتقدمة ( تطویر )"
-
-#: app_admin/models/admin.py:65
-msgid "School of Railway Engineering"
-msgstr "کلیة هندسة السکک الحدیدیة"
-
-#: app_admin/models/admin.py:69
-msgid "Test"
-msgstr "امتحان"
-
-#: app_admin/models/admin.py:70
-msgid "Architecture"
-msgstr "معماریة ( بنیان )"
-
-#: app_admin/models/admin.py:71
-msgid "Industrial Design"
-msgstr "التصمیم الصناعی"
-
-#: app_admin/models/admin.py:72
-msgid "Chemical Engineering"
-msgstr "مهندس کیمیائی"
-
-#: app_admin/models/admin.py:73
-msgid "Civil Engineering"
-msgstr "مهندس مدنی"
-
-#: app_admin/models/admin.py:74
-msgid "Hardware Engineering"
-msgstr "هندسة المعدات"
-
-#: app_admin/models/admin.py:75
-msgid "Software Engineering"
-msgstr "هندسة البرمجیات"
-
-#: app_admin/models/admin.py:76
-msgid "Communication Systems"
-msgstr "نظم الاتصالات"
-
-#: app_admin/models/admin.py:77
-msgid "Power Systems"
-msgstr "أنظمة القوة"
-
-#: app_admin/models/admin.py:78
-msgid "Electronics"
-msgstr "الکترونیه"
-
-#: app_admin/models/admin.py:79
-msgid "Control Systems"
-msgstr "أنظمة التحکم"
-
-#: app_admin/models/admin.py:80
-msgid "Industrial Engineering"
-msgstr "هندسة صناعیة"
-
-#: app_admin/models/admin.py:82
-msgid "Mathematics and Its Applications"
-msgstr "الریاضیات وتطبیقاتها"
-
-#: app_admin/models/admin.py:84
-msgid "Mechanical Engineering"
-msgstr "مهندس میکانیکی"
-
-#: app_admin/models/admin.py:88
-msgid "Material and Metallurgical Engineering"
-msgstr "هندسة المواد المعدنیة"
-
-#: app_admin/models/admin.py:90
-msgid "Atomic and Molecular Physics"
-msgstr "الفیزیاء الذریة والجزیئیة"
-
-#: app_admin/models/admin.py:92
-msgid "Solid State Physics"
-msgstr "فیزیاء الحالة الصلبیة"
-
-#: app_admin/models/admin.py:94
-msgid "Railway Transportation Engineering"
-msgstr "هندسة النقل بالسکک الحدیدیة"
-
-#: app_admin/models/admin.py:97
-msgid "Railway Rolling Stock Engineering"
-msgstr "هندسة السکک الحدیدیةو البناء"
-
-#: app_admin/models/admin.py:101
-msgid "Railway Track and Structures Engineering"
-msgstr "الکیمیاء التحلیلیة"
-
-#: app_admin/models/admin.py:103
-msgid "Analytical Chemistry"
-msgstr "الکیمیاء المعدنیة"
-
-#: app_admin/models/admin.py:104
-msgid "Inorganic Chemistry"
-msgstr "الکیمیاء المعدنیة"
-
-#: app_admin/models/admin.py:105
-msgid "Organic Chemistry"
-msgstr "الکیمیاء العضویة"
-
-#: app_admin/models/admin.py:106
-msgid "Physical Chemistry"
-msgstr "الکیمیاء الفیزیائیة"
-
-#: app_admin/models/admin.py:107
-msgid "Nano-Chemistry"
-msgstr "کیمیاء النانو"
-
-#: app_admin/models/admin.py:111
-msgid "Teaching English as a Foreign Language"
-msgstr "تعلیم اللغة الإنجلیزیة کلغة أجنبیة"
-
-#: app_admin/models/admin.py:112
-msgid "Regional Planning"
-msgstr "التخطیط الاقلیمی"
-
-#: app_admin/models/admin.py:113
-msgid "Architecture - Housing"
-msgstr "معماریة _ السکن"
-
-#: app_admin/models/admin.py:115
-msgid "Architecture - Sustainable"
-msgstr "معماریة _ مستقر"
-
-#: app_admin/models/admin.py:118
-msgid "Architecture - Technology"
-msgstr "معماریة_ تکنولوجیا"
-
-#: app_admin/models/admin.py:123
-msgid "Architecture - Cultural and Educational Spaces"
-msgstr "معماریة - مساحات ثقافیة التعلیمیة"
-
-#: app_admin/models/admin.py:125
-msgid "Architecture - Health Care Spaces"
-msgstr "معماریة - مساحات الرعائة الصحیة"
-
-#: app_admin/models/admin.py:128
-msgid "Land Spaces Architecture"
-msgstr "معماری _ مساحات الارض"
-
-#: app_admin/models/admin.py:134
-msgid ""
-"Conservation and Restoration of Historical Buildings and Fabrics – "
-"Conservation and Restoration of Urban Heritage"
-msgstr "حفاظ وترمیم الابنیة التاریخیة و احیاء المیراث"
-
-#: app_admin/models/admin.py:140
-msgid ""
-"Conservation and Restoration of Historical Buildings and Fabrics – "
-"Conservation and Restoration of Architectural Heritage"
-msgstr "حفاظ وترمیم الابنیة التاریخیة واحیاء المیراث"
-
-#: app_admin/models/admin.py:142
-msgid "Urban Design"
-msgstr "التصمیم الحضری"
-
-#: app_admin/models/admin.py:143
-msgid "Urban Planning"
-msgstr "التخطیط العمرانی ( حضری )"
-
-#: app_admin/models/admin.py:147
-msgid "Automotive Engineering - Automobile Dynamic Systems Design"
-msgstr "هندسة السیارات _ تصمیم الأنظمة الدینامیکیة للمرکبات"
-
-#: app_admin/models/admin.py:149
-msgid "Automotive Engineering - Power Train"
-msgstr "هندسة السیارات _ قطار الکهربائی"
-
-#: app_admin/models/admin.py:154
-msgid "Automotive Engineering - Body and Structure"
-msgstr "هندسة السیارات _ الکترونیات السیارات والهندسة الکهربائیة"
-
-#: app_admin/models/admin.py:158
-msgid ""
-"Automotive Engineering - Automotive Electronics & Electrical Engineering"
-msgstr "هندسة السیارات_ الکترونیات  السیارات والهندسة الکهربائیة"
-
-#: app_admin/models/admin.py:160
-msgid "Process Modeling Simulation & Control"
-msgstr "محاکاة والتحکم فی نمذجة العملیات"
-
-#: app_admin/models/admin.py:162
-msgid "Mineral Chemical Engineering"
-msgstr "الهندسة الکیمیائیة المعدنیة"
-
-#: app_admin/models/admin.py:164
-msgid "Separation Processes"
-msgstr "عملیات الفصل ( فصل العملیات )"
-
-#: app_admin/models/admin.py:165
-msgid "Kinetic and Catalysis"
-msgstr "الحرکیة والحفر  ( المحفز الحرکی )"
-
-#: app_admin/models/admin.py:166
-msgid "Thermodynamics"
-msgstr "الدینامیکا الحراریة"
-
-#: app_admin/models/admin.py:167
-msgid "Polymer Engineering"
-msgstr "هندسة البولیمر"
-
-#: app_admin/models/admin.py:169
-msgid "Hydrocarbon Reservoir Engineering"
-msgstr "هندسة الخزانات الهیدروکربونیة"
-
-#: app_admin/models/admin.py:172
-msgid "Process Design Engineering"
-msgstr "هندسة تصمیم العملیات"
-
-#: app_admin/models/admin.py:174
-msgid "Structural Engineering"
-msgstr "هندسة إنشائی"
-
-#: app_admin/models/admin.py:175
-msgid "Earthquake Engineering"
-msgstr "مهندسی زلزلة"
-
-#: app_admin/models/admin.py:178
-msgid "Construction Management and Engineering"
-msgstr "الإدارة والهندسة بناء"
-
-#: app_admin/models/admin.py:181
-msgid "Geotechnical Engineering"
-msgstr "مهندس جیوتقنیة"
-
-#: app_admin/models/admin.py:184
-msgid "Road and Transportation Engineering"
-msgstr "هندسة الطرق والنقل"
-
-#: app_admin/models/admin.py:186
-msgid "Transportation"
-msgstr "مواصلات"
-
-#: app_admin/models/admin.py:188
-msgid "Water Resources Management"
-msgstr "إدارة الموارد المائیة"
-
-#: app_admin/models/admin.py:193
-msgid "Water Engineering and Hydraulic Structures"
-msgstr "هندسة المیاه والهیاکل الهیدرولیکیة"
-
-#: app_admin/models/admin.py:195
-msgid "Environmental Engineering"
-msgstr "هندسة البیئة"
-
-#: app_admin/models/admin.py:198
-msgid "Marine Structures Engineering"
-msgstr "مهندس إنشائی بحری"
-
-#: app_admin/models/admin.py:201
-msgid "Artificial Intelligence & Robotics"
-msgstr "الذکاء الاصناعی والروبوتیة"
-
-#: app_admin/models/admin.py:204
-msgid "Computer Systems Architecture"
-msgstr "معماریة أنظمة الحاسوب"
-
-#: app_admin/models/admin.py:208
-msgid "Computer Engineering - Computer Networks"
-msgstr "هندسة الحاسوب - شبکات الحاسب"
-
-#: app_admin/models/admin.py:210
-msgid "Bio-Electrics"
-msgstr "الکهربائیة الحیویة"
-
-#: app_admin/models/admin.py:212
-msgid "Digital Electronic Systems"
-msgstr "الأنظمة الالکترونیة الرقمیة"
-
-#: app_admin/models/admin.py:215
-msgid "Electronic Integrated Circuits"
-msgstr "الدوائر الإلکترونیة المتکاملة"
-
-#: app_admin/models/admin.py:220
-msgid "Electrical Machines and Power Electronics"
-msgstr "الآلات الکهربائیة والکترونیات القوی"
-
-#: app_admin/models/admin.py:222
-msgid "Electromagnetic Fields and Waves"
-msgstr "المجالات والموجات الکهرومغناطیسیة"
-
-#: app_admin/models/admin.py:226
-msgid "Information Technology Engineering - Electronic Commerce"
-msgstr "هندسة تکنولوجیا المعلومات  -التجارة الإلکترونیة"
-
-#: app_admin/models/admin.py:228
-msgid "Systems Optimization"
-msgstr "تحسین النظام"
-
-#: app_admin/models/admin.py:231
-msgid "Supply Chain and Logistic Engineering"
-msgstr "مهندس سلسلة التورید والخدمات اللوجستیة"
-
-#: app_admin/models/admin.py:233
-msgid "Engineering Management"
-msgstr "الإدارة الهندسیة"
-
-#: app_admin/models/admin.py:235
-msgid "Socio-Economic Macro Systems"
-msgstr "النظم الاجتماعیة الکلیة _ اقتصادی"
-
-#: app_admin/models/admin.py:237
-msgid "Project Management"
-msgstr "ادارة مشروع"
-
-#: app_admin/models/admin.py:238
-msgid "Financial Engineering"
-msgstr "الهندسة المالیة"
-
-#: app_admin/models/admin.py:240
-msgid "Pure Mathematics - Algebra"
-msgstr "الریاضیات البحتة _ الجبر"
-
-#: app_admin/models/admin.py:243
-msgid "Pure Mathematics - Geometry"
-msgstr "الریاضیات البحتة _ الجبر"
-
-#: app_admin/models/admin.py:246
-msgid "Pure Mathematics - Analysis"
-msgstr "الریاضیات البحتة _ التحلیل"
-
-#: app_admin/models/admin.py:251
-msgid "Applied Mathematics - Numerical Analysis"
-msgstr "الریاضیات التطبیقیة _ التحلیل العددی"
-
-#: app_admin/models/admin.py:255
-msgid "Applied Mathematics - Operation Research"
-msgstr "الریاضیات التطبیقیة _ بحوث العملیات"
-
-#: app_admin/models/admin.py:256
-msgid "Mathematics Statistics"
-msgstr "إحصائیات الریاضیات"
-
-#: app_admin/models/admin.py:257
-msgid "Applied Design"
-msgstr "تصمیم وظیفیة"
-
-#: app_admin/models/admin.py:258
-msgid "Energy Conversion"
-msgstr "Energy Conversion"
-
-#: app_admin/models/admin.py:259
-msgid "Manufacturing"
-msgstr "إنتاج"
-
-#: app_admin/models/admin.py:260
-msgid "Biomechanics"
-msgstr "المیکانیکا الحیویة"
-
-#: app_admin/models/admin.py:261
-msgid "Extractive Metallurgy"
-msgstr "المعادن الاستخراجیة"
-
-#: app_admin/models/admin.py:262
-msgid "Ceramics Engineering"
-msgstr "هندسة السیرامیک"
-
-#: app_admin/models/admin.py:263
-msgid "Materials Selection"
-msgstr "اختیارالمواد"
-
-#: app_admin/models/admin.py:264
-msgid "Bio-Materials"
-msgstr "المواد البیولوجیة"
-
-#: app_admin/models/admin.py:265
-msgid "Metals Casting"
-msgstr "مسبک المعادن"
-
-#: app_admin/models/admin.py:266
-msgid "Metals Forming"
-msgstr "تشکیل المعادن"
-
-#: app_admin/models/admin.py:267
-msgid "Nanotechnology - Materials"
-msgstr "تکنولوجیا النانو - المواد"
-
-#: app_admin/models/admin.py:270
-msgid "Energy Systems - Energy and Environment"
-msgstr "إنظمة الطاقة - الطاقة والبیئة"
-
-#: app_admin/models/admin.py:272
-msgid "Satellite Engineering"
-msgstr "هندسة الأقمار الصناعیة"
-
-#: app_admin/models/admin.py:273
-msgid "Photonics"
-msgstr "الضوئیات"
-
-#: app_admin/models/admin.py:275
-msgid "Condensed Matter Physics"
-msgstr "فیزیاء المادة المکثفة"
-
-#: app_admin/models/admin.py:277
-msgid "Laser Optics Physics"
-msgstr "فیزیاء بصریات اللیزر"
-
-#: app_admin/models/admin.py:280
-msgid "Master of Business Administration (MBA) - Marketing"
-msgstr "ماجستیر ادارة اعمال (MBA) - تسویق"
-
-#: app_admin/models/admin.py:284
-msgid "Master of Business Administration (MBA) - Strategy"
-msgstr "ماجستیر ادارة اعمال (MBA) - استراتیجیة"
-
-#: app_admin/models/admin.py:288
-msgid "Management of Technology (MOT) - Technological Innovation"
-msgstr "إدارة التکنولوجیا (MOT) - الابتکار التکنولوجی"
-
-#: app_admin/models/admin.py:292
-msgid "Management of Technology (MOT) - Technological Transfer"
-msgstr "إدارة التکنولوجیا (MOT) - نقل التکنولوجیا"
-
-#: app_admin/models/admin.py:296
-msgid "Management of Technology (MOT) - Research & Development Policies"
-msgstr "إدارة التکنولوجیا(MOT) - سیاسات البحث والتطویر"
-
-#: app_admin/models/admin.py:300
-msgid "Information Technology Management-E-Business"
-msgstr "إدارة تقنیة المعلومات - الأعمال الإلکترونیة"
-
-#: app_admin/models/admin.py:303
-msgid "Entrepreneurship - New Businesses"
-msgstr "ریادة الأعمال- أعمال جدیدة"
-
-#: app_admin/models/admin.py:307
-msgid "Industrial Engineering - Macro Systems"
-msgstr "هندسة صناعیة- أنظمة الماکرو"
-
-#: app_admin/models/admin.py:310
-msgid "Economic Development and Planning"
-msgstr "النموالإقتصادی والتخطیط"
-
-#: app_admin/models/admin.py:313
-msgid "Economic Systems Planning"
-msgstr "تخطیط النظم الاقتصادیة"
-
-#: app_admin/models/admin.py:316
-msgid "Electric Railways Engineering"
-msgstr "هندسة السکک الحدیدیة الکهربائیة"
-
-#: app_admin/models/admin.py:319
-msgid "Railway Safety Engineering"
-msgstr "هندسة سلامة السکک الحدیدیة"
-
-#: app_admin/models/admin.py:322
-msgid "Railway Control and Signaling"
-msgstr "التحکم فی إشارات السکک الحدیدیة"
-
-#: app_admin/models/admin.py:324
-msgid "Urbanism"
-msgstr "حضری"
-
-#: app_admin/models/admin.py:325
-msgid "Quality & Productivity"
-msgstr "الجودة والإنتاجیة"
-
-#: app_admin/models/admin.py:327
-msgid "Applied Mathematics - Statistics"
-msgstr "الریاضیات التطبیقیة - إحصائیات"
-
-#: app_admin/models/admin.py:330
-msgid "Dynamics Control and Vibration"
-msgstr "التحکم الدینامیکی فی الاهتزاز"
-
-#: app_admin/models/admin.py:332
-msgid "Solid Mechanics"
-msgstr "المیکانیکا الصلبة"
-
-#: app_admin/models/admin.py:333
-msgid "Materials Engineering"
-msgstr "هندسة المواد"
-
-#: app_admin/models/admin.py:336
-msgid "Management of Iranian Public Organization"
-msgstr "إدارة المنظمة العامة لإیران"
-
-#: app_admin/models/admin.py:339
-msgid "Science of Technology Policy"
-msgstr "سیاسة العلوم والتکنولوجیا"
-
-#: app_admin/models/admin.py:346 app_application/models/application.py:47
+#: app_admin/models/admin.py:23 app_application/models/application.py:47
 #: app_application/models/documents.py:41 app_application/models/timeline.py:32
 #: app_chat/models/chat_room.py:35 app_chat/models/chat_room.py:82
 #: app_education/models/bachelor_degree.py:19
@@ -597,19 +60,19 @@ msgstr "سیاسة العلوم والتکنولوجیا"
 #: app_education/models/master_degree.py:19
 #: app_notification/models/notification.py:24
 #: app_occupation/models/latest_occupation.py:30 app_user/models/address.py:23
-#: app_user/models/profile.py:39 app_user/models/user.py:81
+#: app_user/models/profile.py:39 app_user/models/user.py:85
 msgid "User"
 msgstr "مستخدم"
 
-#: app_admin/models/admin.py:352
+#: app_admin/models/admin.py:29
 msgid "Role"
 msgstr "واجب"
 
-#: app_admin/models/admin.py:355
+#: app_admin/models/admin.py:34
 msgid "Schools"
 msgstr "کلیات"
 
-#: app_admin/models/admin.py:362
+#: app_admin/models/admin.py:41 app_education/models/groups.py:15
 msgid "Fields"
 msgstr "الدروس الاکادیمیة"
 
@@ -622,257 +85,213 @@ msgid "Settings"
 msgstr ""
 
 #: app_admin/models/settings.py:14
-msgid "Farsi Signup terms"
-msgstr ""
-
-#: app_admin/models/settings.py:17
-#, fuzzy
-#| msgid "English Status"
-msgid "English Signup terms"
-msgstr "حالة إتقان اللغة الإنجلزیة"
-
-#: app_admin/models/settings.py:20
-msgid "Arabic Signup terms"
-msgstr ""
-
-#: app_admin/models/settings.py:23
-msgid "Farsi Before sign text"
-msgstr ""
-
-#: app_admin/models/settings.py:26
-msgid "English Before sign text"
-msgstr ""
-
-#: app_admin/models/settings.py:29
-msgid "Arabic Before sign text"
-msgstr ""
-
-#: app_admin/models/settings.py:32
-msgid "Farsi Before new application text"
-msgstr ""
-
-#: app_admin/models/settings.py:35
-msgid "English Before new application text"
-msgstr ""
-
-#: app_admin/models/settings.py:38
-msgid "Arabic Before new application text"
-msgstr ""
-
-#: app_admin/models/settings.py:40
 #, fuzzy
 #| msgid "Application Letter"
-msgid "Admin application text"
+msgid "Start register date"
 msgstr "نامه درخواست"
 
-#: app_admin/models/settings.py:42
-#, fuzzy
-#| msgid "Application Letter"
-msgid "Start application date"
-msgstr "نامه درخواست"
+#: app_admin/models/settings.py:16
+msgid "End register date"
+msgstr ""
 
-#: app_admin/models/settings.py:44
-#, fuzzy
-#| msgid "Application Letter"
-msgid "End application date"
-msgstr "نامه درخواست"
+#: app_application/api/serializers/application_admin.py:102
+#: app_application/api/serializers/application_admin.py:106
+#: app_application/api/serializers/application_admin.py:619
+#: app_application/api/serializers/application_admin.py:623
+msgid "Superuser"
+msgstr "المدیر الرئیسی"
 
-#: app_application/api/serializers/application_admin.py:75
+#: app_application/api/serializers/application_admin.py:149
 msgid "tracking_id"
 msgstr "شفرة التتبع"
 
-#: app_application/api/serializers/application_admin.py:76
+#: app_application/api/serializers/application_admin.py:150
 msgid "degree"
 msgstr "درجة"
 
-#: app_application/api/serializers/application_admin.py:77
+#: app_application/api/serializers/application_admin.py:151
 msgid "faculty"
 msgstr "کلیة"
 
-#: app_application/api/serializers/application_admin.py:78
+#: app_application/api/serializers/application_admin.py:152
 msgid "field_of_study"
 msgstr "مجال الدراسة"
 
-#: app_application/api/serializers/application_admin.py:79
+#: app_application/api/serializers/application_admin.py:153
 msgid "status"
 msgstr "الموقف"
 
-#: app_application/api/serializers/application_admin.py:80
+#: app_application/api/serializers/application_admin.py:154
 msgid "jalali_created_at"
 msgstr "وقت الإنشاء"
 
-#: app_application/api/serializers/application_admin.py:81
+#: app_application/api/serializers/application_admin.py:155
 msgid "created_at"
 msgstr "وقت الإنشاء"
 
-#: app_application/api/serializers/application_admin.py:82
+#: app_application/api/serializers/application_admin.py:156
 msgid "user_id"
 msgstr "بطاقة تعریف"
 
-#: app_application/api/serializers/application_admin.py:83
+#: app_application/api/serializers/application_admin.py:157
 #, fuzzy
 #| msgid "user_id"
 msgid "user_email"
 msgstr "بطاقة تعریف"
 
-#: app_application/api/serializers/application_admin.py:84
+#: app_application/api/serializers/application_admin.py:158
 msgid "user_agent"
 msgstr "عامل"
 
-#: app_application/api/serializers/application_admin.py:85
+#: app_application/api/serializers/application_admin.py:159
 msgid "user_full_name"
 msgstr "اسمی ولقبی"
 
-#: app_application/api/serializers/application_admin.py:86
+#: app_application/api/serializers/application_admin.py:160
 #, fuzzy
 #| msgid "user_gender"
 msgid "user_phone_number"
 msgstr "یاهوی _ یاهی"
 
-#: app_application/api/serializers/application_admin.py:87
+#: app_application/api/serializers/application_admin.py:161
 msgid "user_iran_phone_number"
 msgstr ""
 
-#: app_application/api/serializers/application_admin.py:88
+#: app_application/api/serializers/application_admin.py:162
 #, fuzzy
 #| msgid "Nationality"
 msgid "user_nationality"
 msgstr "جنسیة"
 
-#: app_application/api/serializers/application_admin.py:89
+#: app_application/api/serializers/application_admin.py:163
 #, fuzzy
 #| msgid "Mother Language"
 msgid "user_mother_language"
 msgstr "اللغة الأم"
 
-#: app_application/api/serializers/application_admin.py:90
+#: app_application/api/serializers/application_admin.py:164
 #, fuzzy
 #| msgid "Mother Language"
 msgid "user_other_languages"
 msgstr "اللغة الأم"
 
-#: app_application/api/serializers/application_admin.py:91
+#: app_application/api/serializers/application_admin.py:165
 #, fuzzy
 #| msgid "English Status"
 msgid "user_english_status"
 msgstr "حالة إتقان اللغة الإنجلزیة"
 
-#: app_application/api/serializers/application_admin.py:92
+#: app_application/api/serializers/application_admin.py:166
 #, fuzzy
 #| msgid "Persian Status"
 msgid "user_persian_status"
 msgstr "حالة إتقان اللغة الفارسیة"
 
-#: app_application/api/serializers/application_admin.py:93
+#: app_application/api/serializers/application_admin.py:167
 msgid "user_gender"
 msgstr "یاهوی _ یاهی"
 
-#: app_application/api/serializers/application_admin.py:94
+#: app_application/api/serializers/application_admin.py:168
 msgid "user_age"
 msgstr "عمر"
 
-#: app_application/api/serializers/application_admin.py:95
+#: app_application/api/serializers/application_admin.py:169
 msgid "user_country"
 msgstr "دولة"
 
-#: app_application/api/serializers/application_admin.py:96
+#: app_application/api/serializers/application_admin.py:170
 #, fuzzy
 #| msgid "user_age"
 msgid "user_state"
 msgstr "عمر"
 
-#: app_application/api/serializers/application_admin.py:97
+#: app_application/api/serializers/application_admin.py:171
 #, fuzzy
 #| msgid "user_country"
 msgid "user_city"
 msgstr "دولة"
 
-#: app_application/api/serializers/application_admin.py:98
+#: app_application/api/serializers/application_admin.py:172
 msgid "user_postal_code"
 msgstr ""
 
-#: app_application/api/serializers/application_admin.py:99
+#: app_application/api/serializers/application_admin.py:173
 #, fuzzy
 #| msgid "user_age"
 msgid "user_address"
 msgstr "عمر"
 
-#: app_application/api/serializers/application_admin.py:100
+#: app_application/api/serializers/application_admin.py:174
 #, fuzzy
 #| msgid "user_country"
 msgid "bachelor_country"
 msgstr "دولة"
 
-#: app_application/api/serializers/application_admin.py:101
+#: app_application/api/serializers/application_admin.py:176
 msgid "bachelor_date_of_graduation"
 msgstr ""
 
-#: app_application/api/serializers/application_admin.py:102
+#: app_application/api/serializers/application_admin.py:178
 #, fuzzy
 #| msgid "Bachelor"
 msgid "bachelor_gpa"
 msgstr "باکالوریوس"
 
-#: app_application/api/serializers/application_admin.py:103
+#: app_application/api/serializers/application_admin.py:179
 #, fuzzy
 #| msgid "field_of_study"
 msgid "bachelor_field_of_study"
 msgstr "مجال الدراسة"
 
-#: app_application/api/serializers/application_admin.py:104
+#: app_application/api/serializers/application_admin.py:180
 #, fuzzy
 #| msgid "University"
 msgid "bachelor_university"
 msgstr "جامعة"
 
-#: app_application/api/serializers/application_admin.py:105
+#: app_application/api/serializers/application_admin.py:181
 #, fuzzy
 #| msgid "user_country"
 msgid "master_country"
 msgstr "دولة"
 
-#: app_application/api/serializers/application_admin.py:106
+#: app_application/api/serializers/application_admin.py:182
 #, fuzzy
 #| msgid "Date Of Graduation"
 msgid "master_date_of_graduation"
 msgstr "تاريخ التخرج"
 
-#: app_application/api/serializers/application_admin.py:107
+#: app_application/api/serializers/application_admin.py:183
 #, fuzzy
 #| msgid "Master"
 msgid "master_gpa"
 msgstr "ماجستیر"
 
-#: app_application/api/serializers/application_admin.py:108
+#: app_application/api/serializers/application_admin.py:184
 #, fuzzy
 #| msgid "field_of_study"
 msgid "master_field_of_study"
 msgstr "مجال الدراسة"
 
-#: app_application/api/serializers/application_admin.py:109
+#: app_application/api/serializers/application_admin.py:185
 #, fuzzy
 #| msgid "University"
 msgid "master_university"
 msgstr "جامعة"
 
-#: app_application/api/serializers/application_admin.py:110
+#: app_application/api/serializers/application_admin.py:186
 msgid "user_applications_count"
 msgstr "عددملفات المستخدم"
 
-#: app_application/api/serializers/application_admin.py:111
+#: app_application/api/serializers/application_admin.py:187
 msgid "last_comment"
 msgstr "التعليق الأخير"
 
-#: app_application/api/serializers/application_admin.py:112
+#: app_application/api/serializers/application_admin.py:188
 msgid "last_commenter"
 msgstr "المعلق الأخير"
 
-#: app_application/api/serializers/application_admin.py:536
-#: app_application/api/serializers/application_admin.py:540
-msgid "Superuser"
-msgstr "المدیر الرئیسی"
-
-#: app_application/api/serializers/application_admin.py:655
+#: app_application/api/serializers/application_admin.py:739
 #: app_application/models/application.py:27
 #: app_application/models/documents.py:35 app_application/models/referral.py:19
 #: app_application/models/timeline.py:26
@@ -912,17 +331,15 @@ msgstr "الرفض"
 msgid "Need To Edit"
 msgstr "الحاجة للتغییر"
 
-#: app_application/models/application.py:39 app_education/models/faculties.py:9
+#: app_application/models/application.py:39
 msgid "Bachelor"
 msgstr "باکالوریوس"
 
 #: app_application/models/application.py:40
-#: app_education/models/faculties.py:10
 msgid "Master"
 msgstr "ماجستیر"
 
 #: app_application/models/application.py:41
-#: app_education/models/faculties.py:11
 msgid "PhD"
 msgstr ""
 
@@ -957,12 +374,11 @@ msgid "Status"
 msgstr "حالة"
 
 #: app_application/models/application.py:84
-#: app_education/models/faculties.py:21
 msgid "Degree"
 msgstr "درجة"
 
-#: app_application/models/application.py:90
-#: app_education/models/faculties.py:14 app_education/models/faculties.py:35
+#: app_application/models/application.py:90 app_education/models/faculties.py:9
+#: app_education/models/faculties.py:24 app_education/models/groups.py:14
 msgid "Faculty"
 msgstr "کلیة"
 
@@ -1142,38 +558,56 @@ msgstr "درجات باکالوریوس"
 msgid "University"
 msgstr "جامعة"
 
-#: app_education/models/faculties.py:15
+#: app_education/models/faculties.py:10
 #, fuzzy
 #| msgid "Faculty"
 msgid "Faculties"
 msgstr "کلیة"
 
-#: app_education/models/faculties.py:23 app_education/models/faculties.py:37
-#: app_user/models/user.py:110
+#: app_education/models/faculties.py:12 app_education/models/faculties.py:26
+#: app_education/models/faculties.py:27 app_user/models/user.py:114
 msgid "Is Active"
 msgstr "الحالة النشطة"
 
-#: app_education/models/faculties.py:28
+#: app_education/models/faculties.py:17
 #, fuzzy
 #| msgid "Field Of Study"
 msgid "Field of Study"
 msgstr "مجال الدراسة"
 
-#: app_education/models/faculties.py:29
+#: app_education/models/faculties.py:18
 #, fuzzy
 #| msgid "Field Of Study"
 msgid "Fields of Study"
 msgstr "مجال الدراسة"
 
-#: app_education/models/faculties.py:39
+#: app_education/models/faculties.py:29
 msgid "Require Interview"
 msgstr ""
 
-#: app_education/models/faculties.py:41
+#: app_education/models/faculties.py:31
 #, fuzzy
 #| msgid "Members"
 msgid "Max Members"
 msgstr "اعضاء"
+
+#: app_education/models/groups.py:9
+#, fuzzy
+#| msgid "Faculty"
+msgid "Faculty Group"
+msgstr "کلیة"
+
+#: app_education/models/groups.py:10
+#, fuzzy
+#| msgid "Faculty Director"
+msgid "Faculty Groups"
+msgstr "مدیر الکلیة"
+
+#: app_education/models/groups.py:12
+#, fuzzy
+#| msgid "Full Name"
+msgid "Name"
+msgstr "اسمی ولقبی"
 
 #: app_education/models/high_school.py:11
 msgid "High School"
@@ -1307,8 +741,8 @@ msgstr "تفسیرات"
 msgid "Invalid Google Token"
 msgstr ""
 
-#: app_user/api/serializers/profile.py:82
-#: app_user/api/serializers/profile.py:163
+#: app_user/api/serializers/profile.py:83
+#: app_user/api/serializers/profile.py:167
 msgid "Invalid international phone number format."
 msgstr ""
 
@@ -1426,35 +860,41 @@ msgstr "حالة إتقان اللغة الفارسیة"
 msgid "Passport Number"
 msgstr "رقم التلیفون"
 
-#: app_user/models/user.py:82
+#: app_user/models/user.py:86
 msgid "Users"
 msgstr "مستخدمین"
 
-#: app_user/models/user.py:96
+#: app_user/models/user.py:100
 msgid "Sub Code"
 msgstr "قانون شوون الموظفین"
 
-#: app_user/models/user.py:99
+#: app_user/models/user.py:103
 msgid "Picture URL"
 msgstr "رابط الصورة الشخصی"
 
-#: app_user/models/user.py:105
+#: app_user/models/user.py:109
 msgid "Email"
 msgstr "رسائل البرید الإلکترونی"
 
-#: app_user/models/user.py:112
+#: app_user/models/user.py:116
+#, fuzzy
+#| msgid "Admin"
+msgid "Is Admin"
+msgstr "مدیر"
+
+#: app_user/models/user.py:117
 msgid "Is Agent"
 msgstr "حالة الوکیل"
 
-#: app_user/models/user.py:113
+#: app_user/models/user.py:118
 msgid "Is Locked"
 msgstr "حساب مغلق"
 
-#: app_user/models/user.py:118
+#: app_user/models/user.py:123
 msgid "Admin Role"
 msgstr "مستوی المدیر"
 
-#: app_user/models/user.py:121
+#: app_user/models/user.py:126
 msgid "Can Issuance Letter"
 msgstr "يمكن إصدار خطاب"
 
@@ -1634,6 +1074,425 @@ msgstr "الإنجليزية"
 #| msgid "Arabic"
 msgid "Arabic Name"
 msgstr "عربي"
+
+#~ msgid "Department of Chemistry"
+#~ msgstr "کلیة الکیمیاء"
+
+#~ msgid "Department of Foreign Language"
+#~ msgstr "کلیة العلوم الأساسیة"
+
+#~ msgid "School of Architecture and Environmental Design"
+#~ msgstr "کلیة المعماریة والتخطیط العمرانی"
+
+#~ msgid "School of Automotive Engineering"
+#~ msgstr "کلیة هندسة السیارات"
+
+#~ msgid "School of Chemical Petroleum and Gas Engineering"
+#~ msgstr "کلیة الهندسة الکیمیائیة للنفط والغاز"
+
+#~ msgid "School of Civil Engineering"
+#~ msgstr "کلیة الهندسة العمران"
+
+#~ msgid "School of Computer Engineering"
+#~ msgstr "کلیة هندسة الحاسوب"
+
+#~ msgid "School of Electrical Engineering"
+#~ msgstr "کلیة الهندسة الکهربائیة"
+
+#~ msgid "School of Industrial Engineering"
+#~ msgstr "کلیة الهندسة الصناعیة"
+
+#~ msgid "School of Mathematics"
+#~ msgstr "کلیة الریاضیات"
+
+#~ msgid "School of Mechanical Engineering"
+#~ msgstr "کلیة الهندسة المیکانیکیة"
+
+#~ msgid "School of Metallurgy and Materials Engineering"
+#~ msgstr "کلیة المواد المعدنیة"
+
+#~ msgid "School of Advanced Technologies"
+#~ msgstr "کلیة تقنیات جدیدة ( تکنولوجیا جدیدة )"
+
+#~ msgid "School of Physics"
+#~ msgstr "کلیة الفیزیاء"
+
+#~ msgid "School of Management Economy and Progress Engineering"
+#~ msgstr "کلیة الهندسة المتقدمة ( تطویر )"
+
+#~ msgid "School of Railway Engineering"
+#~ msgstr "کلیة هندسة السکک الحدیدیة"
+
+#~ msgid "Test"
+#~ msgstr "امتحان"
+
+#~ msgid "Architecture"
+#~ msgstr "معماریة ( بنیان )"
+
+#~ msgid "Industrial Design"
+#~ msgstr "التصمیم الصناعی"
+
+#~ msgid "Chemical Engineering"
+#~ msgstr "مهندس کیمیائی"
+
+#~ msgid "Civil Engineering"
+#~ msgstr "مهندس مدنی"
+
+#~ msgid "Hardware Engineering"
+#~ msgstr "هندسة المعدات"
+
+#~ msgid "Software Engineering"
+#~ msgstr "هندسة البرمجیات"
+
+#~ msgid "Communication Systems"
+#~ msgstr "نظم الاتصالات"
+
+#~ msgid "Power Systems"
+#~ msgstr "أنظمة القوة"
+
+#~ msgid "Electronics"
+#~ msgstr "الکترونیه"
+
+#~ msgid "Control Systems"
+#~ msgstr "أنظمة التحکم"
+
+#~ msgid "Industrial Engineering"
+#~ msgstr "هندسة صناعیة"
+
+#~ msgid "Mathematics and Its Applications"
+#~ msgstr "الریاضیات وتطبیقاتها"
+
+#~ msgid "Mechanical Engineering"
+#~ msgstr "مهندس میکانیکی"
+
+#~ msgid "Material and Metallurgical Engineering"
+#~ msgstr "هندسة المواد المعدنیة"
+
+#~ msgid "Atomic and Molecular Physics"
+#~ msgstr "الفیزیاء الذریة والجزیئیة"
+
+#~ msgid "Solid State Physics"
+#~ msgstr "فیزیاء الحالة الصلبیة"
+
+#~ msgid "Railway Transportation Engineering"
+#~ msgstr "هندسة النقل بالسکک الحدیدیة"
+
+#~ msgid "Railway Rolling Stock Engineering"
+#~ msgstr "هندسة السکک الحدیدیةو البناء"
+
+#~ msgid "Railway Track and Structures Engineering"
+#~ msgstr "الکیمیاء التحلیلیة"
+
+#~ msgid "Analytical Chemistry"
+#~ msgstr "الکیمیاء المعدنیة"
+
+#~ msgid "Inorganic Chemistry"
+#~ msgstr "الکیمیاء المعدنیة"
+
+#~ msgid "Organic Chemistry"
+#~ msgstr "الکیمیاء العضویة"
+
+#~ msgid "Physical Chemistry"
+#~ msgstr "الکیمیاء الفیزیائیة"
+
+#~ msgid "Nano-Chemistry"
+#~ msgstr "کیمیاء النانو"
+
+#~ msgid "Teaching English as a Foreign Language"
+#~ msgstr "تعلیم اللغة الإنجلیزیة کلغة أجنبیة"
+
+#~ msgid "Regional Planning"
+#~ msgstr "التخطیط الاقلیمی"
+
+#~ msgid "Architecture - Housing"
+#~ msgstr "معماریة _ السکن"
+
+#~ msgid "Architecture - Sustainable"
+#~ msgstr "معماریة _ مستقر"
+
+#~ msgid "Architecture - Technology"
+#~ msgstr "معماریة_ تکنولوجیا"
+
+#~ msgid "Architecture - Cultural and Educational Spaces"
+#~ msgstr "معماریة - مساحات ثقافیة التعلیمیة"
+
+#~ msgid "Architecture - Health Care Spaces"
+#~ msgstr "معماریة - مساحات الرعائة الصحیة"
+
+#~ msgid "Land Spaces Architecture"
+#~ msgstr "معماری _ مساحات الارض"
+
+#~ msgid ""
+#~ "Conservation and Restoration of Historical Buildings and Fabrics – "
+#~ "Conservation and Restoration of Urban Heritage"
+#~ msgstr "حفاظ وترمیم الابنیة التاریخیة و احیاء المیراث"
+
+#~ msgid ""
+#~ "Conservation and Restoration of Historical Buildings and Fabrics – "
+#~ "Conservation and Restoration of Architectural Heritage"
+#~ msgstr "حفاظ وترمیم الابنیة التاریخیة واحیاء المیراث"
+
+#~ msgid "Urban Design"
+#~ msgstr "التصمیم الحضری"
+
+#~ msgid "Urban Planning"
+#~ msgstr "التخطیط العمرانی ( حضری )"
+
+#~ msgid "Automotive Engineering - Automobile Dynamic Systems Design"
+#~ msgstr "هندسة السیارات _ تصمیم الأنظمة الدینامیکیة للمرکبات"
+
+#~ msgid "Automotive Engineering - Power Train"
+#~ msgstr "هندسة السیارات _ قطار الکهربائی"
+
+#~ msgid "Automotive Engineering - Body and Structure"
+#~ msgstr "هندسة السیارات _ الکترونیات السیارات والهندسة الکهربائیة"
+
+#~ msgid ""
+#~ "Automotive Engineering - Automotive Electronics & Electrical Engineering"
+#~ msgstr "هندسة السیارات_ الکترونیات  السیارات والهندسة الکهربائیة"
+
+#~ msgid "Process Modeling Simulation & Control"
+#~ msgstr "محاکاة والتحکم فی نمذجة العملیات"
+
+#~ msgid "Mineral Chemical Engineering"
+#~ msgstr "الهندسة الکیمیائیة المعدنیة"
+
+#~ msgid "Separation Processes"
+#~ msgstr "عملیات الفصل ( فصل العملیات )"
+
+#~ msgid "Kinetic and Catalysis"
+#~ msgstr "الحرکیة والحفر  ( المحفز الحرکی )"
+
+#~ msgid "Thermodynamics"
+#~ msgstr "الدینامیکا الحراریة"
+
+#~ msgid "Polymer Engineering"
+#~ msgstr "هندسة البولیمر"
+
+#~ msgid "Hydrocarbon Reservoir Engineering"
+#~ msgstr "هندسة الخزانات الهیدروکربونیة"
+
+#~ msgid "Process Design Engineering"
+#~ msgstr "هندسة تصمیم العملیات"
+
+#~ msgid "Structural Engineering"
+#~ msgstr "هندسة إنشائی"
+
+#~ msgid "Earthquake Engineering"
+#~ msgstr "مهندسی زلزلة"
+
+#~ msgid "Construction Management and Engineering"
+#~ msgstr "الإدارة والهندسة بناء"
+
+#~ msgid "Geotechnical Engineering"
+#~ msgstr "مهندس جیوتقنیة"
+
+#~ msgid "Road and Transportation Engineering"
+#~ msgstr "هندسة الطرق والنقل"
+
+#~ msgid "Transportation"
+#~ msgstr "مواصلات"
+
+#~ msgid "Water Resources Management"
+#~ msgstr "إدارة الموارد المائیة"
+
+#~ msgid "Water Engineering and Hydraulic Structures"
+#~ msgstr "هندسة المیاه والهیاکل الهیدرولیکیة"
+
+#~ msgid "Environmental Engineering"
+#~ msgstr "هندسة البیئة"
+
+#~ msgid "Marine Structures Engineering"
+#~ msgstr "مهندس إنشائی بحری"
+
+#~ msgid "Artificial Intelligence & Robotics"
+#~ msgstr "الذکاء الاصناعی والروبوتیة"
+
+#~ msgid "Computer Systems Architecture"
+#~ msgstr "معماریة أنظمة الحاسوب"
+
+#~ msgid "Computer Engineering - Computer Networks"
+#~ msgstr "هندسة الحاسوب - شبکات الحاسب"
+
+#~ msgid "Bio-Electrics"
+#~ msgstr "الکهربائیة الحیویة"
+
+#~ msgid "Digital Electronic Systems"
+#~ msgstr "الأنظمة الالکترونیة الرقمیة"
+
+#~ msgid "Electronic Integrated Circuits"
+#~ msgstr "الدوائر الإلکترونیة المتکاملة"
+
+#~ msgid "Electrical Machines and Power Electronics"
+#~ msgstr "الآلات الکهربائیة والکترونیات القوی"
+
+#~ msgid "Electromagnetic Fields and Waves"
+#~ msgstr "المجالات والموجات الکهرومغناطیسیة"
+
+#~ msgid "Information Technology Engineering - Electronic Commerce"
+#~ msgstr "هندسة تکنولوجیا المعلومات  -التجارة الإلکترونیة"
+
+#~ msgid "Systems Optimization"
+#~ msgstr "تحسین النظام"
+
+#~ msgid "Supply Chain and Logistic Engineering"
+#~ msgstr "مهندس سلسلة التورید والخدمات اللوجستیة"
+
+#~ msgid "Engineering Management"
+#~ msgstr "الإدارة الهندسیة"
+
+#~ msgid "Socio-Economic Macro Systems"
+#~ msgstr "النظم الاجتماعیة الکلیة _ اقتصادی"
+
+#~ msgid "Project Management"
+#~ msgstr "ادارة مشروع"
+
+#~ msgid "Financial Engineering"
+#~ msgstr "الهندسة المالیة"
+
+#~ msgid "Pure Mathematics - Algebra"
+#~ msgstr "الریاضیات البحتة _ الجبر"
+
+#~ msgid "Pure Mathematics - Geometry"
+#~ msgstr "الریاضیات البحتة _ الجبر"
+
+#~ msgid "Pure Mathematics - Analysis"
+#~ msgstr "الریاضیات البحتة _ التحلیل"
+
+#~ msgid "Applied Mathematics - Numerical Analysis"
+#~ msgstr "الریاضیات التطبیقیة _ التحلیل العددی"
+
+#~ msgid "Applied Mathematics - Operation Research"
+#~ msgstr "الریاضیات التطبیقیة _ بحوث العملیات"
+
+#~ msgid "Mathematics Statistics"
+#~ msgstr "إحصائیات الریاضیات"
+
+#~ msgid "Applied Design"
+#~ msgstr "تصمیم وظیفیة"
+
+#~ msgid "Energy Conversion"
+#~ msgstr "Energy Conversion"
+
+#~ msgid "Manufacturing"
+#~ msgstr "إنتاج"
+
+#~ msgid "Biomechanics"
+#~ msgstr "المیکانیکا الحیویة"
+
+#~ msgid "Extractive Metallurgy"
+#~ msgstr "المعادن الاستخراجیة"
+
+#~ msgid "Ceramics Engineering"
+#~ msgstr "هندسة السیرامیک"
+
+#~ msgid "Materials Selection"
+#~ msgstr "اختیارالمواد"
+
+#~ msgid "Bio-Materials"
+#~ msgstr "المواد البیولوجیة"
+
+#~ msgid "Metals Casting"
+#~ msgstr "مسبک المعادن"
+
+#~ msgid "Metals Forming"
+#~ msgstr "تشکیل المعادن"
+
+#~ msgid "Nanotechnology - Materials"
+#~ msgstr "تکنولوجیا النانو - المواد"
+
+#~ msgid "Energy Systems - Energy and Environment"
+#~ msgstr "إنظمة الطاقة - الطاقة والبیئة"
+
+#~ msgid "Satellite Engineering"
+#~ msgstr "هندسة الأقمار الصناعیة"
+
+#~ msgid "Photonics"
+#~ msgstr "الضوئیات"
+
+#~ msgid "Condensed Matter Physics"
+#~ msgstr "فیزیاء المادة المکثفة"
+
+#~ msgid "Laser Optics Physics"
+#~ msgstr "فیزیاء بصریات اللیزر"
+
+#~ msgid "Master of Business Administration (MBA) - Marketing"
+#~ msgstr "ماجستیر ادارة اعمال (MBA) - تسویق"
+
+#~ msgid "Master of Business Administration (MBA) - Strategy"
+#~ msgstr "ماجستیر ادارة اعمال (MBA) - استراتیجیة"
+
+#~ msgid "Management of Technology (MOT) - Technological Innovation"
+#~ msgstr "إدارة التکنولوجیا (MOT) - الابتکار التکنولوجی"
+
+#~ msgid "Management of Technology (MOT) - Technological Transfer"
+#~ msgstr "إدارة التکنولوجیا (MOT) - نقل التکنولوجیا"
+
+#~ msgid "Management of Technology (MOT) - Research & Development Policies"
+#~ msgstr "إدارة التکنولوجیا(MOT) - سیاسات البحث والتطویر"
+
+#~ msgid "Information Technology Management-E-Business"
+#~ msgstr "إدارة تقنیة المعلومات - الأعمال الإلکترونیة"
+
+#~ msgid "Entrepreneurship - New Businesses"
+#~ msgstr "ریادة الأعمال- أعمال جدیدة"
+
+#~ msgid "Industrial Engineering - Macro Systems"
+#~ msgstr "هندسة صناعیة- أنظمة الماکرو"
+
+#~ msgid "Economic Development and Planning"
+#~ msgstr "النموالإقتصادی والتخطیط"
+
+#~ msgid "Economic Systems Planning"
+#~ msgstr "تخطیط النظم الاقتصادیة"
+
+#~ msgid "Electric Railways Engineering"
+#~ msgstr "هندسة السکک الحدیدیة الکهربائیة"
+
+#~ msgid "Railway Safety Engineering"
+#~ msgstr "هندسة سلامة السکک الحدیدیة"
+
+#~ msgid "Railway Control and Signaling"
+#~ msgstr "التحکم فی إشارات السکک الحدیدیة"
+
+#~ msgid "Urbanism"
+#~ msgstr "حضری"
+
+#~ msgid "Quality & Productivity"
+#~ msgstr "الجودة والإنتاجیة"
+
+#~ msgid "Applied Mathematics - Statistics"
+#~ msgstr "الریاضیات التطبیقیة - إحصائیات"
+
+#~ msgid "Dynamics Control and Vibration"
+#~ msgstr "التحکم الدینامیکی فی الاهتزاز"
+
+#~ msgid "Solid Mechanics"
+#~ msgstr "المیکانیکا الصلبة"
+
+#~ msgid "Materials Engineering"
+#~ msgstr "هندسة المواد"
+
+#~ msgid "Management of Iranian Public Organization"
+#~ msgstr "إدارة المنظمة العامة لإیران"
+
+#~ msgid "Science of Technology Policy"
+#~ msgstr "سیاسة العلوم والتکنولوجیا"
+
+#, fuzzy
+#~| msgid "English Status"
+#~ msgid "English Signup terms"
+#~ msgstr "حالة إتقان اللغة الإنجلزیة"
+
+#, fuzzy
+#~| msgid "Application Letter"
+#~ msgid "Admin application text"
+#~ msgstr "نامه درخواست"
+
+#, fuzzy
+#~| msgid "Application Letter"
+#~ msgid "End application date"
+#~ msgstr "نامه درخواست"
 
 #~ msgid "P.H.D"
 #~ msgstr "درجة الدکتوراه"

@@ -10,5 +10,12 @@ class FacultyGroups(models.Model):
         verbose_name_plural = _("Faculty Groups")
 
     name = models.CharField(max_length=100, verbose_name=_("Name"))
-    faculty = models.ForeignKey(FacultyModel, on_delete=models.CASCADE, verbose_name=_("Faculty"))
-    fields = models.ManyToManyField(FieldOfStudyModel, verbose_name=_("Fields"))
+    faculty = models.ForeignKey(
+        FacultyModel,
+        on_delete=models.CASCADE,
+        related_name="faculty_groups",
+        verbose_name=_("Faculty"),
+    )
+    fields = models.ManyToManyField(
+        FieldOfStudyModel, related_name="field_groups", verbose_name=_("Fields")
+    )

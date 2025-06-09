@@ -53,6 +53,11 @@ urlpatterns = [
         name="admin_application_detail",
     ),
     path(
+        "admin/all-application/delete/<int:pk>/",
+        AdminDeleteApplicationView.as_view(),
+        name="admin_application_delete",
+    ),
+    path(
         "admin/application/timeline/",
         AdminCreateApplicationTimeLineView.as_view(),
         name="admin_application_timeline_create",

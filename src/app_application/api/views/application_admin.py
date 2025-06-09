@@ -1,4 +1,5 @@
 from django.http import HttpResponse
+from django.db.models import OuterRef, Subquery, FloatField
 
 from rest_framework import generics, response
 
@@ -11,11 +12,13 @@ from app_application.api.serializers.application_admin import (
     AdminSubmitApplicationLetterSerializer,
 )
 from app_application.filters.applications import ApplicationListFilter
+from app_education.models import BachelorDegreeModel, MasterDegreeModel
 from app_admin.models import AdminModel
 
 from utils.permissions import (
     IsAuthenticatedPermission,
     IsAdminUserPermission,
+    IsSuperUserPermission,
     CanIssuanceLetterPermission,
 )
 from utils.versioning import BaseVersioning
@@ -27,19 +30,30 @@ class AdminAllApplicationView(generics.ListAPIView):
     versioning_class = BaseVersioning
     pagination_class = BasePagination
     serializer_class = AdminApplicationListSerializer
-    ordering_fields = ["create_at"]
+    ordering_fields = ["create_at", "bachelor_gpa", "master_gpa"]
     filterset_class = ApplicationListFilter
 
     def get_queryset(self):
-        if self.request.user.is_superuser is True:
-            return (
-                ApplicationModel.objects.all()
-                .exclude(status=ApplicationModel.ApplicationStatusOptions.Not_Completed)
-                .distinct()
-            )
+        bachelor_gpa_subquery = BachelorDegreeModel.objects.filter(
+            user=OuterRef("user_id")
+        ).values("gpa")[:1]
+
+        master_gpa_subquery = MasterDegreeModel.objects.filter(
+            user=OuterRef("user_id")
+        ).values("gpa")[:1]
+
+        queryset = ApplicationModel.objects.annotate(
+            bachelor_gpa=Subquery(bachelor_gpa_subquery, output_field=FloatField()),
+            master_gpa=Subquery(master_gpa_subquery, output_field=FloatField()),
+        )
+
+        if self.request.user.is_superuser or self.request.user.is_admin:
+            return queryset.exclude(
+                status=ApplicationModel.ApplicationStatusOptions.Not_Completed
+            ).distinct()
         else:
             return (
-                ApplicationModel.objects.filter(
+                queryset.filter(
                     application_referral__destination_user=self.request.user
                 )
                 .exclude(status=ApplicationModel.ApplicationStatusOptions.Not_Completed)
@@ -54,7 +68,7 @@ class AdminExportApplicationListView(generics.GenericAPIView):
     filterset_class = ApplicationListFilter
 
     def get_queryset(self):
-        if self.request.user.is_superuser is True:
+        if self.request.user.is_superuser is True or self.request.user.is_admin is True:
             return ApplicationModel.objects.all().exclude(
                 status=ApplicationModel.ApplicationStatusOptions.Not_Completed
             )
@@ -115,7 +129,7 @@ class AdminDetailApplicationView(generics.RetrieveAPIView):
     lookup_field = "pk"
 
     def get_queryset(self):
-        if self.request.user.is_superuser is True:
+        if self.request.user.is_superuser is True or self.request.user.is_admin is True:
             return (
                 ApplicationModel.objects.all()
                 .exclude(status=ApplicationModel.ApplicationStatusOptions.Not_Completed)
@@ -131,6 +145,23 @@ class AdminDetailApplicationView(generics.RetrieveAPIView):
             )
 
 
+class AdminDeleteApplicationView(generics.DestroyAPIView):
+    permission_classes = [
+        IsAuthenticatedPermission,
+        IsAdminUserPermission,
+        IsSuperUserPermission,
+    ]
+    versioning_class = BaseVersioning
+    lookup_field = "pk"
+
+    def get_queryset(self):
+        return (
+            ApplicationModel.objects.all()
+            .exclude(status=ApplicationModel.ApplicationStatusOptions.Not_Completed)
+            .distinct()
+        )
+
+
 class AdminUpdateApplicationView(generics.UpdateAPIView):
     permission_classes = [IsAuthenticatedPermission, IsAdminUserPermission]
     versioning_class = BaseVersioning
@@ -138,7 +169,7 @@ class AdminUpdateApplicationView(generics.UpdateAPIView):
     lookup_field = "pk"
 
     def get_queryset(self):
-        if self.request.user.is_superuser is True:
+        if self.request.user.is_superuser is True or self.request.user.is_admin is True:
             return ApplicationModel.objects.all().exclude(
                 status=ApplicationModel.ApplicationStatusOptions.Not_Completed
             )
