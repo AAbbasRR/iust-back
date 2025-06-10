@@ -167,6 +167,7 @@ class AdminApplicationExportResource(resources.ModelResource):
     user_other_languages = fields.Field(column_name=_("user_other_languages"))
     user_english_status = fields.Field(column_name=_("user_english_status"))
     user_persian_status = fields.Field(column_name=_("user_persian_status"))
+    user_passport_number = fields.Field(column_name=_("user_passport_number"))
     user_gender = fields.Field(column_name=_("user_gender"))
     user_age = fields.Field(column_name=_("user_age"))
     user_country = fields.Field(column_name=_("user_country"))

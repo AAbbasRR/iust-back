@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-08 03:58+0330\n"
+"POT-Creation-Date: 2025-06-10 13:30+0330\n"
 "PO-Revision-Date: 2024-07-09 13:19+0330\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -72,7 +72,7 @@ msgstr "واجب"
 msgid "Schools"
 msgstr "کلیات"
 
-#: app_admin/models/admin.py:41 app_education/models/groups.py:15
+#: app_admin/models/admin.py:41 app_education/models/groups.py:20
 msgid "Fields"
 msgstr "الدروس الاکادیمیة"
 
@@ -94,204 +94,210 @@ msgstr "نامه درخواست"
 msgid "End register date"
 msgstr ""
 
-#: app_application/api/serializers/application_admin.py:102
-#: app_application/api/serializers/application_admin.py:106
-#: app_application/api/serializers/application_admin.py:619
-#: app_application/api/serializers/application_admin.py:623
+#: app_application/api/serializers/application_admin.py:103
+#: app_application/api/serializers/application_admin.py:107
+#: app_application/api/serializers/application_admin.py:625
+#: app_application/api/serializers/application_admin.py:629
 msgid "Superuser"
 msgstr "المدیر الرئیسی"
 
-#: app_application/api/serializers/application_admin.py:149
+#: app_application/api/serializers/application_admin.py:151
 msgid "tracking_id"
 msgstr "شفرة التتبع"
 
-#: app_application/api/serializers/application_admin.py:150
+#: app_application/api/serializers/application_admin.py:152
 msgid "degree"
 msgstr "درجة"
 
-#: app_application/api/serializers/application_admin.py:151
+#: app_application/api/serializers/application_admin.py:153
 msgid "faculty"
 msgstr "کلیة"
 
-#: app_application/api/serializers/application_admin.py:152
+#: app_application/api/serializers/application_admin.py:154
 msgid "field_of_study"
 msgstr "مجال الدراسة"
 
-#: app_application/api/serializers/application_admin.py:153
+#: app_application/api/serializers/application_admin.py:155
 msgid "status"
 msgstr "الموقف"
 
-#: app_application/api/serializers/application_admin.py:154
+#: app_application/api/serializers/application_admin.py:156
 msgid "jalali_created_at"
 msgstr "وقت الإنشاء"
 
-#: app_application/api/serializers/application_admin.py:155
+#: app_application/api/serializers/application_admin.py:157
 msgid "created_at"
 msgstr "وقت الإنشاء"
 
-#: app_application/api/serializers/application_admin.py:156
+#: app_application/api/serializers/application_admin.py:158
 msgid "user_id"
 msgstr "بطاقة تعریف"
 
-#: app_application/api/serializers/application_admin.py:157
+#: app_application/api/serializers/application_admin.py:159
 #, fuzzy
 #| msgid "user_id"
 msgid "user_email"
 msgstr "بطاقة تعریف"
 
-#: app_application/api/serializers/application_admin.py:158
+#: app_application/api/serializers/application_admin.py:160
 msgid "user_agent"
 msgstr "عامل"
 
-#: app_application/api/serializers/application_admin.py:159
+#: app_application/api/serializers/application_admin.py:161
 msgid "user_full_name"
 msgstr "اسمی ولقبی"
 
-#: app_application/api/serializers/application_admin.py:160
+#: app_application/api/serializers/application_admin.py:162
 #, fuzzy
 #| msgid "user_gender"
 msgid "user_phone_number"
 msgstr "یاهوی _ یاهی"
 
-#: app_application/api/serializers/application_admin.py:161
+#: app_application/api/serializers/application_admin.py:163
 msgid "user_iran_phone_number"
 msgstr ""
 
-#: app_application/api/serializers/application_admin.py:162
+#: app_application/api/serializers/application_admin.py:164
 #, fuzzy
 #| msgid "Nationality"
 msgid "user_nationality"
 msgstr "جنسیة"
 
-#: app_application/api/serializers/application_admin.py:163
+#: app_application/api/serializers/application_admin.py:165
 #, fuzzy
 #| msgid "Mother Language"
 msgid "user_mother_language"
 msgstr "اللغة الأم"
 
-#: app_application/api/serializers/application_admin.py:164
+#: app_application/api/serializers/application_admin.py:166
 #, fuzzy
 #| msgid "Mother Language"
 msgid "user_other_languages"
 msgstr "اللغة الأم"
 
-#: app_application/api/serializers/application_admin.py:165
+#: app_application/api/serializers/application_admin.py:167
 #, fuzzy
 #| msgid "English Status"
 msgid "user_english_status"
 msgstr "حالة إتقان اللغة الإنجلزیة"
 
-#: app_application/api/serializers/application_admin.py:166
+#: app_application/api/serializers/application_admin.py:168
 #, fuzzy
 #| msgid "Persian Status"
 msgid "user_persian_status"
 msgstr "حالة إتقان اللغة الفارسیة"
 
-#: app_application/api/serializers/application_admin.py:167
+#: app_application/api/serializers/application_admin.py:169
+#, fuzzy
+#| msgid "user_gender"
+msgid "user_passport_number"
+msgstr "یاهوی _ یاهی"
+
+#: app_application/api/serializers/application_admin.py:170
 msgid "user_gender"
 msgstr "یاهوی _ یاهی"
 
-#: app_application/api/serializers/application_admin.py:168
+#: app_application/api/serializers/application_admin.py:171
 msgid "user_age"
 msgstr "عمر"
 
-#: app_application/api/serializers/application_admin.py:169
+#: app_application/api/serializers/application_admin.py:172
 msgid "user_country"
 msgstr "دولة"
 
-#: app_application/api/serializers/application_admin.py:170
+#: app_application/api/serializers/application_admin.py:173
 #, fuzzy
 #| msgid "user_age"
 msgid "user_state"
 msgstr "عمر"
 
-#: app_application/api/serializers/application_admin.py:171
+#: app_application/api/serializers/application_admin.py:174
 #, fuzzy
 #| msgid "user_country"
 msgid "user_city"
 msgstr "دولة"
 
-#: app_application/api/serializers/application_admin.py:172
+#: app_application/api/serializers/application_admin.py:175
 msgid "user_postal_code"
 msgstr ""
 
-#: app_application/api/serializers/application_admin.py:173
+#: app_application/api/serializers/application_admin.py:176
 #, fuzzy
 #| msgid "user_age"
 msgid "user_address"
 msgstr "عمر"
 
-#: app_application/api/serializers/application_admin.py:174
+#: app_application/api/serializers/application_admin.py:177
 #, fuzzy
 #| msgid "user_country"
 msgid "bachelor_country"
 msgstr "دولة"
 
-#: app_application/api/serializers/application_admin.py:176
+#: app_application/api/serializers/application_admin.py:179
 msgid "bachelor_date_of_graduation"
 msgstr ""
 
-#: app_application/api/serializers/application_admin.py:178
+#: app_application/api/serializers/application_admin.py:181
 #, fuzzy
 #| msgid "Bachelor"
 msgid "bachelor_gpa"
 msgstr "باکالوریوس"
 
-#: app_application/api/serializers/application_admin.py:179
+#: app_application/api/serializers/application_admin.py:182
 #, fuzzy
 #| msgid "field_of_study"
 msgid "bachelor_field_of_study"
 msgstr "مجال الدراسة"
 
-#: app_application/api/serializers/application_admin.py:180
+#: app_application/api/serializers/application_admin.py:183
 #, fuzzy
 #| msgid "University"
 msgid "bachelor_university"
 msgstr "جامعة"
 
-#: app_application/api/serializers/application_admin.py:181
+#: app_application/api/serializers/application_admin.py:184
 #, fuzzy
 #| msgid "user_country"
 msgid "master_country"
 msgstr "دولة"
 
-#: app_application/api/serializers/application_admin.py:182
+#: app_application/api/serializers/application_admin.py:185
 #, fuzzy
 #| msgid "Date Of Graduation"
 msgid "master_date_of_graduation"
 msgstr "تاريخ التخرج"
 
-#: app_application/api/serializers/application_admin.py:183
+#: app_application/api/serializers/application_admin.py:186
 #, fuzzy
 #| msgid "Master"
 msgid "master_gpa"
 msgstr "ماجستیر"
 
-#: app_application/api/serializers/application_admin.py:184
+#: app_application/api/serializers/application_admin.py:187
 #, fuzzy
 #| msgid "field_of_study"
 msgid "master_field_of_study"
 msgstr "مجال الدراسة"
 
-#: app_application/api/serializers/application_admin.py:185
+#: app_application/api/serializers/application_admin.py:188
 #, fuzzy
 #| msgid "University"
 msgid "master_university"
 msgstr "جامعة"
 
-#: app_application/api/serializers/application_admin.py:186
+#: app_application/api/serializers/application_admin.py:189
 msgid "user_applications_count"
 msgstr "عددملفات المستخدم"
 
-#: app_application/api/serializers/application_admin.py:187
+#: app_application/api/serializers/application_admin.py:190
 msgid "last_comment"
 msgstr "التعليق الأخير"
 
-#: app_application/api/serializers/application_admin.py:188
+#: app_application/api/serializers/application_admin.py:191
 msgid "last_commenter"
 msgstr "المعلق الأخير"
 
-#: app_application/api/serializers/application_admin.py:739
+#: app_application/api/serializers/application_admin.py:745
 #: app_application/models/application.py:27
 #: app_application/models/documents.py:35 app_application/models/referral.py:19
 #: app_application/models/timeline.py:26
@@ -378,7 +384,7 @@ msgid "Degree"
 msgstr "درجة"
 
 #: app_application/models/application.py:90 app_education/models/faculties.py:9
-#: app_education/models/faculties.py:24 app_education/models/groups.py:14
+#: app_education/models/faculties.py:24 app_education/models/groups.py:17
 msgid "Faculty"
 msgstr "کلیة"
 
