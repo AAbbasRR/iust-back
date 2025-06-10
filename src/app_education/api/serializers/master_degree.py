@@ -21,7 +21,7 @@ class MasterDegreeSerializer(serializers.ModelSerializer):
             "id": {"read_only": True},
             "country": {"required": True, "allow_null": False, "allow_blank": False},
             "state": {"required": True, "allow_null": False, "allow_blank": False},
-            "city": {"required": True, "allow_null": False, "allow_blank": False},
+            "city": {"required": False, "allow_null": False, "allow_blank": False},
             "date_of_graduation": {
                 "required": True,
                 "allow_null": False,
