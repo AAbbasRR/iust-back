@@ -11,6 +11,13 @@ class Settings(models.Model):
         verbose_name_plural = _("Settings")
 
     start_register_date = models.DateField(
+        null=True,
+        blank=True,
         verbose_name=_("Start register date"),
     )
-    end_register_date = models.DateField(verbose_name=_("End register date"))
+    end_register_date = models.DateField(
+        null=True, blank=True, verbose_name=_("End register date")
+    )
+    fa_terms = models.TextField(null=True, blank=True, verbose_name=_("Farsi terms"))
+    en_terms = models.TextField(null=True, blank=True, verbose_name=_("English terms"))
+    ar_terms = models.TextField(null=True, blank=True, verbose_name=_("Arabic terms"))

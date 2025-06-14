@@ -16,6 +16,7 @@ class AdminFacultyListCreateView(generics.ListCreateAPIView):
     versioning_class = BaseVersioning
     pagination_class = BasePagination
     serializer_class = AdminFacultySerializer
+    search_fields = ["fa_name", "en_name", "ar_name"]
     queryset = FacultyModel.objects.all()
 
 

@@ -19,6 +19,7 @@ class AdminFieldOfStudyListCreateView(generics.ListCreateAPIView):
     pagination_class = BasePagination
     serializer_class = AdminFieldOfStudySerializer
     queryset = FieldOfStudyModel.objects.all()
+    search_fields = ["fa_name", "en_name", "ar_name"]
     filterset_fields = ["faculty"]
 
 
