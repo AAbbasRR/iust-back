@@ -56,11 +56,11 @@ class AdminCreateReferralSerializer(serializers.ModelSerializer):
                 message=message,
             )
         else:
-            user_faculty_rule = self.user.user_admin.filter(
+            user_faculty_role = self.user.user_admin.filter(
                 role=AdminModel.AdminRoleOptions.faculty_director,
                 faculties=attrs["application"].faculty,
             ).first()
-            if user_faculty_rule is not None:
+            if user_faculty_role is not None:
                 for index, user in enumerate(destination_users):
                     if index + 1 == len(destination_users):
                         message = message + f"{user.get_full_name()}"
@@ -78,12 +78,12 @@ class AdminCreateReferralSerializer(serializers.ModelSerializer):
                     message=message,
                 )
             else:
-                user_head_rule = self.user.user_admin.filter(
+                user_head_role = self.user.user_admin.filter(
                     role=AdminModel.AdminRoleOptions.department_head,
                     faculties=attrs["application"].faculty,
                     fields=attrs["application"].field_of_study,
                 ).first()
-                if user_head_rule is not None:
+                if user_head_role is not None:
                     destination_users = attrs["destination_users"].filter(
                         user_admin__faculties=attrs["application"].faculty
                     )
@@ -105,7 +105,7 @@ class AdminCreateReferralSerializer(serializers.ModelSerializer):
                     )
                 else:
                     raise exceptions.ParseError(
-                        BaseErrors.user_do_not_have_rule_for_referral
+                        BaseErrors.user_do_not_have_role_for_referral
                     )
 
         return True

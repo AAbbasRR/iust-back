@@ -75,7 +75,7 @@ class AdminApplicationListSerializer(serializers.ModelSerializer):
         if self.user.is_superuser:
             return True
         else:
-            user_rule = self.user.user_admin.filter(
+            user_role = self.user.user_admin.filter(
                 Q(faculties=obj.faculty)
                 & Q(role=AdminModel.AdminRoleOptions.faculty_director)
                 | (
@@ -83,15 +83,15 @@ class AdminApplicationListSerializer(serializers.ModelSerializer):
                     & Q(role=AdminModel.AdminRoleOptions.department_head)
                 )
             ).first()
-            return user_rule is not None
+            return user_role is not None
 
     def get_staffs(self, obj):
-        user_faculty_rule = self.user.user_admin.filter(
+        user_faculty_role = self.user.user_admin.filter(
             role=AdminModel.AdminRoleOptions.faculty_director,
             faculties=obj.faculty,
         ).first()
         superusers_data = []
-        if self.user.is_superuser or user_faculty_rule is not None:
+        if self.user.is_superuser or user_faculty_role is not None:
             superusers = UserModel.objects.filter(is_superuser=True).exclude(
                 pk=self.user.id
             )
@@ -110,7 +110,7 @@ class AdminApplicationListSerializer(serializers.ModelSerializer):
         faculty_director = AdminModel.objects.filter(
             faculties=obj.faculty, role=AdminModel.AdminRoleOptions.faculty_director
         ).exclude(user__pk=self.user.id)
-        faculty_director_data = AdminRuleSerializer(faculty_director, many=True).data
+        faculty_director_data = AdminRoleSerializer(faculty_director, many=True).data
         staffs = (
             AdminModel.objects.filter(
                 faculties=obj.faculty,
@@ -122,7 +122,7 @@ class AdminApplicationListSerializer(serializers.ModelSerializer):
             .exclude(user__pk=self.user.id)
             .order_by("fields", "role")
         )
-        staffs_data = AdminRuleSerializer(staffs, many=True).data
+        staffs_data = AdminRoleSerializer(staffs, many=True).data
         return superusers_data + faculty_director_data + staffs_data
 
     def get_group(self, obj):
@@ -452,7 +452,7 @@ class AdminApplicationTimeLineSerializer(serializers.ModelSerializer):
         return {"full_name": obj.user.user_profile.get_full_name()}
 
 
-class AdminRuleSerializer(serializers.ModelSerializer):
+class AdminRoleSerializer(serializers.ModelSerializer):
     id = serializers.SerializerMethodField("get_id")
     role_display = serializers.CharField(source="get_role_display", read_only=True)
     fields_display = serializers.SerializerMethodField("get_fields_display")
@@ -589,7 +589,7 @@ class AdminDetailApplicationSerializer(serializers.ModelSerializer):
         ).data
 
     def get_can_referral(self, obj):
-        user_rule = self.user.user_admin.filter(
+        user_role = self.user.user_admin.filter(
             Q(faculties=obj.faculty)
             & Q(role=AdminModel.AdminRoleOptions.faculty_director)
             | (
@@ -597,24 +597,24 @@ class AdminDetailApplicationSerializer(serializers.ModelSerializer):
                 & Q(role=AdminModel.AdminRoleOptions.department_head)
             )
         ).first()
-        return self.user.is_superuser or user_rule is not None
+        return self.user.is_superuser or user_role is not None
 
     def get_can_submit_application(self, obj):
-        user_rule = self.user.user_admin.filter(
+        user_role = self.user.user_admin.filter(
             faculties=obj.faculty, role=AdminModel.AdminRoleOptions.faculty_director
         ).first()
-        return self.user.is_superuser or user_rule is not None
+        return self.user.is_superuser or user_role is not None
 
     def get_can_signature(self, obj):
         return self.user.is_superuser
 
     def get_staffs(self, obj):
-        user_faculty_rule = self.user.user_admin.filter(
+        user_faculty_role = self.user.user_admin.filter(
             role=AdminModel.AdminRoleOptions.faculty_director,
             faculties=obj.faculty,
         ).first()
         superusers_data = []
-        if self.user.is_superuser or user_faculty_rule is not None:
+        if self.user.is_superuser or user_faculty_role is not None:
             superusers = UserModel.objects.filter(is_superuser=True).exclude(
                 pk=self.user.id
             )
@@ -633,7 +633,7 @@ class AdminDetailApplicationSerializer(serializers.ModelSerializer):
         faculty_director = AdminModel.objects.filter(
             faculties=obj.faculty, role=AdminModel.AdminRoleOptions.faculty_director
         ).exclude(user__pk=self.user.id)
-        faculty_director_data = AdminRuleSerializer(faculty_director, many=True).data
+        faculty_director_data = AdminRoleSerializer(faculty_director, many=True).data
         staffs = (
             AdminModel.objects.filter(
                 faculties=obj.faculty,
@@ -645,7 +645,7 @@ class AdminDetailApplicationSerializer(serializers.ModelSerializer):
             .exclude(user__pk=self.user.id)
             .order_by("fields", "role")
         )
-        staffs_data = AdminRuleSerializer(staffs, many=True).data
+        staffs_data = AdminRoleSerializer(staffs, many=True).data
         return superusers_data + faculty_director_data + staffs_data
 
 
@@ -674,11 +674,11 @@ class AdminUpdateApplicationSerializer(serializers.ModelSerializer):
                     field.required = False
 
     def update(self, instance, validated_data):
-        user_rule = self.user.user_admin.filter(
+        user_role = self.user.user_admin.filter(
             faculties=instance.faculty,
             role=AdminModel.AdminRoleOptions.faculty_director,
         ).first()
-        if self.user.is_superuser or user_rule is not None:
+        if self.user.is_superuser or user_role is not None:
             instance.status = validated_data["status"]
             instance.save()
             time_line_status = TimeLineModel.TimeLineStatusOptions.NeedToEdit

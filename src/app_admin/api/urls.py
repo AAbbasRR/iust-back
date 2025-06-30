@@ -10,14 +10,14 @@ urlpatterns = [
     # staffs
     path("staffs/list/", AdminStaffsListAPIView.as_view(), name="admin_list_staffs"),
     path(
-        "staffs/create_rule/",
+        "staffs/create_role/",
         AdminStaffsCreateAPIView.as_view(),
-        name="admin_create_rule_staff",
+        name="admin_create_role_staff",
     ),
     path(
-        "staffs/update_detele_rule/<int:pk>/",
+        "staffs/update_detele_role/<int:pk>/",
         AdminStaffsUpdateDeleteAPIView.as_view(),
-        name="admin_update_delete_rule_staff",
+        name="admin_update_delete_role_staff",
     ),
     # report
     path(

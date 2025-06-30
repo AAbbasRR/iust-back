@@ -28,12 +28,12 @@ class AdminApplicationTimeLineSerializer(serializers.ModelSerializer):
             attrs["application"].status
             == ApplicationModel.ApplicationStatusOptions.Current
         ):
-            user_rule = self.user.user_admin.filter(
+            user_role = self.user.user_admin.filter(
                 Q(faculties=attrs["application"].faculty)
                 & Q(role=AdminModel.AdminRoleOptions.faculty_director)
                 | Q(fields=attrs["application"].field_of_study)
             ).first()
-            if self.user.is_superuser is True or user_rule is not None:
+            if self.user.is_superuser is True or user_role is not None:
                 return attrs
             else:
                 raise exceptions.ParseError(

@@ -58,7 +58,7 @@ class BaseErrors:
     message_success_viewed = _("Message Success Viewed")
 
     # referral
-    user_do_not_have_rule_for_referral = _(
+    user_do_not_have_role_for_referral = _(
         "You Do Not Have Permission For Referral This Application"
     )
     cant_referral_to_this_user = _("Cant Referral Application To User")

@@ -25,6 +25,9 @@ class AdminFacultyGroupsListCreateView(generics.ListCreateAPIView):
         "fields__en_name",
         "fields__ar_name",
     ]
+    filter_fields = [
+        "faculty"
+    ]
     queryset = FacultyGroupsModel.objects.all()
 
     def get_permissions(self):
