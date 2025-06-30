@@ -17,6 +17,7 @@ class AdminStaffsListAPIView(generics.ListAPIView):
     versioning_class = BaseVersioning
     pagination_class = BasePagination
     serializer_class = UserSerializer
+    search_fields = ["username", "sub", "email", "user_profile__first_name", "user_profile__last_name"]
     queryset = UserModel.objects.filter(
         is_staff=True, is_superuser=False
     ).prefetch_related("user_admin")
