@@ -18,6 +18,14 @@ class Settings(models.Model):
     end_register_date = models.DateField(
         null=True, blank=True, verbose_name=_("End register date")
     )
+    start_phd_register_date = models.DateField(
+        null=True,
+        blank=True,
+        verbose_name=_("Start PHD register date"),
+    )
+    end_phd_register_date = models.DateField(
+        null=True, blank=True, verbose_name=_("End PHD register date")
+    )
     fa_terms = models.TextField(null=True, blank=True, verbose_name=_("Farsi terms"))
     en_terms = models.TextField(null=True, blank=True, verbose_name=_("English terms"))
     ar_terms = models.TextField(null=True, blank=True, verbose_name=_("Arabic terms"))

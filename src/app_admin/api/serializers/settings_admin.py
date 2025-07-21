@@ -10,10 +10,14 @@ class AdminSettingsSerializer(serializers.ModelSerializer):
             "id",
             "start_register_date",
             "end_register_date",
+            "start_phd_register_date",
+            "end_phd_register_date",
         )
         extra_kwargs = {
             "start_register_date": {"required": False},
             "end_register_date": {"required": False},
+            "start_phd_register_date": {"required": False},
+            "end_phd_register_date": {"required": False},
         }
 
     def update(self, instance, validated_data):

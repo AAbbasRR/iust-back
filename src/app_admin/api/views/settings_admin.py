@@ -37,14 +37,26 @@ class AdminSettingsView(generics.GenericAPIView):
                 {
                     "id": 11,
                     "field": "start_register_date",
-                    "fa_name": "تاریخ شروع ثبت نام",
+                    "fa_name": "تاریخ شروع ثبت نام کارشناسی",
                     "value": str(list_settings.start_register_date),
                 },
                 {
                     "id": 12,
                     "field": "end_register_date",
-                    "fa_name": "تاریخ اتمام ثبت نام",
+                    "fa_name": "تاریخ اتمام ثبت نام کارشناسی",
                     "value": str(list_settings.end_register_date),
+                },
+                {
+                    "id": 11,
+                    "field": "start_phd_register_date",
+                    "fa_name": "تاریخ شروع ثبت نام دکترا",
+                    "value": str(list_settings.start_phd_register_date),
+                },
+                {
+                    "id": 12,
+                    "field": "end_phd_register_date",
+                    "fa_name": "تاریخ اتمام ثبت نام دکترا",
+                    "value": str(list_settings.end_phd_register_date),
                 },
             ]
         )
