@@ -4,11 +4,12 @@ from rest_framework import generics, exceptions, response, status
 
 from app_chat.api.serializers.tickets_admin import (
     AdminMessageSerializers,
+    AdminEditMessageSerializers,
     AdminTicketChatRoomSerializers,
     AdminChatRoomRetrieveSerializer,
     AdminCloseTicketSerializers,
 )
-from app_chat.models import ChatRoomModel
+from app_chat.models import ChatRoomModel, MessageModel
 from app_chat.filters.tickets import AdminTicketListFilter
 
 from utils.permissions import (
@@ -88,6 +89,20 @@ class AdminCreateMessageOnChatRoomView(generics.CreateAPIView):
                 ).data,
                 status=status.HTTP_201_CREATED,
             )
+
+
+class AdminEditMessageOnChatRoomView(generics.UpdateAPIView):
+    permission_classes = [
+        IsAuthenticatedPermission,
+        IsAdminUserPermission,
+        IsSuperUserPermission,
+    ]
+    versioning_class = BaseVersioning
+    serializer_class = AdminEditMessageSerializers
+    lookup_field = "pk"
+
+    def get_queryset(self):
+        return MessageModel.objects.filter(user=self.request.user)
 
 
 class AdminCloseTicketView(generics.CreateAPIView):

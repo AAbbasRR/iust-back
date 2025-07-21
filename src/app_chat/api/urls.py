@@ -35,6 +35,11 @@ urlpatterns = [
         AdminCreateMessageOnChatRoomView.as_view(),
         name="admin_create_message_chatroom",
     ),
+path(
+        "admin/message/edit/<int:pk>/",
+        AdminEditMessageOnChatRoomView.as_view(),
+        name="admin_edit_message_chatroom",
+    ),
     path(
         "admin/close/",
         AdminCloseTicketView.as_view(),

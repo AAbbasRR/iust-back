@@ -497,6 +497,7 @@ class AdminDetailApplicationSerializer(serializers.ModelSerializer):
     field_of_study = serializers.SerializerMethodField(read_only=True)
     status = serializers.CharField(source="get_status_display", read_only=True)
     user = serializers.SerializerMethodField("get_user")
+    last_education_detail = serializers.SerializerMethodField("get_last_education_detail")
     application_document = serializers.SerializerMethodField("get_application_document")
     application_timeline = serializers.SerializerMethodField("get_application_timeline")
     staffs = serializers.SerializerMethodField("get_staffs")
@@ -528,6 +529,7 @@ class AdminDetailApplicationSerializer(serializers.ModelSerializer):
             "application_letter_url",
             "application_timeline",
             "user",
+            "last_education_detail",
             "staffs",
             "can_referral",
             "can_submit_application",
@@ -558,16 +560,36 @@ class AdminDetailApplicationSerializer(serializers.ModelSerializer):
 
     def get_user(self, obj):
         return {
-            "full_name": obj.user.user_profile.get_full_name(),
+            "first_name": obj.user.user_profile.first_name,
+            "last_name": obj.user.user_profile.last_name,
             "gender": obj.user.user_profile.get_gender_display(),
             "country": obj.user.user_address.country,
+            "state": obj.user.user_address.state,
             "city": obj.user.user_address.city,
             "age": obj.user.user_profile.age,
             "agent": obj.agent.email
             if obj.agent is not None and self.user.is_superuser is True
             else None,
+            "email": obj.user.email,
+            "passport_number": obj.user.user_profile.passport_number,
             "applications_count": obj.user.user_application.count(),
         }
+
+    def get_last_education_detail(self, obj):
+        last_education = None
+        if obj.degree == ApplicationModel.ApplicationDegreeOptions.PHD:
+            last_education = obj.user.user_master_degree
+        elif obj.degree == ApplicationModel.ApplicationDegreeOptions.Master:
+            last_education = obj.user.user_bachelor_degree
+        if last_education != None:
+            return {
+                "university": last_education.university,
+                "date_of_graduation": last_education.date_of_graduation,
+                "gpa": last_education.gpa,
+                "field_of_study": last_education.field_of_study,
+            }
+        else:
+            return None
 
     def get_application_document(self, obj):
         try:

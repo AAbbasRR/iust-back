@@ -67,6 +67,39 @@ class AdminMessageSerializers(serializers.ModelSerializer):
         return message_obj
 
 
+class AdminEditMessageSerializers(serializers.ModelSerializer):
+    file_url = serializers.SerializerMethodField("get_file_url")
+
+    class Meta:
+        model = MessageModel
+        fields = [
+            "id",
+            "message",
+            "file_url",
+            "file",
+        ]
+        extra_kwargs = {
+            "id": {"read_only": True},
+            "message": {"required": False, "allow_blank": True},
+            "file": {"required": False, "allow_null": True, "write_only": True},
+        }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.request = self.context.get("request")
+        if self.request:
+            self.user = self.request.user
+
+    def get_file_url(self, obj):
+        return obj.get_file_url(self.request)
+
+    def update(self, instance, validated_data):
+        for field_name in validated_data:  # update document fields
+            setattr(instance, field_name, validated_data[field_name])
+        instance.save()
+        return instance
+
+
 class AdminTicketChatRoomSerializers(serializers.ModelSerializer):
     latest_message = serializers.SerializerMethodField("get_latest_message")
 
