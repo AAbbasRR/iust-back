@@ -47,13 +47,13 @@ class AdminSettingsView(generics.GenericAPIView):
                     "value": str(list_settings.end_register_date),
                 },
                 {
-                    "id": 11,
+                    "id": 13,
                     "field": "start_phd_register_date",
                     "fa_name": "تاریخ شروع ثبت نام دکترا",
                     "value": str(list_settings.start_phd_register_date),
                 },
                 {
-                    "id": 12,
+                    "id": 14,
                     "field": "end_phd_register_date",
                     "fa_name": "تاریخ اتمام ثبت نام دکترا",
                     "value": str(list_settings.end_phd_register_date),
