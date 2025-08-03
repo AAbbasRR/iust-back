@@ -36,6 +36,12 @@ urlpatterns = [
         CompleteForgetPasswordView.as_view(),
         name="user_complete_forget_password",
     ),
+    # admin users
+    path(
+        "users/list/",
+        AdminAllUserView.as_view(),
+        name="admin_users_list",
+    ),
     # admin staffs
     path(
         "agents/list_create/",

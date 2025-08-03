@@ -21,3 +21,4 @@ from .agents_admin import (
     AdminAgentRejectAccountAPIView,
     AdminAgentAcceptAccountAPIView,
 )
+from .users_admin import AdminAllUserView
