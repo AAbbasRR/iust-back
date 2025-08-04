@@ -32,6 +32,7 @@ class AdminAllApplicationView(generics.ListAPIView):
     serializer_class = AdminApplicationListSerializer
     ordering_fields = ["create_at", "bachelor_gpa", "master_gpa"]
     filterset_class = ApplicationListFilter
+    search_fields = ["user__user_profile__first_name", "user__user_profile__last_name"]
 
     def get_queryset(self):
         bachelor_gpa_subquery = BachelorDegreeModel.objects.filter(
