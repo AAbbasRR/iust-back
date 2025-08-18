@@ -92,14 +92,31 @@ class AdminReferralApplicationListView(generics.ListAPIView):
     versioning_class = BaseVersioning
     pagination_class = BasePagination
     serializer_class = AdminApplicationListSerializer
-    ordering_fields = ["create_at"]
+    ordering_fields = ["create_at", "bachelor_gpa", "master_gpa"]
     filterset_class = ApplicationListFilter
 
     def get_queryset(self):
-        return ApplicationModel.objects.filter(
-            application_referral__destination_user=self.request.user,
-            application_referral__is_enabled=True,
-        ).distinct()
+        bachelor_gpa_subquery = BachelorDegreeModel.objects.filter(
+            user=OuterRef("user_id")
+        ).values("gpa")[:1]
+
+        master_gpa_subquery = MasterDegreeModel.objects.filter(
+            user=OuterRef("user_id")
+        ).values("gpa")[:1]
+
+        queryset = ApplicationModel.objects.annotate(
+            bachelor_gpa=Subquery(bachelor_gpa_subquery, output_field=FloatField()),
+            master_gpa=Subquery(master_gpa_subquery, output_field=FloatField()),
+        )
+
+        return (
+            queryset.filter(
+              application_referral__destination_user=self.request.user,
+              application_referral__is_enabled=True,
+            )
+            .distinct()
+        )
+
 
 
 class AdminExportReferralApplicationListView(generics.GenericAPIView):
