@@ -2,6 +2,10 @@ from rest_framework import serializers
 
 from app_education.models import FacultyModel
 
+class FieldOfStudySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FieldOfStudyModel
+        fields = ["id", "fa_name", "en_name", "ar_name"]
 
 class AdminFacultySerializer(serializers.ModelSerializer):
     class Meta:
