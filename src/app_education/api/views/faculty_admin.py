@@ -2,6 +2,7 @@ from rest_framework import generics
 
 from app_education.api.serializers.faculty_admin import AdminFacultySerializer
 from app_education.models import FacultyModel
+from app_education.api.serializers.faculty import FacultySerializer
 
 from utils import BaseVersioning
 from utils.paginations import BasePagination
