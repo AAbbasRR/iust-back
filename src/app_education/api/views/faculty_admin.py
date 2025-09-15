@@ -1,8 +1,7 @@
 from rest_framework import generics, response
 
-from app_education.api.serializers.faculty_admin import AdminFacultySerializer
+from app_education.api.serializers.faculty_admin import AdminFacultySerializer, AdminFacultyByDegreeSerializer
 from app_education.models import FacultyModel
-from app_education.api.serializers.faculty import FacultySerializer
 
 from utils import BaseVersioning
 from utils.paginations import BasePagination
@@ -41,7 +40,7 @@ class AdminFacultyListAllByDegreeView(generics.ListAPIView):
         grouped = {"Master": [], "P.H.D": []}
 
         for degree in ["Master", "P.H.D"]:
-            serializer = FacultySerializer(
+            serializer = AdminFacultyByDegreeSerializer(
                 faculties,
                 many=True,
                 context={"degree": degree, "request": request},
