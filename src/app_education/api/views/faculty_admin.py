@@ -1,4 +1,4 @@
-from rest_framework import generics
+from rest_framework import generics, response
 
 from app_education.api.serializers.faculty_admin import AdminFacultySerializer
 from app_education.models import FacultyModel
