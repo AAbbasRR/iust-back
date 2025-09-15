@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from app_education.models import FacultyModel
+from app_education.models import FacultyModel, FieldOfStudyModel
 
 class FieldOfStudySerializer(serializers.ModelSerializer):
     class Meta:
