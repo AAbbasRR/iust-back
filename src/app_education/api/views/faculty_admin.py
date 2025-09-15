@@ -27,3 +27,24 @@ class AdminFacultyUpdateDeleteView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = AdminFacultySerializer
     queryset = FacultyModel.objects.all()
     lookup_field = "pk"
+
+class AdminFacultyListAllByDegreeView(generics.ListAPIView):
+    permission_classes = [
+        IsAuthenticatedPermission,
+    ]
+    versioning_class = BaseVersioning
+
+    def list(self, request, *args, **kwargs):
+        faculties = FacultyModel.objects.prefetch_related("fields_of_studies").all()
+
+        grouped = {"Master": [], "P.H.D": []}
+
+        for degree in ["Master", "P.H.D"]:
+            serializer = FacultySerializer(
+                faculties,
+                many=True,
+                context={"degree": degree, "request": request},
+            )
+            grouped[degree] = serializer.data
+
+        return response.Response(grouped)

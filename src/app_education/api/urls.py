@@ -41,6 +41,11 @@ urlpatterns = [
         AdminFacultyUpdateDeleteView.as_view(),
         name="admin_faculties_update_delete",
     ),
+    path(
+        "admin/faculties/lists_by_degree/",
+        AdminFacultyListAllByDegreeView.as_view(),
+        name="admin_faculties_lists_by_degree",
+    ),
     # Admin Field Of Study
     path(
         "admin/field_of_study/list_create/",
