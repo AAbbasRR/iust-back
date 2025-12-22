@@ -99,3 +99,16 @@ class AdminAgentAcceptAccountAPIView(generics.GenericAPIView):
         agent.set_last_login()
         agent.save()
         return response.Response(status=status.HTTP_200_OK)
+
+
+class AdminConvertAgentToUserAPIView(generics.GenericAPIView):
+    permission_classes = [IsAuthenticatedPermission, IsAdminUserPermission,IsSuperUserPermission]
+    versioning_class = BaseVersioning
+    queryset = UserModel.objects.filter(is_agent=True)
+    lookup_field = "pk"
+
+    def post(self, request, *args, **kwargs):
+        agent = self.get_object()
+        agent = agent.is_agent = False
+        agent.save()
+        return response.Response(status=status.HTTP_200_OK)

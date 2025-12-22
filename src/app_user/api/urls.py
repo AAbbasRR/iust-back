@@ -63,6 +63,11 @@ urlpatterns = [
         AdminAgentAcceptAccountAPIView.as_view(),
         name="admin_agents_accept",
     ),
+    path(
+        "agents/convert_to_user/<int:pk>/",
+        AdminConvertAgentToUserAPIView.as_view(),
+        name="admin_agents_convert_to_user",
+    ),
     # change password
     path("change_password/", ChangePasswordView.as_view(), name="user_change_password"),
     # manage profile account

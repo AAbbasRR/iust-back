@@ -20,5 +20,6 @@ from .agents_admin import (
     AdminAgentUpdateAPIView,
     AdminAgentRejectAccountAPIView,
     AdminAgentAcceptAccountAPIView,
+    AdminConvertAgentToUserAPIView
 )
 from .users_admin import AdminAllUserView
