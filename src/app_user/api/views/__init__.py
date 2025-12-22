@@ -22,4 +22,4 @@ from .agents_admin import (
     AdminAgentAcceptAccountAPIView,
     AdminConvertAgentToUserAPIView
 )
-from .users_admin import AdminAllUserView
+from .users_admin import AdminAllUserView, AdminConvertUserToAgentAPIView

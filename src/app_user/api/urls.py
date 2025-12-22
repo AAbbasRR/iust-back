@@ -89,6 +89,7 @@ urlpatterns = [
     ),
     # user details
     path("user/detail/", UserProfileDetailView.as_view(), name="user_detail"),
+    path("user/convert_to_agent/", AdminConvertUserToAgentAPIView.as_view(), name="user_convert_to_agent"),
     # admin details
     path("admin/detail/", AdminDetailDataView.as_view(), name="admin_detail"),
 ]
